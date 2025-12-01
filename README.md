@@ -1,6 +1,11 @@
 # 🎯 NLP Text Classification with Translation
 
+
 Streamlit application for analyzing customer service transcripts with **automatic language detection and translation**, sentiment analysis, and category classification.
+
+## Project Structure
+- `Latest Streamlit app in root folder (use this one).
+- `archive/streamlit_nlp_app.py` → Old version, kept for reference only.
 
 ## 🚀 Live Demo
 
