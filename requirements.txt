@@ -20,10 +20,9 @@ pyarrow>=13.0.0,<15.0.0
 # ==========================================
 # NLP & Machine Learning
 # ==========================================
-# spaCy - Industrial NLP
 spacy>=3.6.0,<4.0.0
-# spaCy English model
-en-core-web-sm>=3.6.0,<4.0.0
+textblob>=0.17.0,<1.0.0
+nltk>=3.8.0,<4.0.0
 
 # TextBlob - Sentiment Analysis
 textblob>=0.17.0,<1.0.0
@@ -35,10 +34,10 @@ nltk>=3.8.0,<4.0.0
 # Translation Services
 # ==========================================
 # Google Translate (stable version)
-googletrans==3.1.0a0
+# googletrans==3.1.0a0
 
 # Alternative if googletrans fails:
-# deep-translator>=1.11.0
+deep-translator>=1.11.0
 
 # ==========================================
 # Utilities & Support Libraries
