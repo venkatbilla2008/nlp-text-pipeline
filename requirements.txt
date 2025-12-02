@@ -1,27 +1,11 @@
-# Enhanced Dynamic NLP Pipeline - Requirements
-# =============================================
-# Optimized for Streamlit Cloud
-# Python 3.11+
-
-# Core Framework
 streamlit>=1.28.0
-
-# Data Processing
 pandas>=2.0.0
-numpy>=1.24.0
+numpy==1.26.4
 openpyxl>=3.1.0
 pyarrow>=13.0.0
-
-# NLP & ML
-spacy>=3.6.0
+spacy==3.7.2
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
 textblob>=0.17.0
 nltk>=3.8.0
-
-# Translation - Using deep-translator (more stable than googletrans)
 deep-translator>=1.11.0
-
-# Utilities
 python-dateutil>=2.8.0
-
-# Note: After deployment, models will be downloaded automatically
