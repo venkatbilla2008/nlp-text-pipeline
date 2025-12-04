@@ -1161,11 +1161,18 @@ def main():
     # Initialize domain loader in session state and auto-load industries
     if 'domain_loader' not in st.session_state:
         st.session_state.domain_loader = DomainLoader()
+        st.session_state.load_diagnostics = []  # Store diagnostic info
+        
+        # Force fresh directory scan (no caching)
+        import sys
+        if 'domain_packs' in sys.modules:
+            del sys.modules['domain_packs']
         
         # Auto-load all industries from domain_packs folder
         with st.spinner("🔄 Loading industries from domain_packs/..."):
             loaded_count = st.session_state.domain_loader.auto_load_all_industries()
             
+            # Show detailed diagnostic information
             if loaded_count > 0:
                 industries_list = st.session_state.domain_loader.get_available_industries()
                 st.success(f"✅ Loaded {loaded_count} industries: {', '.join(sorted(industries_list))}")
@@ -1174,6 +1181,78 @@ def main():
                 st.error("❌ No industries loaded from domain_packs/ folder!")
                 st.info("💡 Check that domain_packs/ folder exists with industry subfolders containing rules.json and keywords.json")
                 logger.error("Failed to auto-load any industries")
+            
+            # Show diagnostic expander - always expanded if not all 10 loaded
+            with st.expander("🔍 View Load Diagnostics", expanded=(loaded_count != 10)):
+                st.markdown("### Directory Check")
+                
+                domain_dir = "domain_packs"
+                if os.path.exists(domain_dir):
+                    st.success(f"✅ Directory exists: {domain_dir}")
+                    st.code(f"Full path: {os.path.abspath(domain_dir)}")
+                    
+                    try:
+                        items = os.listdir(domain_dir)
+                        # Filter out non-industry items
+                        industry_items = [i for i in items if os.path.isdir(os.path.join(domain_dir, i)) and not i.startswith('.')]
+                        other_items = [i for i in items if i not in industry_items]
+                        
+                        st.info(f"📂 Found {len(industry_items)} industry folders: {', '.join(sorted(industry_items))}")
+                        if other_items:
+                            st.caption(f"Other items (ignored): {', '.join(other_items)}")
+                        
+                        # Check each industry
+                        st.markdown("### Per-Industry Status")
+                        
+                        success_count = 0
+                        failed_count = 0
+                        
+                        for item in sorted(industry_items):
+                            item_path = os.path.join(domain_dir, item)
+                            
+                            rules_path = os.path.join(item_path, "rules.json")
+                            keywords_path = os.path.join(item_path, "keywords.json")
+                            
+                            has_rules = os.path.exists(rules_path)
+                            has_keywords = os.path.exists(keywords_path)
+                            
+                            col1, col2, col3 = st.columns([3, 1, 1])
+                            
+                            with col1:
+                                if has_rules and has_keywords:
+                                    st.success(f"✅ **{item}**")
+                                    success_count += 1
+                                else:
+                                    st.error(f"❌ **{item}**")
+                                    failed_count += 1
+                            
+                            with col2:
+                                if has_rules:
+                                    st.caption("✓ rules.json")
+                                else:
+                                    st.caption("✗ rules.json")
+                            
+                            with col3:
+                                if has_keywords:
+                                    st.caption("✓ keywords.json")
+                                else:
+                                    st.caption("✗ keywords.json")
+                        
+                        st.markdown("---")
+                        st.metric("Industries Loaded", f"{success_count}/10", 
+                                 delta=f"{success_count - 10} missing" if success_count < 10 else "Complete!")
+                        
+                        if failed_count > 0:
+                            st.error(f"⚠️ {failed_count} industries failed to load. Check that rules.json and keywords.json exist in each folder.")
+                    
+                    except Exception as e:
+                        st.error(f"❌ Error reading directory: {str(e)}")
+                        import traceback
+                        st.code(traceback.format_exc())
+                else:
+                    st.error(f"❌ Directory not found: {domain_dir}")
+                    st.code(f"Current working directory: {os.getcwd()}")
+                    st.code(f"Files in current directory: {os.listdir('.')}")
             else:
                 st.warning("⚠️ No industries found in domain_packs/ folder")
     
