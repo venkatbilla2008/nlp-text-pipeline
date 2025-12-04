@@ -1,0 +1,3300 @@
+[
+    {
+        "conditions": [
+            "clear explanation by rep",
+            "clear",
+            "explanation",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "communication",
+            "soft",
+            "skills",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Clear Explanation by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "empathetic rep",
+            "empathetic",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "communication",
+            "soft",
+            "skills",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Empathetic Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent communication",
+            "excellent",
+            "communication",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "soft",
+            "skills",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Excellent communication",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent tone",
+            "excellent",
+            "tone",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "communication",
+            "soft",
+            "skills",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Excellent tone",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good listening skills",
+            "good",
+            "listening",
+            "skills",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "communication",
+            "soft",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Good Listening Skills",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "patient rep",
+            "patient",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "communication",
+            "soft",
+            "skills",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Patient Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "rep has clear understanding",
+            "clear",
+            "understanding",
+            "appreciating communication and soft skills",
+            "appreciating",
+            "communication",
+            "soft",
+            "skills",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Communication and Soft Skills",
+            "level_4": "Rep has Clear Understanding",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "knowledgeable rep",
+            "knowledgeable",
+            "appreciating knowledge",
+            "appreciating",
+            "knowledge",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Knowledge",
+            "level_4": "Knowledgeable Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "calm rep",
+            "calm",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Calm Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent rep",
+            "excellent",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Excellent Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "friendly rep",
+            "friendly",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Friendly Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good attention by rep",
+            "good",
+            "attention",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Good Attention by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "helpful rep",
+            "helpful",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Helpful Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "kind rep",
+            "kind",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Kind Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "nice rep",
+            "nice",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Nice Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "pleasant rep",
+            "pleasant",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Pleasant Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "polite rep",
+            "polite",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Polite Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "professional rep",
+            "professional",
+            "appreciating ownership",
+            "appreciating",
+            "ownership",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Ownership",
+            "level_4": "Professional Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "issue resolved",
+            "issue",
+            "resolved",
+            "appreciating resolution",
+            "appreciating",
+            "resolution",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Resolution",
+            "level_4": "Issue Resolved",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "quick / prompt rep",
+            "quick",
+            "prompt",
+            "appreciating resolution",
+            "appreciating",
+            "resolution",
+            "appreciating agent",
+            "agent"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "level_3": "Appreciating Resolution",
+            "level_4": "Quick / Prompt Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent products",
+            "excellent",
+            "products",
+            "appreciating product",
+            "appreciating",
+            "product",
+            "appreciating product  service",
+            "service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Product",
+            "level_4": "Excellent Products",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good plans",
+            "good",
+            "plans",
+            "appreciating product",
+            "appreciating",
+            "product",
+            "appreciating product  service",
+            "service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Product",
+            "level_4": "Good plans",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good promotion / offer",
+            "good",
+            "promotion",
+            "offer",
+            "appreciating product",
+            "appreciating",
+            "product",
+            "appreciating product  service",
+            "service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Product",
+            "level_4": "Good Promotion / Offer",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good calling service",
+            "good",
+            "calling",
+            "service",
+            "appreciating product",
+            "appreciating",
+            "product",
+            "appreciating product  service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Product",
+            "level_4": "Good calling service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "customer will recommend service",
+            "customer",
+            "will",
+            "recommend",
+            "service",
+            "appreciating service",
+            "appreciating",
+            "appreciating product  service",
+            "product"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Service",
+            "level_4": "Customer Will Recommend Service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent / good service",
+            "excellent",
+            "good",
+            "service",
+            "appreciating service",
+            "appreciating",
+            "appreciating product  service",
+            "product"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Service",
+            "level_4": "Excellent / Good service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good website",
+            "good",
+            "website",
+            "appreciating website / app",
+            "appreciating",
+            "appreciating product  service",
+            "product",
+            "service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Website / App",
+            "level_4": "Good Website",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "nice app",
+            "nice",
+            "appreciating website / app",
+            "appreciating",
+            "website",
+            "appreciating product  service",
+            "product",
+            "service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Website / App",
+            "level_4": "Nice APP",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "professional service",
+            "professional",
+            "service",
+            "appreciating service",
+            "appreciating",
+            "appreciating product  service",
+            "product"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Service",
+            "level_4": "Professional service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "reliable service",
+            "reliable",
+            "service",
+            "appreciating service",
+            "appreciating",
+            "appreciating product  service",
+            "product"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Service",
+            "level_4": "Reliable Service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "timely service",
+            "timely",
+            "service",
+            "appreciating service",
+            "appreciating",
+            "appreciating product  service",
+            "product"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Product & Service",
+            "level_3": "Appreciating Service",
+            "level_4": "Timely service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "communication problem",
+            "communication",
+            "problem",
+            "communication and soft skills",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Communication problem",
+            "level_4": "Communication problem",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "dead air on call",
+            "dead",
+            "call",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Dead Air on call",
+            "level_4": "Dead Air on call",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "excessive talking by rep",
+            "excessive",
+            "talking",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Excessive Talking by Rep",
+            "level_4": "Excessive Talking by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "hard to understand rep",
+            "hard",
+            "understand",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Hard to Understand Rep",
+            "level_4": "Hard to Understand Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "language barrier",
+            "language",
+            "barrier",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Language Barrier",
+            "level_4": "Language Barrier",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "long hold on call / chat",
+            "long",
+            "hold",
+            "call",
+            "chat",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Long Hold on Call / Chat",
+            "level_4": "Long Hold on Call / Chat",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "multiple holds",
+            "multiple",
+            "holds",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Multiple Holds",
+            "level_4": "Multiple Holds",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no assurance",
+            "assurance",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "No Assurance",
+            "level_4": "No Assurance",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no empathy by rep",
+            "empathy",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "No empathy by Rep",
+            "level_4": "No empathy by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no patience",
+            "patience",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "No patience",
+            "level_4": "No patience",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "pushy sales",
+            "pushy",
+            "sales",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Pushy Sales",
+            "level_4": "Pushy Sales",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rate of speech",
+            "rate",
+            "speech",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rate of Speech",
+            "level_4": "Rate of Speech",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep accent issues",
+            "accent",
+            "issues",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Accent Issues",
+            "level_4": "Rep Accent Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep could not explain",
+            "could",
+            "explain",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Could Not Explain",
+            "level_4": "Rep Could Not Explain",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep hung up the call",
+            "hung",
+            "call",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Hung up the call",
+            "level_4": "Rep Hung up the call",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep in rush",
+            "rush",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep In Rush",
+            "level_4": "Rep In Rush",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep interrupting customer",
+            "interrupting",
+            "customer",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Interrupting Customer",
+            "level_4": "Rep Interrupting Customer",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep laughing / shout on call",
+            "laughing",
+            "shout",
+            "call",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Laughing / Shout on call",
+            "level_4": "Rep Laughing / Shout on call",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep had listening issues",
+            "listening",
+            "issues",
+            "rep listening issues",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Listening Issues",
+            "level_4": "Rep Had Listening Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep mocked customer",
+            "mocked",
+            "customer",
+            "rep mocking customer",
+            "mocking",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Mocking customer",
+            "level_4": "Rep Mocked customer",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep not able to understand",
+            "able",
+            "understand",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep not able to understand",
+            "level_4": "Rep not able to understand",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep pronunciation issue",
+            "pronunciation",
+            "issue",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Pronunciation Issue",
+            "level_4": "Rep Pronunciation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep sounded robotic",
+            "sounded",
+            "robotic",
+            "rep sound robotic",
+            "sound",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Sound Robotic",
+            "level_4": "Rep Sounded Robotic",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep used jargon",
+            "used",
+            "jargon",
+            "rep using jargon",
+            "using",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Using Jargon",
+            "level_4": "Rep Used Jargon",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep yawning / sleeping",
+            "yawning",
+            "sleeping",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Yawning / Sleeping",
+            "level_4": "Rep Yawning / Sleeping",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "voice tone issue",
+            "voice",
+            "tone",
+            "issue",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Voice tone issue",
+            "level_4": "Voice tone issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "wrong documentation by rep",
+            "wrong",
+            "documentation",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Wrong Documentation by Rep",
+            "level_4": "Wrong Documentation by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "customer not getting information",
+            "customer",
+            "getting",
+            "information",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Customer Not Getting Information",
+            "level_4": "Customer Not Getting Information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "inconsistent information shared",
+            "inconsistent",
+            "information",
+            "shared",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Inconsistent information shared",
+            "level_4": "Inconsistent information shared",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep didnt understand issue",
+            "didnt",
+            "understand",
+            "issue",
+            "issue understanding",
+            "understanding",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Issue understanding",
+            "level_4": "Rep didn't understand issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep provided misleading information",
+            "provided",
+            "misleading",
+            "information",
+            "misleading information",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Misleading Information",
+            "level_4": "Rep provided misleading Information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no customer education",
+            "customer",
+            "education",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "No Customer Education",
+            "level_4": "No Customer Education",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep asked irrelevant questions",
+            "asked",
+            "irrelevant",
+            "questions",
+            "rep asking irrelevant questions",
+            "asking",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Rep Asking Irrelevant Questions",
+            "level_4": "Rep Asked Irrelevant Questions",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep had no knowledge",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Rep had No Knowledge",
+            "level_4": "Rep had No Knowledge",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep need training",
+            "need",
+            "training",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Rep Need Training",
+            "level_4": "Rep Need Training",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep provided incomplete explanation",
+            "provided",
+            "incomplete",
+            "explanation",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Rep Provided Incomplete Explanation",
+            "level_4": "Rep Provided Incomplete Explanation",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep share wrong / incomplete information",
+            "share",
+            "wrong",
+            "incomplete",
+            "information",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Knowledge",
+            "level_3": "Rep share wrong / incomplete information",
+            "level_4": "Rep share wrong / incomplete information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "need call back",
+            "need",
+            "call",
+            "back",
+            "call back issue",
+            "issue",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Call Back Issue",
+            "level_4": "Need Call Back",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no call back",
+            "call",
+            "back",
+            "call back issue",
+            "issue",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Call Back Issue",
+            "level_4": "No Call Back",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "dishonest rep",
+            "dishonest",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Dishonest Rep",
+            "level_4": "Dishonest Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no attention by rep",
+            "attention",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "No Attention by Rep",
+            "level_4": "No Attention by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no followup",
+            "followup",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "No Follow-up",
+            "level_4": "No Follow-up",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no ownership by rep",
+            "ownership",
+            "lack of ownership",
+            "lack"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "No Ownership by Rep",
+            "level_4": "No Ownership by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "promised not fulfilled",
+            "promised",
+            "fulfilled",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Promised Not fulfilled",
+            "level_4": "Promised Not fulfilled",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep did not acknowledge",
+            "acknowledge",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Rep Did Not Acknowledge",
+            "level_4": "Rep Did Not Acknowledge",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep not accommodating / argumentive",
+            "accommodating",
+            "argumentive",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Rep Not accommodating / Argumentive",
+            "level_4": "Rep Not accommodating / Argumentive",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep not helpful",
+            "helpful",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Rep Not Helpful",
+            "level_4": "Rep Not Helpful",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep was not courteous",
+            "courteous",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Rep was not courteous",
+            "level_4": "Rep was not courteous",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rude  rep",
+            "rude",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Rude - Rep",
+            "level_4": "Rude - Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "unprofessional  rep",
+            "unprofessional",
+            "lack of ownership",
+            "lack",
+            "ownership"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Lack of Ownership",
+            "level_3": "Unprofessional - Rep",
+            "level_4": "Unprofessional - Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "call transfer issue",
+            "call",
+            "transfer",
+            "issue",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Call Transfer Issue",
+            "level_4": "Call Transfer Issue",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "connected / transfer to wrong department",
+            "connected",
+            "transfer",
+            "wrong",
+            "department",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Connected / Transfer to Wrong Department",
+            "level_4": "Connected / Transfer to Wrong Department",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "customer directed to store / vendor / depart",
+            "customer",
+            "directed",
+            "store",
+            "vendor",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Customer directed to store / vendor / depart",
+            "level_4": "Customer directed to store / vendor / depart",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "long time to resolve",
+            "long",
+            "time",
+            "resolve",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Long Time to resolve",
+            "level_4": "Long Time to Resolve",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "long wait on call / chat",
+            "long",
+            "wait",
+            "call",
+            "chat",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Long Wait on Call / Chat",
+            "level_4": "Long Wait on Call / Chat",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "multiple interactions",
+            "multiple",
+            "interactions",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Multiple Interactions",
+            "level_4": "Multiple Interactions",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "no solution / issues  not resolved",
+            "solution",
+            "issues",
+            "resolved",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "No Solution / Issues - Not Resolved",
+            "level_4": "No Solution / Issues - Not Resolved",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "not happy with solution",
+            "happy",
+            "solution",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Not happy with Solution",
+            "level_4": "Not happy with Solution",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "standard / scripted response by rep",
+            "standard",
+            "scripted",
+            "response",
+            "resolution"
+        ],
+        "set": {
+            "category": "Agent Opportunity",
+            "subcategory": "Resolution",
+            "level_3": "Standard / Scripted Response by Rep",
+            "level_4": "Standard / Scripted Response by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "account access issue",
+            "account",
+            "access",
+            "issue",
+            "account management issue",
+            "management"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Account Access Issue",
+            "level_4": "Account Access Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "account cancellation issue",
+            "account",
+            "cancellation",
+            "issue",
+            "account management issue",
+            "management"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Account Cancellation Issue",
+            "level_4": "Account Cancellation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "account suspended",
+            "account",
+            "suspended",
+            "account management issue",
+            "management",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Account Suspended",
+            "level_4": "Account Suspended",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "address change related",
+            "address",
+            "change",
+            "related",
+            "account management issue",
+            "account",
+            "management",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Address Change Related",
+            "level_4": "Address Change Related",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "application related",
+            "application",
+            "related",
+            "account management issue",
+            "account",
+            "management",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Application Related",
+            "level_4": "Application Related",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "password issue",
+            "password",
+            "issue",
+            "account management issue",
+            "account",
+            "management"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Password Issue",
+            "level_4": "Password Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "billing  invoice related issue",
+            "billing",
+            "invoice",
+            "related",
+            "issue",
+            "billing issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Billing - Invoice Related Issue",
+            "level_4": "Billing - Invoice Related Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "charges issue",
+            "charges",
+            "issue",
+            "billing issue",
+            "billing"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Charges Issue",
+            "level_4": "Charges Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "double charged",
+            "double",
+            "charged",
+            "billing issue",
+            "billing",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Double Charged",
+            "level_4": "Double Charged",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "duplicate billing",
+            "duplicate",
+            "billing",
+            "billing issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Duplicate Billing",
+            "level_4": "Duplicate Billing",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "incorrect fees / charges",
+            "incorrect",
+            "fees",
+            "charges",
+            "billing issue",
+            "billing",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Incorrect Fees / Charges",
+            "level_4": "Incorrect Fees / Charges",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "late fees",
+            "late",
+            "fees",
+            "billing issue",
+            "billing",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Late Fees",
+            "level_4": "Late Fees",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cancelling the product / service",
+            "cancelling",
+            "product",
+            "service",
+            "cancelation issue",
+            "cancelation",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Cancelation Issue",
+            "level_3": "Cancelling the Product / service",
+            "level_4": "Cancelling the Product / service",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "change plan / program",
+            "change",
+            "plan",
+            "program"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Change Plan / Program",
+            "level_3": "Change Plan / Program",
+            "level_4": "Change Plan / Program",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "unfair practices",
+            "unfair",
+            "practices",
+            "dissatisfied with process",
+            "dissatisfied",
+            "process"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Dissatisfied with Process",
+            "level_3": "Unfair Practices",
+            "level_4": "Unfair Practices",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "unfriendly process",
+            "unfriendly",
+            "process",
+            "dissatisfied with process",
+            "dissatisfied"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Dissatisfied with Process",
+            "level_3": "Unfriendly process",
+            "level_4": "Unfriendly process",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "want to talk a phone rep",
+            "want",
+            "talk",
+            "phone",
+            "improve process",
+            "improve",
+            "process"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Improve Process",
+            "level_3": "Want to Talk a Phone Rep",
+            "level_4": "Want to Talk a Phone Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "issue with survey",
+            "issue",
+            "survey"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Issue with Survey",
+            "level_3": "Issue with Survey",
+            "level_4": "Issue with Survey",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issues for new customers",
+            "issues",
+            "customers"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Issues for New Customers",
+            "level_3": "Issues for New Customers",
+            "level_4": "Issues for New Customers",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no way / hard to contact customer care",
+            "hard",
+            "contact",
+            "customer",
+            "care",
+            "difficult to contact customer care",
+            "difficult"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Difficult to Contact Customer Care",
+            "level_3": "Difficult to Contact Customer Care",
+            "level_4": "No way / Hard to Contact Customer Care",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "ongoing issue",
+            "ongoing",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Ongoing Issue",
+            "level_3": "Ongoing Issue",
+            "level_4": "Ongoing Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "order cancellation",
+            "order",
+            "cancellation",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Order Cancellation",
+            "level_4": "Order Cancellation",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "order delayed",
+            "order",
+            "delayed",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Order Delayed",
+            "level_4": "Order Delayed",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "order related",
+            "order",
+            "related",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Order Related",
+            "level_4": "Order Related",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "pending order",
+            "pending",
+            "order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Pending Order",
+            "level_4": "Pending Order",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "auto pay",
+            "auto",
+            "payment issue",
+            "payment",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Payment Issue",
+            "level_3": "Auto pay",
+            "level_4": "Auto pay",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "payment history / statement",
+            "payment",
+            "history",
+            "statement",
+            "payment issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Payment Issue",
+            "level_3": "Payment History / Statement",
+            "level_4": "Payment History / Statement",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue in making payment",
+            "issue",
+            "making",
+            "payment",
+            "payment issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Payment Issue",
+            "level_3": "Issue in making payment",
+            "level_4": "Issue in making payment",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "improve / change policy",
+            "improve",
+            "change",
+            "policy",
+            "policy issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Policy Issue",
+            "level_3": "Improve / Change Policy",
+            "level_4": "Improve / Change Policy",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "many restrictions",
+            "many",
+            "restrictions",
+            "policy issue",
+            "policy",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Policy Issue",
+            "level_3": "Many Restrictions",
+            "level_4": "Many Restrictions",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "not happy with policy",
+            "happy",
+            "policy",
+            "policy issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Policy Issue",
+            "level_3": "Not happy with Policy",
+            "level_4": "Not happy with Policy",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "outsourcing issues",
+            "outsourcing",
+            "issues",
+            "policy issue",
+            "policy",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Policy Issue",
+            "level_3": "Outsourcing Issues",
+            "level_4": "Outsourcing Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "policy violation",
+            "policy",
+            "violation",
+            "policy issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Policy Issue",
+            "level_3": "Policy Violation",
+            "level_4": "Policy Violation",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "refund policy issue",
+            "refund",
+            "policy",
+            "issue",
+            "policy issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Policy Issue",
+            "level_3": "Refund Policy Issue",
+            "level_4": "Refund Policy Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "purchase issue",
+            "purchase",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Purchase issue",
+            "level_3": "Purchase issue",
+            "level_4": "Purchase issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "delayed refund",
+            "delayed",
+            "refund"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Refund",
+            "level_3": "Delayed Refund",
+            "level_4": "Delayed Refund",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "need refund",
+            "need",
+            "refund"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Refund",
+            "level_3": "Need Refund",
+            "level_4": "Need Refund",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "refund denied",
+            "refund",
+            "denied"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Refund",
+            "level_3": "Refund Denied",
+            "level_4": "Refund Denied",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "renewal issue",
+            "renewal",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Renewal Issue",
+            "level_3": "Renewal issue",
+            "level_4": "Renewal issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "scam / fraud",
+            "scam",
+            "fraud",
+            "scam / fraud issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Scam / fraud Issue",
+            "level_3": "Scam / fraud",
+            "level_4": "Scam / fraud",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "product not received",
+            "product",
+            "received",
+            "shipping  delivery",
+            "shipping",
+            "delivery"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Shipping - Delivery",
+            "level_3": "Product Not received",
+            "level_4": "Product Not received",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no communication received",
+            "communication",
+            "received",
+            "updates / notification issue",
+            "updates",
+            "notification",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Updates / Notification Issue",
+            "level_3": "No Communication Received",
+            "level_4": "No Communication Received",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "not received email",
+            "received",
+            "email",
+            "updates / notification issue",
+            "updates",
+            "notification",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Updates / Notification Issue",
+            "level_3": "Not received Email",
+            "level_4": "Not received Email",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "transferring service",
+            "transferring",
+            "service",
+            "account management issue",
+            "account",
+            "management",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "level_3": "Transferring Service",
+            "level_4": "Transferring Service",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "difficulty placing order",
+            "difficulty",
+            "placing",
+            "order",
+            "placing order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Placing Order",
+            "level_4": "Difficulty placing order",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "out of stock product listed online",
+            "stock",
+            "product",
+            "listed",
+            "online",
+            "placing order",
+            "placing",
+            "order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Placing Order",
+            "level_4": "Out of stock product listed online",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "unable to cancel order  website",
+            "unable",
+            "cancel",
+            "order",
+            "website",
+            "cancel order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Cancel Order",
+            "level_4": "Unable to cancel order - website",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "unable to checkout  address",
+            "unable",
+            "checkout",
+            "address",
+            "placing order",
+            "placing",
+            "order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Placing Order",
+            "level_4": "Unable to checkout - Address",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "unable to checkout  credit card payment",
+            "unable",
+            "checkout",
+            "credit",
+            "card",
+            "placing order",
+            "placing",
+            "order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Placing Order",
+            "level_4": "Unable to checkout - Credit Card Payment",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "unable to modify order",
+            "unable",
+            "modify",
+            "order",
+            "modify order",
+            "order issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Modify Order",
+            "level_4": "Unable to modify order",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "could not schedule appointment",
+            "could",
+            "schedule",
+            "appointment",
+            "scheduling appointment",
+            "scheduling",
+            "scheduling issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Scheduling Issue",
+            "level_3": "Scheduling Appointment",
+            "level_4": "Could not Schedule Appointment",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "need reimbursement",
+            "need",
+            "reimbursement",
+            "need refund",
+            "refund"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Refund",
+            "level_3": "Need Refund",
+            "level_4": "Need Reimbursement",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "product not delivered",
+            "product",
+            "delivered",
+            "order issue",
+            "order",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Product Not Delivered",
+            "level_4": "Product Not Delivered",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cancelling your services",
+            "cancelling",
+            "your",
+            "services",
+            "cancelling the product / service",
+            "product",
+            "service",
+            "cancelation issue",
+            "cancelation",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Cancelation Issue",
+            "level_3": "Cancelling the Product / service",
+            "level_4": "Cancelling Your Services",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "reward not received",
+            "reward",
+            "received",
+            "order issue",
+            "order",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Reward Not Received",
+            "level_4": "Reward Not Received",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "subscription cancelation",
+            "subscription",
+            "cancelation",
+            "cancelling the product / service",
+            "cancelling",
+            "product",
+            "service",
+            "subscription issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Subscription Issue",
+            "level_3": "Cancelling the Product / service",
+            "level_4": "Subscription Cancelation",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cancellation charges",
+            "cancellation",
+            "charges",
+            "cancelling the product / service",
+            "cancelling",
+            "product",
+            "service",
+            "cancelation issue",
+            "cancelation",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Cancelation Issue",
+            "level_3": "Cancelling the Product / service",
+            "level_4": "Cancellation Charges",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "do not need annual subscription",
+            "need",
+            "annual",
+            "subscription",
+            "cancelling the product / service",
+            "cancelling",
+            "product",
+            "service",
+            "subscription issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Subscription Issue",
+            "level_3": "Cancelling the Product / service",
+            "level_4": "Do Not Need Annual Subscription",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue with annual subscription",
+            "issue",
+            "annual",
+            "subscription",
+            "annual subscription issue",
+            "subscription issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Subscription Issue",
+            "level_3": "Annual Subscription Issue",
+            "level_4": "Issue with Annual Subscription",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "annual fee",
+            "annual",
+            "subscription issue",
+            "subscription",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Subscription Issue",
+            "level_3": "Annual Fee",
+            "level_4": "Annual fee",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue related to premium",
+            "issue",
+            "related",
+            "premium",
+            "premium issue",
+            "billing issue",
+            "billing"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "level_3": "Premium Issue",
+            "level_4": "Issue related to Premium",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "network facility",
+            "network",
+            "facility"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Network Facility",
+            "level_3": "Network Facility",
+            "level_4": "Network Facility",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "denied claim",
+            "denied",
+            "claim",
+            "claims issue",
+            "claims",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Claims Issue",
+            "level_3": "Claims Issue",
+            "level_4": "Denied Claim",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "copay issue",
+            "copay",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Copay Issue",
+            "level_3": "Copay Issue",
+            "level_4": "Copay Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "pharmacy order issue",
+            "pharmacy",
+            "order",
+            "issue",
+            "pharmacy order",
+            "order issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Pharmacy Order",
+            "level_4": "Pharmacy Order Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "prescription issue",
+            "prescription",
+            "issue",
+            "order issue",
+            "order"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Prescription Issue",
+            "level_4": "Prescription Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue in getting plan benefits",
+            "issue",
+            "getting",
+            "plan",
+            "benefits",
+            "benefits issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Benefits Issue",
+            "level_3": "Benefits Issue",
+            "level_4": "Issue in getting plan Benefits",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "coverage issue",
+            "coverage",
+            "issue",
+            "network facility",
+            "network",
+            "facility"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Network Facility",
+            "level_3": "Coverage",
+            "level_4": "Coverage Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "received no medical facility",
+            "received",
+            "medical",
+            "facility",
+            "medical facility"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Medical facility",
+            "level_3": "Received No Medical facility",
+            "level_4": "Received No Medical facility",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "home health care issue",
+            "home",
+            "health",
+            "care",
+            "issue",
+            "healthcare issue",
+            "healthcare"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Healthcare Issue",
+            "level_3": "Healthcare Issue",
+            "level_4": "Home Health Care Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "supplies / medicine out of stock",
+            "supplies",
+            "medicine",
+            "stock",
+            "out of stock",
+            "order issue",
+            "order",
+            "issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Order Issue",
+            "level_3": "Out of Stock",
+            "level_4": "Supplies / Medicine out of stock",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue with doctor availability",
+            "issue",
+            "doctor",
+            "availability",
+            "doctor availability"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Doctor Availability",
+            "level_3": "Doctor Availability",
+            "level_4": "Issue with Doctor availability",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "privacy issue",
+            "privacy",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Privacy Issue",
+            "level_3": "Privacy Issue",
+            "level_4": "Privacy Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "dissatisfied with product",
+            "dissatisfied",
+            "product",
+            "product dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Product Dissatisfaction",
+            "level_3": "Dissatisfied with Product",
+            "level_4": "Dissatisfied with product",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "dissatisfied with plan",
+            "dissatisfied",
+            "plan",
+            "product plan",
+            "product"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Product Plan",
+            "level_3": "Dissatisfied with Plan",
+            "level_4": "Dissatisfied with Plan",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "bad / poor  service",
+            "poor",
+            "service",
+            "service dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Service Dissatisfaction",
+            "level_3": "Bad / Poor - Service",
+            "level_4": "Bad / Poor - Service",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "complicated service",
+            "complicated",
+            "service",
+            "service dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Service Dissatisfaction",
+            "level_3": "Complicated Service",
+            "level_4": "Complicated Service",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "improve service",
+            "improve",
+            "service",
+            "service dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Service Dissatisfaction",
+            "level_3": "Improve Service",
+            "level_4": "Improve Service",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "not reliable service",
+            "reliable",
+            "service",
+            "service dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Service Dissatisfaction",
+            "level_3": "Not Reliable Service",
+            "level_4": "Not Reliable Service",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "service not helpful",
+            "service",
+            "helpful",
+            "service dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Service Dissatisfaction",
+            "level_3": "Service Not helpful",
+            "level_4": "Service Not helpful",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "slow service",
+            "slow",
+            "service",
+            "service dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Service Dissatisfaction",
+            "level_3": "Slow Service",
+            "level_4": "Slow Service",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "app error / improve app",
+            "error",
+            "improve",
+            "website / app issue",
+            "website",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "App Error / Improve App",
+            "level_4": "App Error / Improve App",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "browser issue",
+            "browser",
+            "issue",
+            "website / app issue",
+            "website"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Browser Issue",
+            "level_4": "Browser Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "difficult to use / navigate",
+            "difficult",
+            "navigate",
+            "website / app issue",
+            "website",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Difficult To Use / Navigate",
+            "level_4": "Difficult To Use / Navigate",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue with information on site",
+            "issue",
+            "information",
+            "site",
+            "website / app issue",
+            "website"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Issue with Information on Site",
+            "level_4": "Issue with Information on Site",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "website difficult to understand",
+            "website",
+            "difficult",
+            "understand",
+            "website / app issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Website Difficult To Understand",
+            "level_4": "Website Difficult To Understand",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "website error",
+            "website",
+            "error",
+            "website / app issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Website Error",
+            "level_4": "Website Error",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "website  multiple charges",
+            "website",
+            "multiple",
+            "charges",
+            "website error",
+            "error",
+            "website / app issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Website Error",
+            "level_4": "Website - Multiple charges",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "website slow",
+            "website",
+            "slow",
+            "website error",
+            "error",
+            "website / app issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Website / App Issue",
+            "level_3": "Website Error",
+            "level_4": "Website slow",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "customer self resolved issue",
+            "customer",
+            "self",
+            "resolved",
+            "issue"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Customer",
+            "level_3": "Customer self resolved issue",
+            "level_4": "Customer self resolved issue",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "impacting client / business",
+            "impacting",
+            "client",
+            "business",
+            "customer"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Customer",
+            "level_3": "Impacting Client / Business",
+            "level_4": "Impacting Client / Business",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "incorrect rating",
+            "incorrect",
+            "rating",
+            "customer"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Customer",
+            "level_3": "Incorrect Rating",
+            "level_4": "Incorrect Rating",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "dissatisfied with previous rep",
+            "dissatisfied",
+            "previous",
+            "issue with previous rep",
+            "issue"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Issue with Previous Rep",
+            "level_3": "Dissatisfied with Previous rep",
+            "level_4": "Dissatisfied with Previous rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "customer will take legal action",
+            "customer",
+            "will",
+            "take",
+            "legal",
+            "legal issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Legal Issue",
+            "level_3": "Customer will take legal action",
+            "level_4": "Customer will take legal action",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "background noise on call",
+            "background",
+            "noise",
+            "call",
+            "audio quality",
+            "audio",
+            "quality"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Audio Quality",
+            "level_3": "Background Noise on Call",
+            "level_4": "Background Noise on Call",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "hearing issue on call",
+            "hearing",
+            "issue",
+            "call",
+            "audio quality",
+            "audio",
+            "quality"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Audio Quality",
+            "level_3": "Hearing Issue on call",
+            "level_4": "Hearing Issue on call",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "voice breaking issue",
+            "voice",
+            "breaking",
+            "issue",
+            "audio quality",
+            "audio",
+            "quality"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Audio Quality",
+            "level_3": "Voice Breaking Issue",
+            "level_4": "Voice Breaking Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "call / chat / email not answered",
+            "call",
+            "chat",
+            "email",
+            "answered"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Call / Chat / Email Not Answered",
+            "level_3": "Call / Chat / Email Not Answered",
+            "level_4": "Call / Chat / Email Not Answered",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "call dropped",
+            "call",
+            "dropped"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Call dropped",
+            "level_3": "Call dropped",
+            "level_4": "Call dropped",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "chat disconnection",
+            "chat",
+            "disconnection"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Chat Disconnection",
+            "level_3": "Chat Disconnection",
+            "level_4": "Chat Disconnection",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "audio connection issue",
+            "audio",
+            "connection",
+            "issue",
+            "audio quality",
+            "quality"
+        ],
+        "set": {
+            "category": "Others",
+            "subcategory": "Audio Quality",
+            "level_3": "Audio Connection Issue",
+            "level_4": "Audio Connection Issue",
+            "sentiment": "negative"
+        }
+    }
+]

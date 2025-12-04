@@ -1,0 +1,61 @@
+{
+    "version": "1.0",
+    "description": "Maps companies to their respective industries for VoC classification",
+    "industries": {
+        "Banking": [
+            "Capital One",
+            "PNC",
+            "PPT Chat",
+            "PPT SMS"
+        ],
+        "Telecommunications": [
+            "ATT DTV",
+            "ATT ICM Mumbai",
+            "ATT ICM Mumbai SA",
+            "DirecTV",
+            "Hughes",
+            "T-Mobile Eng"
+        ],
+        "E-commerce": [
+            "Amazon Seller Support",
+            "Wayfair IND",
+            "Wayfair JAM",
+            "Shutterfly",
+            "Petco",
+            "Shutterstock"
+        ],
+        "Travel_Hospitality": [
+            "Expedia Hotel",
+            "Expedia Retail",
+            "Airbnb",
+            "TripAdvisor",
+            "Hilton",
+            "Viking",
+            "VRBO"
+        ],
+        "Streaming_Entertainment": [
+            "Netflix Chat",
+            "Spotify",
+            "Spotify Chat"
+        ],
+        "Technology_Software": [
+            "McAfee V1",
+            "McAfee V2",
+            "GoDaddy",
+            "Lenovo"
+        ],
+        "Healthcare": [
+            "Humana"
+        ],
+        "Transportation": [
+            "Lyft"
+        ],
+        "Financial_Services": [
+            "Remitly",
+            "AFG Email"
+        ],
+        "Other": [
+            "TRQ"
+        ]
+    }
+}

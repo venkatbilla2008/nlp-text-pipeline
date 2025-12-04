@@ -1,0 +1,66 @@
+[
+    {
+        "conditions": [
+            "transfer failed",
+            "transaction failed",
+            "payment stuck",
+            "money not received"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Transaction Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "high fees",
+            "expensive",
+            "charges too much",
+            "fee issue"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Charges / Fees Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "fraud",
+            "scam",
+            "unauthorized transaction",
+            "suspicious activity"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Scam / fraud Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "need refund",
+            "refund request",
+            "refund denied"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Refund",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "fast transfer",
+            "reliable",
+            "excellent service",
+            "easy to use"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Service Appreciation",
+            "sentiment": "positive"
+        }
+    }
+]

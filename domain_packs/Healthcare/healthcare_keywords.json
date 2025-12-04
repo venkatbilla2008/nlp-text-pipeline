@@ -1,0 +1,65 @@
+[
+    {
+        "conditions": [
+            "claim denied",
+            "claim rejected",
+            "insurance denied",
+            "coverage issue"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Claims Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "billing error",
+            "wrong bill",
+            "overcharged",
+            "billing dispute"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cant find provider",
+            "network issue",
+            "provider not available"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Network Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "helpful rep",
+            "patient service",
+            "understanding",
+            "great help"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "cancel plan",
+            "change plan",
+            "switch insurance"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Change Plan / Program",
+            "sentiment": "neutral"
+        }
+    }
+]

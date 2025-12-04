@@ -1,0 +1,66 @@
+[
+    {
+        "conditions": [
+            "driver issue",
+            "rude driver",
+            "unsafe driving",
+            "driver problem"
+        ],
+        "set": {
+            "category": "Driver/Rider",
+            "subcategory": "Driver Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "overcharged",
+            "fare dispute",
+            "wrong fare",
+            "pricing issue"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Charges / Fees",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "long wait",
+            "driver cancelled",
+            "no driver",
+            "cant get ride"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Service Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "great driver",
+            "excellent service",
+            "safe ride",
+            "friendly driver"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Driver/Rider Professionalism",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "refund request",
+            "need refund",
+            "money back"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Billing Issue",
+            "sentiment": "negative"
+        }
+    }
+]

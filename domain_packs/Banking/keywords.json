@@ -1,0 +1,78 @@
+[
+    {
+        "conditions": [
+            "refund",
+            "charged",
+            "billing",
+            "payment failed",
+            "overcharged",
+            "card declined",
+            "unauthorized charge",
+            "double charged"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Billing Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "account locked",
+            "account disabled",
+            "cant access",
+            "login issue",
+            "password reset",
+            "forgotten password"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Account Management Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "fraud",
+            "scam",
+            "unauthorized",
+            "stolen card",
+            "suspicious activity",
+            "security breach"
+        ],
+        "set": {
+            "category": "Process",
+            "subcategory": "Scam / fraud Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rude agent",
+            "unprofessional",
+            "hung up",
+            "no patience",
+            "not helpful",
+            "argumentative"
+        ],
+        "set": {
+            "category": "Agent",
+            "subcategory": "Agent Behaviour",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "helpful agent",
+            "courteous",
+            "patient",
+            "excellent service",
+            "knowledgeable"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Appreciating Agent",
+            "sentiment": "positive"
+        }
+    }
+]

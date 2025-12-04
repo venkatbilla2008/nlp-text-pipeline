@@ -1,0 +1,70 @@
+[
+    {
+        "conditions": [
+            "no signal",
+            "poor reception",
+            "network down",
+            "cant connect",
+            "connection issue",
+            "dropped call"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Technical Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "slow internet",
+            "buffering",
+            "speed issue",
+            "bandwidth problem"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Technical Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "billing error",
+            "overcharged",
+            "wrong bill",
+            "disputed charge",
+            "refund"
+        ],
+        "set": {
+            "category": "TCD: Billing",
+            "subcategory": "Billing Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "installation issue",
+            "technician",
+            "setup problem",
+            "equipment"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Technical Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cancel service",
+            "disconnect",
+            "terminate",
+            "end subscription"
+        ],
+        "set": {
+            "category": "Subscription Management",
+            "subcategory": "Cancellation",
+            "sentiment": "negative"
+        }
+    }
+]

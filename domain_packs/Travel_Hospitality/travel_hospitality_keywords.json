@@ -1,0 +1,68 @@
+[
+    {
+        "conditions": [
+            "flight cancelled",
+            "booking cancelled",
+            "cancellation",
+            "trip cancelled"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Cancellation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "refund",
+            "money back",
+            "reimbursement",
+            "refund denied"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Refund Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "booking error",
+            "wrong dates",
+            "reservation problem",
+            "double booked"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Booking Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "dirty room",
+            "unclean",
+            "poor service",
+            "rude staff",
+            "disappointed"
+        ],
+        "set": {
+            "category": "People Driven",
+            "subcategory": "Service Quality",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "amazing stay",
+            "wonderful experience",
+            "excellent service",
+            "will return"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Service Appreciation",
+            "sentiment": "positive"
+        }
+    }
+]

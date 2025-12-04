@@ -1,0 +1,437 @@
+[
+    {
+        "conditions": [
+            "bad experience",
+            "experience",
+            "agent experience",
+            "agent"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Agent Experience",
+            "level_3": "Bad experience",
+            "level_4": "Bad experience",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "good interaction",
+            "good",
+            "interaction",
+            "department",
+            "agent experience",
+            "agent",
+            "experience"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Agent Experience",
+            "level_3": "Department",
+            "level_4": "Good Interaction",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good experience",
+            "good",
+            "experience",
+            "agent experience",
+            "agent"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Agent Experience",
+            "level_3": "Good experience",
+            "level_4": "Good experience",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "duration",
+            "training timeline",
+            "training",
+            "timeline"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Training Timeline",
+            "level_3": "Duration",
+            "level_4": "Duration",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "empathy",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Empathy",
+            "level_4": "Empathy",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "kind and helpful attitude",
+            "kind",
+            "helpful",
+            "attitude",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Kind and Helpful attitude",
+            "level_4": "Kind and Helpful attitude",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "overall behavior",
+            "overall",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Overall Behavior",
+            "level_4": "Overall Behavior",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "patience",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Patience",
+            "level_4": "Patience",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "understandability",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Understandability",
+            "level_4": "Understandability",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "clarity of speech/deliverables",
+            "clarity",
+            "speech/deliverables",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Clarity of speech/deliverables",
+            "level_4": "Clarity of speech/deliverables",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "communication skills",
+            "communication",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Communication Skills",
+            "level_4": "Communication Skills",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "engagement/teamwork",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Engagement/teamwork",
+            "level_4": "Engagement/teamwork",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "examples/live scenarios",
+            "examples/live",
+            "scenarios",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Examples/live scenarios",
+            "level_4": "Examples/live scenarios",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "knowledge",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Knowledge",
+            "level_4": "Knowledge",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "motivational aspects",
+            "motivational",
+            "aspects",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Motivational aspects",
+            "level_4": "Motivational aspects",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "problem solving ability",
+            "problem",
+            "solving",
+            "ability",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Problem solving ability",
+            "level_4": "Problem solving ability",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rate of speech",
+            "rate",
+            "speech",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Rate of speech",
+            "level_4": "Rate of speech",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "understanding concepts",
+            "understanding",
+            "concepts",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Understanding Concepts",
+            "level_4": "Understanding Concepts",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "training content",
+            "training",
+            "content"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Content",
+            "level_3": "Training Content",
+            "level_4": "Training Content",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "training material provided",
+            "training",
+            "material",
+            "provided",
+            "training content",
+            "content"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Content",
+            "level_3": "Training material provided",
+            "level_4": "Training material provided",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "adaptability",
+            "training environment",
+            "training",
+            "environment"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Environment",
+            "level_3": "Adaptability",
+            "level_4": "Adaptability",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "comfortable environment",
+            "comfortable",
+            "environment",
+            "comfortability",
+            "training environment",
+            "training"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Environment",
+            "level_3": "Comfortability",
+            "level_4": "Comfortable Environment",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "friendliness",
+            "training environment",
+            "training",
+            "environment"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Environment",
+            "level_3": "Friendliness",
+            "level_4": "Friendliness",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "communication issues",
+            "communication",
+            "issues",
+            "communication skills",
+            "skills"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "level_3": "Communication Skills",
+            "level_4": "Communication Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "professional",
+            "professionalism",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Professionalism",
+            "level_4": "Professional",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "bad behavior",
+            "behavior"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "level_3": "Bad Behavior",
+            "level_4": "Bad Behavior",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "uncomfortable environment",
+            "uncomfortable",
+            "environment",
+            "comfortability",
+            "training environment",
+            "training"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Environment",
+            "level_3": "Comfortability",
+            "level_4": "Uncomfortable Environment",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "content appropriateness",
+            "content",
+            "appropriateness",
+            "training content",
+            "training"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Content",
+            "level_3": "Content Appropriateness",
+            "level_4": "Content Appropriateness",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "bad interaction",
+            "interaction",
+            "department",
+            "agent experience",
+            "agent",
+            "experience"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Agent Experience",
+            "level_3": "Department",
+            "level_4": "Bad Interaction",
+            "sentiment": "negative"
+        }
+    }
+]

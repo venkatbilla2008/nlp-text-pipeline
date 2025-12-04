@@ -1,0 +1,69 @@
+[
+    {
+        "conditions": [
+            "delayed delivery",
+            "late shipment",
+            "where is my order",
+            "tracking issue",
+            "not delivered"
+        ],
+        "set": {
+            "category": "Process Driven",
+            "subcategory": "Delivery Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "damaged product",
+            "defective",
+            "broken",
+            "wrong item",
+            "missing parts"
+        ],
+        "set": {
+            "category": "Product Driven",
+            "subcategory": "Product Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "return",
+            "exchange",
+            "refund request",
+            "send back"
+        ],
+        "set": {
+            "category": "Refund",
+            "subcategory": "Return/Refund",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "payment failed",
+            "card declined",
+            "checkout error",
+            "payment issue"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Payment Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "great product",
+            "love it",
+            "excellent quality",
+            "highly recommend"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Product Appreciation",
+            "sentiment": "positive"
+        }
+    }
+]

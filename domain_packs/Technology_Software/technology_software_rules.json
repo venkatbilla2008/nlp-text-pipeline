@@ -1,0 +1,3440 @@
+[
+    {
+        "conditions": [
+            "courteous rep",
+            "courteous",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Courteous Rep",
+            "level_4": "Courteous Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "efficient rep",
+            "efficient",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Efficient Rep",
+            "level_4": "Efficient Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "argumentative rep",
+            "argumentative",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Argumentative Rep",
+            "level_4": "Argumentative Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "talk over by rep",
+            "talk",
+            "over",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Talk Over by Rep",
+            "level_4": "Talk Over by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "long hold on call / chat",
+            "long",
+            "hold",
+            "call",
+            "chat",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Long Hold on Call / Chat",
+            "level_4": "Long Hold on Call / Chat",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no patience",
+            "patience",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "No patience",
+            "level_4": "No patience",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "pushy sales",
+            "pushy",
+            "sales",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Pushy Sales",
+            "level_4": "Pushy Sales",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "call/chat disconnection",
+            "call/chat",
+            "disconnection",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Call/Chat Disconnection",
+            "level_4": "Call/Chat Disconnection",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep yawning / sleeping",
+            "yawning",
+            "sleeping",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Rep Yawning / Sleeping",
+            "level_4": "Rep Yawning / Sleeping",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "dishonest rep",
+            "dishonest",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Dishonest Rep",
+            "level_4": "Dishonest Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no attention by rep",
+            "attention",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "No Attention by Rep",
+            "level_4": "No Attention by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no ownership by rep",
+            "ownership",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "No Ownership by Rep",
+            "level_4": "No Ownership by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep was not courteous",
+            "courteous",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Rep was not courteous",
+            "level_4": "Rep was not courteous",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rude  unprofessional behaviour",
+            "rude",
+            "unprofessional",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Rude & Unprofessional Behaviour",
+            "level_4": "Rude & Unprofessional Behaviour",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "escalation denials / escalation failure / ecat",
+            "escalation",
+            "denials",
+            "failure",
+            "ecat",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Escalation Denials / Escalation Failure / ECAT",
+            "level_4": "Escalation Denials / Escalation Failure / ECAT",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep mocking customer",
+            "mocking",
+            "customer",
+            "behaviour"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Behaviour",
+            "level_3": "Rep Mocking customer",
+            "level_4": "Rep Mocking customer",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "didnt explain what to expect next",
+            "didnt",
+            "explain",
+            "what",
+            "expect",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Didn't explain what to expect next",
+            "level_4": "Didn't explain what to expect next",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "knowledgeable rep",
+            "knowledgeable",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Knowledgeable Rep",
+            "level_4": "Knowledgeable Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "customer not getting information",
+            "customer",
+            "getting",
+            "information",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Customer Not Getting Information",
+            "level_4": "Customer Not Getting Information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "inconsistent information shared",
+            "inconsistent",
+            "information",
+            "shared",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Inconsistent information shared",
+            "level_4": "Inconsistent information shared",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep didnt understand issue",
+            "didnt",
+            "understand",
+            "issue",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Rep didn't understand issue",
+            "level_4": "Rep didn't understand issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep provided misleading information",
+            "provided",
+            "misleading",
+            "information",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Rep provided misleading Information",
+            "level_4": "Rep provided misleading Information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no customer education",
+            "customer",
+            "education",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "No Customer Education",
+            "level_4": "No Customer Education",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep asked irrelevant questions",
+            "asked",
+            "irrelevant",
+            "questions",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Rep Asked Irrelevant Questions",
+            "level_4": "Rep Asked Irrelevant Questions",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep had no knowledge",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Rep had No Knowledge",
+            "level_4": "Rep had No Knowledge",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep need training",
+            "need",
+            "training",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Rep Need Training",
+            "level_4": "Rep Need Training",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep share wrong / incomplete information",
+            "share",
+            "wrong",
+            "incomplete",
+            "information",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Rep share wrong / incomplete information",
+            "level_4": "Rep share wrong / incomplete information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "promised not fulfilled",
+            "promised",
+            "fulfilled",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Promised Not fulfilled",
+            "level_4": "Promised Not fulfilled",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "resolved to my satisfaction",
+            "resolved",
+            "satisfaction",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Resolved to my satisfaction",
+            "level_4": "Resolved to my satisfaction",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "long time to resolve",
+            "long",
+            "time",
+            "resolve",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Long Time to Resolve",
+            "level_4": "Long Time to Resolve",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no solution / issues  not resolved",
+            "solution",
+            "issues",
+            "resolved",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "No Solution / Issues - Not Resolved",
+            "level_4": "No Solution / Issues - Not Resolved",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "incorrect order",
+            "incorrect",
+            "order",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Incorrect Order",
+            "level_4": "Incorrect Order",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "appropriate offer was not provided",
+            "appropriate",
+            "offer",
+            "provided",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Appropriate offer was not provided",
+            "level_4": "Appropriate offer was not provided",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "didnt do proper transfer / multiple transfer",
+            "didnt",
+            "proper",
+            "transfer",
+            "multiple",
+            "knowledge"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Knowledge",
+            "level_3": "Didnt Do Proper Transfer / Multiple Transfer",
+            "level_4": "Didnt Do Proper Transfer / Multiple Transfer",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no call back",
+            "call",
+            "back",
+            "call back issue",
+            "issue"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Call Back Issue",
+            "level_3": "No Call Back",
+            "level_4": "No Call Back",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no followup",
+            "followup",
+            "call back issue",
+            "call",
+            "back",
+            "issue"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Call Back Issue",
+            "level_3": "No Follow-up",
+            "level_4": "No Follow-up",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep listening issues",
+            "listening",
+            "issues",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Listening Issues",
+            "level_4": "Rep Listening Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "looking for american representative",
+            "looking",
+            "american",
+            "representative",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Looking for American Representative",
+            "level_4": "Looking for American Representative",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "clear explanation by rep",
+            "clear",
+            "explanation",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Clear Explanation by Rep",
+            "level_4": "Clear Explanation by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "excellent communication",
+            "excellent",
+            "communication",
+            "communication and soft skills",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Excellent communication",
+            "level_4": "Excellent communication",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent tone",
+            "excellent",
+            "tone",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Excellent tone",
+            "level_4": "Excellent tone",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good listening skills",
+            "good",
+            "listening",
+            "skills",
+            "communication and soft skills",
+            "communication",
+            "soft"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Good Listening Skills",
+            "level_4": "Good Listening Skills",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "rep has clear understanding",
+            "clear",
+            "understanding",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep has Clear Understanding",
+            "level_4": "Rep has Clear Understanding",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "agent professionalism",
+            "agent",
+            "professionalism",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Agent Professionalism",
+            "level_4": "Agent Professionalism",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "good attention by rep",
+            "good",
+            "attention",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Good Attention by Rep",
+            "level_4": "Good Attention by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "issue resolved by rep",
+            "issue",
+            "resolved",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Issue Resolved by Rep",
+            "level_4": "Issue Resolved by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "communication problem",
+            "communication",
+            "problem",
+            "communication and soft skills",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Communication problem",
+            "level_4": "Communication problem",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "excessive talking by rep",
+            "excessive",
+            "talking",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Excessive Talking by Rep",
+            "level_4": "Excessive Talking by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "language barrier",
+            "language",
+            "barrier",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Language Barrier",
+            "level_4": "Language Barrier",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no assurance",
+            "assurance",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "No Assurance",
+            "level_4": "No Assurance",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no empathy by rep",
+            "empathy",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "No empathy by Rep",
+            "level_4": "No empathy by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rate of speech",
+            "rate",
+            "speech",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rate of Speech",
+            "level_4": "Rate of Speech",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep accent issues",
+            "accent",
+            "issues",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Accent Issues",
+            "level_4": "Rep Accent Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep could not explain",
+            "could",
+            "explain",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Could Not Explain",
+            "level_4": "Rep Could Not Explain",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep in rush",
+            "rush",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep In Rush",
+            "level_4": "Rep In Rush",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep not able to understand",
+            "able",
+            "understand",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep not able to understand",
+            "level_4": "Rep not able to understand",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep pronunciation issue",
+            "pronunciation",
+            "issue",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Pronunciation Issue",
+            "level_4": "Rep Pronunciation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep sounded robotic",
+            "sounded",
+            "robotic",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Sounded Robotic",
+            "level_4": "Rep Sounded Robotic",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep used jargon",
+            "used",
+            "jargon",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Used Jargon",
+            "level_4": "Rep Used Jargon",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "voice tone issue",
+            "voice",
+            "tone",
+            "issue",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Voice tone issue",
+            "level_4": "Voice tone issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep did not acknowledge",
+            "acknowledge",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Did Not Acknowledge",
+            "level_4": "Rep Did Not Acknowledge",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep not helpful",
+            "helpful",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Rep Not Helpful",
+            "level_4": "Rep Not Helpful",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "standard / scripted response by rep",
+            "standard",
+            "scripted",
+            "response",
+            "communication and soft skills",
+            "communication",
+            "soft",
+            "skills"
+        ],
+        "set": {
+            "category": "Agent Related",
+            "subcategory": "Communication and Soft Skills",
+            "level_3": "Standard / Scripted Response by Rep",
+            "level_4": "Standard / Scripted Response by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "survey misinterpretation",
+            "survey",
+            "misinterpretation"
+        ],
+        "set": {
+            "category": "Customer Related",
+            "subcategory": "Survey",
+            "level_3": "Survey Misinterpretation",
+            "level_4": "Survey Misinterpretation",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "customer self resolved issue",
+            "customer",
+            "self",
+            "resolved",
+            "issue",
+            "resolution"
+        ],
+        "set": {
+            "category": "Customer Related",
+            "subcategory": "Resolution",
+            "level_3": "Customer self resolved issue",
+            "level_4": "Customer self resolved issue",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "not willing in tbs",
+            "willing",
+            "resolution"
+        ],
+        "set": {
+            "category": "Customer Related",
+            "subcategory": "Resolution",
+            "level_3": "Not willing in TBS",
+            "level_4": "Not willing in TBS",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "account information related issue",
+            "account",
+            "information",
+            "related",
+            "issue",
+            "account management",
+            "management"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "Account Management",
+            "level_3": "Account Information Related Issue",
+            "level_4": "Account Information Related Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "customer will recommend mcafee",
+            "customer",
+            "will",
+            "recommend",
+            "mcafee",
+            "appreciate process",
+            "appreciate",
+            "process"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "Appreciate Process",
+            "level_3": "Customer Will Recommend McAfee",
+            "level_4": "Customer Will Recommend McAfee",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "ar high price",
+            "high",
+            "price",
+            "ar related",
+            "related"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "AR Related",
+            "level_3": "AR High Price",
+            "level_4": "AR High Price",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "unauthorized charges",
+            "unauthorized",
+            "charges",
+            "ar related",
+            "related"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "AR Related",
+            "level_3": "Unauthorized Charges",
+            "level_4": "Unauthorized Charges",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "complex refund process",
+            "complex",
+            "refund",
+            "process",
+            "mcafee process",
+            "mcafee"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "McAfee Process",
+            "level_3": "Complex Refund Process",
+            "level_4": "Complex Refund Process",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "good promotion / offer",
+            "good",
+            "promotion",
+            "offer",
+            "mcafee process",
+            "mcafee",
+            "process"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "McAfee Process",
+            "level_3": "Good Promotion / Offer",
+            "level_4": "Good Promotion / Offer",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "unhappy with mcafee policies",
+            "unhappy",
+            "mcafee",
+            "policies",
+            "mcafee process",
+            "process"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "McAfee Process",
+            "level_3": "Unhappy with McAfee Policies",
+            "level_4": "Unhappy with McAfee Policies",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "delayed refund",
+            "delayed",
+            "refund",
+            "mcafee process",
+            "mcafee",
+            "process"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "McAfee Process",
+            "level_3": "Delayed Refund",
+            "level_4": "Delayed Refund",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "refund denied",
+            "refund",
+            "denied",
+            "mcafee process",
+            "mcafee",
+            "process"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "McAfee Process",
+            "level_3": "Refund Denied",
+            "level_4": "Refund Denied",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "issues for new customers",
+            "issues",
+            "customers",
+            "new customers"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "New Customers",
+            "level_3": "Issues for New Customers",
+            "level_4": "Issues for New Customers",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "duplicate charge / double charged",
+            "duplicate",
+            "charge",
+            "double",
+            "charged",
+            "mcafee process",
+            "mcafee",
+            "process"
+        ],
+        "set": {
+            "category": "Process/Policy Related",
+            "subcategory": "McAfee Process",
+            "level_3": "Duplicate Charge / Double Charged",
+            "level_4": "Duplicate Charge / Double Charged",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "activation issue",
+            "activation",
+            "issue",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Activation Issue",
+            "level_4": "Activation Issue",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "subscription / account expired",
+            "subscription",
+            "account",
+            "expired",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Subscription / Account Expired",
+            "level_4": "Subscription / Account Expired",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "subscription licenses",
+            "subscription",
+            "licenses",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Subscription licenses",
+            "level_4": "Subscription licenses",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "account signin issue",
+            "account",
+            "signin",
+            "issue",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Account Sign-In Issue",
+            "level_4": "Account Sign-In Issue",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "update profile info",
+            "update",
+            "profile",
+            "info",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Update Profile Info",
+            "level_4": "Update Profile Info",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "password issue",
+            "password",
+            "issue",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Password Issue",
+            "level_4": "Password Issue",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "toaster alert  popups",
+            "toaster",
+            "alert",
+            "popups",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Toaster Alert & Popups",
+            "level_4": "Toaster Alert & Popups",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent products",
+            "excellent",
+            "products",
+            "appreciating product",
+            "appreciating",
+            "product"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Appreciating Product",
+            "level_3": "Excellent Products",
+            "level_4": "Excellent Products",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good plans",
+            "good",
+            "plans",
+            "appreciating product",
+            "appreciating",
+            "product"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Appreciating Product",
+            "level_3": "Good plans",
+            "level_4": "Good plans",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "customer will recommend service",
+            "customer",
+            "will",
+            "recommend",
+            "service",
+            "appreciating product",
+            "appreciating",
+            "product"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Appreciating Product",
+            "level_3": "Customer Will Recommend Service",
+            "level_4": "Customer Will Recommend Service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "need more product features",
+            "need",
+            "more",
+            "product",
+            "features",
+            "feature requested",
+            "feature",
+            "requested"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Feature Requested",
+            "level_3": "Need More Product Features",
+            "level_4": "Need More Product Features",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "kdmi related",
+            "kdmi",
+            "related",
+            "ongoing issue",
+            "ongoing",
+            "issue"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Ongoing Issue",
+            "level_3": "KDMI Related",
+            "level_4": "KDMI Related",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "dissatisfied with product",
+            "dissatisfied",
+            "product",
+            "product dissatisfaction",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Dissatisfaction",
+            "level_3": "Dissatisfied with product",
+            "level_4": "Dissatisfied with product",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "high price",
+            "high",
+            "price",
+            "product dissatisfaction",
+            "product",
+            "dissatisfaction"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Dissatisfaction",
+            "level_3": "High Price",
+            "level_4": "High Price",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "backup issue",
+            "backup",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Backup Issue",
+            "level_4": "Backup Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "file restore issue",
+            "file",
+            "restore",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "File Restore Issue",
+            "level_4": "File Restore Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "email not working",
+            "email",
+            "working",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Email Not working",
+            "level_4": "Email Not working",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "download issue",
+            "download",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Download Issue",
+            "level_4": "Download Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "installation issue",
+            "installation",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Installation Issue",
+            "level_4": "Installation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "uninstallation issue",
+            "uninstallation",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Uninstallation Issue",
+            "level_4": "Uninstallation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "product not working",
+            "product",
+            "working",
+            "product functionality",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Product Not Working",
+            "level_4": "Product Not Working",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "firewall issue",
+            "firewall",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Firewall Issue",
+            "level_4": "Firewall Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "issue with security updates",
+            "issue",
+            "security",
+            "updates",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Issue with Security Updates",
+            "level_4": "Issue with Security Updates",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "mobile phone protection issue",
+            "mobile",
+            "phone",
+            "protection",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Mobile Phone Protection Issue",
+            "level_4": "Mobile Phone Protection Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "virus infection issue",
+            "virus",
+            "infection",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Virus Infection Issue",
+            "level_4": "Virus Infection Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cloud issue",
+            "cloud",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Cloud Issue",
+            "level_4": "Cloud Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "error messages",
+            "error",
+            "messages",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Error Messages",
+            "level_4": "Error Messages",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "internet browsing issue",
+            "internet",
+            "browsing",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Internet Browsing Issue",
+            "level_4": "Internet Browsing Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "product key issues",
+            "product",
+            "issues",
+            "product functionality",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Product Key Issues",
+            "level_4": "Product Key Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "slow server",
+            "slow",
+            "server",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Slow Server",
+            "level_4": "Slow Server",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "vpn related issue",
+            "related",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "VPN Related Issue",
+            "level_4": "VPN Related Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "privacy issue",
+            "privacy",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Privacy Issue",
+            "level_4": "Privacy Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "browser issue",
+            "browser",
+            "issue",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Browser Issue",
+            "level_4": "Browser Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "pc optimizer",
+            "optimizer",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "PC Optimizer",
+            "level_4": "PC Optimizer",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "protection score",
+            "protection",
+            "score",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Protection Score",
+            "level_4": "Protection Score",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "safe connect",
+            "safe",
+            "connect",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Safe Connect",
+            "level_4": "Safe Connect",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "true key",
+            "true",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "True Key",
+            "level_4": "True Key",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "identity  privacy",
+            "identity",
+            "privacy",
+            "product functionality",
+            "product",
+            "functionality"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "level_3": "Identity & Privacy",
+            "level_4": "Identity & Privacy",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "product feature/incompatibility",
+            "product",
+            "feature/incompatibility",
+            "product compatability",
+            "compatability"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Compatability",
+            "level_3": "Product Feature/Incompatibility",
+            "level_4": "Product Feature/Incompatibility",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "system issue  others",
+            "system",
+            "issue",
+            "others",
+            "product compatability",
+            "product",
+            "compatability"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Compatability",
+            "level_3": "System Issue - Others",
+            "level_4": "System Issue - Others",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "system slowness",
+            "system",
+            "slowness",
+            "product compatability",
+            "product",
+            "compatability"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Compatability",
+            "level_3": "System Slowness",
+            "level_4": "System Slowness",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "scam  fraud  theft",
+            "scam",
+            "fraud",
+            "theft",
+            "scammed in the name of mcafee",
+            "scammed",
+            "name",
+            "mcafee"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Scammed in the Name of McAfee",
+            "level_3": "Scam - Fraud - Theft",
+            "level_4": "Scam - Fraud - Theft",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "hacking issue",
+            "hacking",
+            "issue",
+            "scammed in the name of mcafee",
+            "scammed",
+            "name",
+            "mcafee"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Scammed in the Name of McAfee",
+            "level_3": "Hacking Issue",
+            "level_4": "Hacking Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "difficult to use / navigate",
+            "difficult",
+            "navigate",
+            "website complexity",
+            "website",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Difficult To Use / Navigate",
+            "level_4": "Difficult To Use / Navigate",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "website difficult to understand",
+            "website",
+            "difficult",
+            "understand",
+            "website complexity",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Website Difficult To Understand",
+            "level_4": "Website Difficult To Understand",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "other website related issues",
+            "other",
+            "website",
+            "related",
+            "issues",
+            "website complexity",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Other Website Related Issues",
+            "level_4": "Other Website Related Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "billing  invoice related issue",
+            "billing",
+            "invoice",
+            "related",
+            "issue",
+            "website complexity",
+            "website",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Billing - Invoice Related Issue",
+            "level_4": "Billing - Invoice Related Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "purchase issue",
+            "purchase",
+            "issue",
+            "website complexity",
+            "website",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Purchase issue",
+            "level_4": "Purchase issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no way / hard to contact mcafee",
+            "hard",
+            "contact",
+            "mcafee",
+            "website complexity",
+            "website",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "No way / Hard to Contact McAfee",
+            "level_4": "No way / Hard to Contact McAfee",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "want to talk a phone rep",
+            "want",
+            "talk",
+            "phone",
+            "website complexity",
+            "website",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Want to Talk a Phone Rep",
+            "level_4": "Want to Talk a Phone Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "good website",
+            "good",
+            "website",
+            "website complexity",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Good Website",
+            "level_4": "Good Website",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "nice app",
+            "nice",
+            "website complexity",
+            "website",
+            "complexity"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Website Complexity",
+            "level_3": "Nice APP",
+            "level_4": "Nice APP",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "issue with previous rep",
+            "issue",
+            "previous",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Issue with Previous rep",
+            "level_4": "Issue with Previous rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "nonmcafee redirect",
+            "nonmcafee",
+            "redirect",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Non-McAfee Redirect",
+            "level_4": "Non-McAfee Redirect",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "call transfer issue",
+            "call",
+            "transfer",
+            "issue",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Call Transfer Issue",
+            "level_4": "Call Transfer Issue",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "multiple interactions",
+            "multiple",
+            "interactions",
+            "resolution quality",
+            "resolution",
+            "quality"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Resolution Quality",
+            "level_3": "Multiple Interactions",
+            "level_4": "Multiple Interactions",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "appreciating service",
+            "appreciating",
+            "service",
+            "support related",
+            "support",
+            "related"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Support Related",
+            "level_3": "Appreciating Service",
+            "level_4": "Appreciating Service",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "outsourcing issues",
+            "outsourcing",
+            "issues",
+            "support related",
+            "support",
+            "related"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Support Related",
+            "level_3": "Outsourcing Issues",
+            "level_4": "Outsourcing Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "disappointed with service",
+            "disappointed",
+            "service",
+            "support related",
+            "support",
+            "related"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "Support Related",
+            "level_3": "Disappointed with Service",
+            "level_4": "Disappointed with Service",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "ivr  automatic answering issue",
+            "automatic",
+            "answering",
+            "issue",
+            "ivr"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "IVR",
+            "level_3": "IVR - Automatic Answering Issue",
+            "level_4": "IVR - Automatic Answering Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "wait time to reach consultants",
+            "wait",
+            "time",
+            "reach",
+            "consultants",
+            "ivr"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "IVR",
+            "level_3": "Wait Time to reach consultants",
+            "level_4": "Wait Time to reach consultants",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "wait time between transfer / departments",
+            "wait",
+            "time",
+            "between",
+            "transfer",
+            "ivr"
+        ],
+        "set": {
+            "category": "Support/Service Related",
+            "subcategory": "IVR",
+            "level_3": "Wait time between Transfer / Departments",
+            "level_4": "Wait time between Transfer / Departments",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "call connection / connectivity issue",
+            "call",
+            "connection",
+            "connectivity",
+            "issue",
+            "technology issue",
+            "technology"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Technology Issue",
+            "level_3": "Call Connection / Connectivity Issue",
+            "level_4": "Call Connection / Connectivity Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "call dropped / call disconnected",
+            "call",
+            "dropped",
+            "disconnected",
+            "technology issue",
+            "technology",
+            "issue"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Technology Issue",
+            "level_3": "Call Dropped / Call Disconnected",
+            "level_4": "Call Dropped / Call Disconnected",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "call / chat / email not answered",
+            "call",
+            "chat",
+            "email",
+            "answered",
+            "technology issue",
+            "technology",
+            "issue"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Technology Issue",
+            "level_3": "Call / Chat / Email Not Answered",
+            "level_4": "Call / Chat / Email Not Answered",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "background noise on call",
+            "background",
+            "noise",
+            "call",
+            "audio quality",
+            "audio",
+            "quality"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Audio Quality",
+            "level_3": "Background Noise on Call",
+            "level_4": "Background Noise on Call",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "audio connection issue",
+            "audio",
+            "connection",
+            "issue",
+            "audio quality",
+            "quality"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Audio Quality",
+            "level_3": "Audio Connection Issue",
+            "level_4": "Audio Connection Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "voice breaking issue",
+            "voice",
+            "breaking",
+            "issue",
+            "audio quality",
+            "audio",
+            "quality"
+        ],
+        "set": {
+            "category": "Technology",
+            "subcategory": "Audio Quality",
+            "level_3": "Voice Breaking Issue",
+            "level_4": "Voice Breaking Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "generic positive feedback",
+            "generic",
+            "positive",
+            "feedback",
+            "positive feedback"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Positive Feedback",
+            "level_3": "Generic positive feedback",
+            "level_4": "Generic positive feedback",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "generic negative feedback",
+            "generic",
+            "negative",
+            "feedback",
+            "negative feedback"
+        ],
+        "set": {
+            "category": "Negative Feedback",
+            "subcategory": "Negative Feedback",
+            "level_3": "Generic Negative feedback",
+            "level_4": "Generic Negative feedback",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "courteous rep",
+            "courteous",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Courteous Rep",
+            "level_4": "Courteous Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "efficient rep",
+            "efficient",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Efficient Rep",
+            "level_4": "Efficient Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "argumentative rep",
+            "argumentative",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Argumentative Rep",
+            "level_4": "Argumentative Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "talk over by rep",
+            "talk",
+            "over",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Talk Over by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "long hold on call / chat",
+            "long",
+            "hold",
+            "call",
+            "chat",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Long Hold on Call / Chat",
+            "level_4": "Long Hold on Call / Chat",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no patience",
+            "patience",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "No patience",
+            "level_4": "No patience",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "pushy sales",
+            "pushy",
+            "sales",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Pushy Sales",
+            "level_4": "Pushy Sales",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "call/chat disconnection",
+            "call/chat",
+            "disconnection",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Call/Chat Disconnection",
+            "level_4": "Call/Chat Disconnection",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep yawning / sleeping",
+            "yawning",
+            "sleeping",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Rep Yawning / Sleeping",
+            "level_4": "Rep Yawning / Sleeping",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "lied to me",
+            "lied",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Lied to Me",
+            "level_4": "Lied to Me",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no attention by rep",
+            "attention",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "No Attention by Rep",
+            "level_4": "No Attention by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no ownership by rep",
+            "ownership",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "No Ownership by Rep",
+            "level_4": "No Ownership by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep was not courteous",
+            "courteous",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Rep was not courteous",
+            "level_4": "Rep was not courteous",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rude",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Rude",
+            "level_4": "Rude",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "escalation denials / escalation failure",
+            "escalation",
+            "denials",
+            "failure",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Escalation Denials / Escalation Failure",
+            "level_4": "Escalation Denials / Escalation Failure",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep mocking customer",
+            "mocking",
+            "customer",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Rep Mocking customer",
+            "level_4": "Rep Mocking customer",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "didnt explain what to expect next",
+            "didnt",
+            "explain",
+            "what",
+            "expect",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Didn't explain what to expect next",
+            "level_4": "Didn't explain what to expect next",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "knowledgeable rep",
+            "knowledgeable",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Knowledgeable Rep",
+            "level_4": "Knowledgeable Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "customer not getting information",
+            "customer",
+            "getting",
+            "information",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Customer Not Getting Information",
+            "level_4": "Customer Not Getting Information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "inconsistent information shared",
+            "inconsistent",
+            "information",
+            "shared",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Inconsistent information shared",
+            "level_4": "Inconsistent information shared",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep didnt understand issue",
+            "didnt",
+            "understand",
+            "issue",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Rep didn't understand issue",
+            "level_4": "Rep didn't understand issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep provided misleading information",
+            "provided",
+            "misleading",
+            "information",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Rep provided misleading Information",
+            "level_4": "Rep provided misleading Information",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no customer education",
+            "customer",
+            "education",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "No Customer Education",
+            "level_4": "No Customer Education",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "repetitive queries",
+            "repetitive",
+            "queries",
+            "agent professionalism",
+            "agent",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Repetitive Queries",
+            "level_4": "Repetitive Queries",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "didnt understand product",
+            "didnt",
+            "understand",
+            "product",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Didnt understand Product",
+            "level_4": "Didnt understand Product",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep need training",
+            "need",
+            "training",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Rep Need Training",
+            "level_4": "Rep Need Training",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep share wrong / incomplete information",
+            "share",
+            "wrong",
+            "incomplete",
+            "information",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Rep share wrong / incomplete information",
+            "level_4": "Rep share wrong / incomplete information",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "lack of follow up",
+            "lack",
+            "follow",
+            "timely actions",
+            "timely",
+            "actions"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Timely Actions ",
+            "level_3": "Lack of follow up",
+            "level_4": "Lack of follow up",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "long call duration",
+            "long",
+            "call",
+            "duration",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Long Call Duration",
+            "level_4": "Long Call Duration",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "issue not solved",
+            "issue",
+            "solved",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Issue not Solved",
+            "level_4": "Issue not Solved",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "multiple transfers",
+            "multiple",
+            "transfers",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Multiple Transfers",
+            "level_4": "Multiple Transfers",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no call back",
+            "call",
+            "back",
+            "timely actions",
+            "timely",
+            "actions"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Timely Actions ",
+            "level_3": "No Call back",
+            "level_4": "No Call back",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "promise not kept",
+            "promise",
+            "kept",
+            "timely actions",
+            "timely",
+            "actions"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Timely Actions ",
+            "level_3": "Promise Not Kept",
+            "level_4": "Promise Not Kept",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "not listening / agent experience",
+            "listening",
+            "agent",
+            "experience",
+            "agent professionalism",
+            "professionalism"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Professionalism",
+            "level_3": "Not Listening / Agent Experience",
+            "level_4": "Not Listening / Agent Experience",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "looking for american representative",
+            "looking",
+            "american",
+            "representative",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Looking for American Representative",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "clear explanation by rep",
+            "clear",
+            "explanation",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Clear Explanation by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent communication",
+            "excellent",
+            "communication",
+            "positive communication feedback",
+            "positive",
+            "feedback",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Excellent communication",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "excellent tone",
+            "excellent",
+            "tone",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Excellent tone",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good listening skills",
+            "good",
+            "listening",
+            "skills",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "agent"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Good Listening Skills",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "rep has clear understanding",
+            "clear",
+            "understanding",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Rep has Clear Understanding",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "agent professionalism",
+            "agent",
+            "professionalism",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Agent Professionalism",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "good attention by rep",
+            "good",
+            "attention",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Good Attention by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "issue resolved by rep",
+            "issue",
+            "resolved",
+            "positive communication feedback",
+            "positive",
+            "communication",
+            "feedback",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Positive Communication Feedback",
+            "level_4": "Issue Resolved by Rep",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Language Skills",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "excessive talking by rep",
+            "excessive",
+            "talking",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Excessive Talking by Rep",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "language barrier",
+            "language",
+            "barrier",
+            "language skills",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Language Barrier",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "no assurance",
+            "assurance",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "No Assurance",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "no empathy by rep",
+            "empathy",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "No empathy by Rep",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rate of speech",
+            "rate",
+            "speech",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Rate of Speech",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "rep accent issues",
+            "accent",
+            "issues",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Rep Accent Issues",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep could not explain",
+            "could",
+            "explain",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Rep Could Not Explain",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "rep in rush",
+            "rush",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Rep In Rush",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "unable to understand the rep",
+            "unable",
+            "understand",
+            "language skills",
+            "language",
+            "skills",
+            "agent capability",
+            "agent",
+            "capability"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Agent Capability",
+            "level_3": "Language Skills",
+            "level_4": "Unable to understand the Rep",
+            "sentiment": "neutral"
+        }
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "conditions": [
+            "bad experience",
+            "poor experience",
+            "terrible experience",
+            "horrible experience"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Agent Experience",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "good experience",
+            "great experience",
+            "excellent experience",
+            "wonderful experience",
+            "positive experience"
+        ],
+        "set": {
+            "category": "Overall Experience",
+            "subcategory": "Agent Experience",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "rude",
+            "unprofessional",
+            "bad behavior",
+            "disrespectful",
+            "impolite"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "helpful",
+            "kind",
+            "patient",
+            "professional",
+            "courteous",
+            "friendly"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Behavior",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "training",
+            "training session",
+            "training material",
+            "training content",
+            "training program"
+        ],
+        "set": {
+            "category": "Training Session",
+            "subcategory": "Training Content",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "communication issue",
+            "communication problem",
+            "poor communication",
+            "unclear communication"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "good communication",
+            "clear communication",
+            "excellent communication",
+            "effective communication"
+        ],
+        "set": {
+            "category": "People",
+            "subcategory": "Skills",
+            "sentiment": "positive"
+        }
+    }
+]

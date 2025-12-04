@@ -1,0 +1,69 @@
+[
+    {
+        "conditions": [
+            "cant play",
+            "not playing",
+            "playback error",
+            "video wont load",
+            "stream failed"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Playback Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "buffering",
+            "lag",
+            "stuttering",
+            "freezing",
+            "slow loading"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Streaming Quality",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "cancel subscription",
+            "cancel membership",
+            "end subscription",
+            "stop payment"
+        ],
+        "set": {
+            "category": "Cancellation",
+            "subcategory": "Cancel Membership",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "content not available",
+            "removed",
+            "cant find",
+            "missing episodes"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Content Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "love this",
+            "great content",
+            "amazing shows",
+            "best streaming"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Content Appreciation",
+            "sentiment": "positive"
+        }
+    }
+]

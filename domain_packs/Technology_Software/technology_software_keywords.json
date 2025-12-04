@@ -1,0 +1,69 @@
+[
+    {
+        "conditions": [
+            "software crash",
+            "app crash",
+            "not working",
+            "error message",
+            "bug",
+            "glitch"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Functionality",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "installation failed",
+            "cant install",
+            "setup issue",
+            "wont install"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Product Setup/Onboarding",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "license issue",
+            "activation",
+            "subscription problem",
+            "expired license"
+        ],
+        "set": {
+            "category": "Support",
+            "subcategory": "Subscription Management",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "slow performance",
+            "lagging",
+            "freezing",
+            "unresponsive"
+        ],
+        "set": {
+            "category": "Product Related",
+            "subcategory": "Performance Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "works great",
+            "excellent software",
+            "solved my problem",
+            "very helpful"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Product Appreciation",
+            "sentiment": "positive"
+        }
+    }
+]
