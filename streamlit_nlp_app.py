@@ -1378,9 +1378,6 @@ def main():
             return
         
         st.success(f"✅ Loaded {len(data_df)} records")
-    
-    elif data_file and not st.session_state.get('selected_industry'):
-        st.warning("⚠️ Please select an industry from the sidebar before processing your data")
         
         # Column selection
         st.subheader("🔧 Configuration")
@@ -1566,8 +1563,11 @@ def main():
                             mime="text/csv"
                         )
     
-    elif not selected_industry:
-        st.info("👆 Please upload and load industry configuration files in the sidebar to begin.")
+    elif data_file and not st.session_state.get('selected_industry'):
+        st.warning("⚠️ Please select an industry from the sidebar before processing your data")
+    
+    elif not st.session_state.get('selected_industry'):
+        st.info("👆 Please select an industry from the sidebar to begin.")
     
     else:
         st.info("👆 Please upload your data file to begin analysis.")
