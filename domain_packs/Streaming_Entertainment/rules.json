@@ -19,10 +19,7 @@
     {
         "conditions": [
             "courteous agent",
-            "courteous",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "courteous"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -35,10 +32,7 @@
     {
         "conditions": [
             "efficient agent",
-            "efficient",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "efficient"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -52,10 +46,7 @@
         "conditions": [
             "excellent communication",
             "excellent",
-            "communication",
-            "appreciating agent",
-            "appreciating",
-            "agent"
+            "communication"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -68,11 +59,7 @@
     {
         "conditions": [
             "excellent tone",
-            "excellent",
-            "tone",
-            "appreciating agent",
-            "appreciating",
-            "agent"
+            "tone"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -85,10 +72,7 @@
     {
         "conditions": [
             "patient agent",
-            "patient",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "patient"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -101,11 +85,7 @@
     {
         "conditions": [
             "agent has clear understanding",
-            "agent",
-            "clear",
-            "understanding",
-            "appreciating agent",
-            "appreciating"
+            "understanding"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -118,10 +98,7 @@
     {
         "conditions": [
             "knowledgeable agent",
-            "knowledgeable",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "knowledgeable"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -134,10 +111,7 @@
     {
         "conditions": [
             "calm agent",
-            "calm",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "calm"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -149,11 +123,7 @@
     },
     {
         "conditions": [
-            "excellent agent",
-            "excellent",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "excellent agent"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -166,10 +136,7 @@
     {
         "conditions": [
             "friendly agent",
-            "friendly",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "friendly"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -183,10 +150,7 @@
         "conditions": [
             "good attention by agent",
             "good",
-            "attention",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "attention"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -198,11 +162,7 @@
     },
     {
         "conditions": [
-            "helpful agent",
-            "helpful",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "helpful"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -215,10 +175,7 @@
     {
         "conditions": [
             "kind agent",
-            "kind",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "kind"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -231,10 +188,7 @@
     {
         "conditions": [
             "nice agent",
-            "nice",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "nice"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -247,10 +201,7 @@
     {
         "conditions": [
             "pleasant agent",
-            "pleasant",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "pleasant"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -263,10 +214,7 @@
     {
         "conditions": [
             "polite agent",
-            "polite",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "polite"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -279,10 +227,7 @@
     {
         "conditions": [
             "professional agent",
-            "professional",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "professional"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -298,7 +243,6 @@
             "issue",
             "resolved",
             "appreciating product  service",
-            "appreciating",
             "product",
             "service"
         ],
@@ -314,10 +258,7 @@
         "conditions": [
             "quick / prompt agent",
             "quick",
-            "prompt",
-            "agent",
-            "appreciating agent",
-            "appreciating"
+            "prompt"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -330,12 +271,7 @@
     {
         "conditions": [
             "good plans",
-            "good",
-            "plans",
-            "appreciating product  service",
-            "appreciating",
-            "product",
-            "service"
+            "plans"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -348,13 +284,8 @@
     {
         "conditions": [
             "good promotion / offer",
-            "good",
             "promotion",
-            "offer",
-            "appreciating product  service",
-            "appreciating",
-            "product",
-            "service"
+            "offer"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -369,11 +300,7 @@
             "customer will recommend service",
             "customer",
             "will",
-            "recommend",
-            "service",
-            "appreciating product  service",
-            "appreciating",
-            "product"
+            "recommend"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -385,13 +312,7 @@
     },
     {
         "conditions": [
-            "excellent / good service",
-            "excellent",
-            "good",
-            "service",
-            "appreciating product  service",
-            "appreciating",
-            "product"
+            "excellent / good service"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -404,12 +325,7 @@
     {
         "conditions": [
             "good website",
-            "good",
-            "website",
-            "appreciating product  service",
-            "appreciating",
-            "product",
-            "service"
+            "website"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -421,12 +337,7 @@
     },
     {
         "conditions": [
-            "nice app",
-            "nice",
-            "appreciating product  service",
-            "appreciating",
-            "product",
-            "service"
+            "nice app"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -438,12 +349,7 @@
     },
     {
         "conditions": [
-            "professional service",
-            "professional",
-            "service",
-            "appreciating product  service",
-            "appreciating",
-            "product"
+            "professional service"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -455,12 +361,7 @@
     },
     {
         "conditions": [
-            "reliable service",
-            "reliable",
-            "service",
-            "appreciating product  service",
-            "appreciating",
-            "product"
+            "reliable service"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -473,11 +374,7 @@
     {
         "conditions": [
             "timely service",
-            "timely",
-            "service",
-            "appreciating product  service",
-            "appreciating",
-            "product"
+            "timely"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -490,7 +387,6 @@
     {
         "conditions": [
             "communication problem",
-            "communication",
             "problem",
             "communication and soft skills",
             "soft",
@@ -508,11 +404,7 @@
         "conditions": [
             "dead air on call",
             "dead",
-            "call",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "call"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -526,12 +418,7 @@
         "conditions": [
             "hard to understand agent",
             "hard",
-            "understand",
-            "agent",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "understand"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -545,11 +432,7 @@
         "conditions": [
             "language barrier",
             "language",
-            "barrier",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "barrier"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -564,8 +447,7 @@
             "no assurance",
             "assurance",
             "behavior issue",
-            "behavior",
-            "issue"
+            "behavior"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -578,12 +460,7 @@
     {
         "conditions": [
             "no empathy by agent",
-            "empathy",
-            "agent",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "empathy"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -596,10 +473,7 @@
     {
         "conditions": [
             "no patience",
-            "patience",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "patience"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -612,13 +486,8 @@
     {
         "conditions": [
             "agent could not explain",
-            "agent",
             "could",
-            "explain",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "explain"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -631,12 +500,8 @@
     {
         "conditions": [
             "agent disconnected chat",
-            "agent",
             "disconnected",
-            "chat",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "chat"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -649,11 +514,7 @@
     {
         "conditions": [
             "agent in rush",
-            "agent",
-            "rush",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "rush"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -666,12 +527,7 @@
     {
         "conditions": [
             "agent interrupted customer",
-            "agent",
-            "interrupted",
-            "customer",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "interrupted"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -684,12 +540,7 @@
     {
         "conditions": [
             "agent mocking on customer",
-            "agent",
-            "mocking",
-            "customer",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "mocking"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -702,14 +553,7 @@
     {
         "conditions": [
             "agent couldnt understand customer",
-            "agent",
-            "couldnt",
-            "understand",
-            "customer",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "couldnt"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -722,13 +566,8 @@
     {
         "conditions": [
             "agent used jargon",
-            "agent",
             "used",
-            "jargon",
-            "communication and soft skills",
-            "communication",
-            "soft",
-            "skills"
+            "jargon"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -741,7 +580,6 @@
     {
         "conditions": [
             "customer not getting information",
-            "customer",
             "getting",
             "information",
             "knowledge"
@@ -758,9 +596,7 @@
         "conditions": [
             "inconsistent information shared",
             "inconsistent",
-            "information",
-            "shared",
-            "knowledge"
+            "shared"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -772,10 +608,7 @@
     },
     {
         "conditions": [
-            "issue understanding",
-            "issue",
-            "understanding",
-            "knowledge"
+            "issue understanding"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -788,9 +621,7 @@
     {
         "conditions": [
             "misleading information",
-            "misleading",
-            "information",
-            "knowledge"
+            "misleading"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -803,9 +634,7 @@
     {
         "conditions": [
             "no customer education",
-            "customer",
-            "education",
-            "knowledge"
+            "education"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -818,11 +647,9 @@
     {
         "conditions": [
             "agent asked irrelevant questions",
-            "agent",
             "asked",
             "irrelevant",
-            "questions",
-            "knowledge"
+            "questions"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -834,9 +661,7 @@
     },
     {
         "conditions": [
-            "agent had no knowledge",
-            "agent",
-            "knowledge"
+            "agent had no knowledge"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -849,10 +674,8 @@
     {
         "conditions": [
             "agent need training",
-            "agent",
             "need",
-            "training",
-            "knowledge"
+            "training"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -865,11 +688,8 @@
     {
         "conditions": [
             "agent provided incomplete explanation",
-            "agent",
             "provided",
-            "incomplete",
-            "explanation",
-            "knowledge"
+            "incomplete"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -882,11 +702,7 @@
     {
         "conditions": [
             "agent shared wrong / incomplete information",
-            "agent",
-            "shared",
-            "wrong",
-            "incomplete",
-            "knowledge"
+            "wrong"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -899,11 +715,7 @@
     {
         "conditions": [
             "dishonest agent",
-            "dishonest",
-            "agent",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "dishonest"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -915,12 +727,7 @@
     },
     {
         "conditions": [
-            "no attention by agent",
-            "attention",
-            "agent",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "no attention by agent"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -933,11 +740,7 @@
     {
         "conditions": [
             "no ownership by agent",
-            "ownership",
-            "agent",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "ownership"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -951,10 +754,7 @@
         "conditions": [
             "promise not fulfilled",
             "promise",
-            "fulfilled",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "fulfilled"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -967,11 +767,7 @@
     {
         "conditions": [
             "agent did not acknowledge",
-            "agent",
-            "acknowledge",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "acknowledge"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -984,12 +780,8 @@
     {
         "conditions": [
             "agent not accommodating / argumentative",
-            "agent",
             "accommodating",
-            "argumentative",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "argumentative"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1001,12 +793,7 @@
     },
     {
         "conditions": [
-            "agent not helpful",
-            "agent",
-            "helpful",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "agent not helpful"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1018,12 +805,7 @@
     },
     {
         "conditions": [
-            "agent was not courteous",
-            "agent",
-            "courteous",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "agent was not courteous"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1036,11 +818,7 @@
     {
         "conditions": [
             "rude  agent",
-            "rude",
-            "agent",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "rude"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1053,11 +831,7 @@
     {
         "conditions": [
             "unprofessional  agent",
-            "unprofessional",
-            "agent",
-            "behavior issue",
-            "behavior",
-            "issue"
+            "unprofessional"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1087,8 +861,7 @@
         "conditions": [
             "multiple interactions",
             "multiple",
-            "interactions",
-            "resolution"
+            "interactions"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1101,10 +874,7 @@
     {
         "conditions": [
             "no solution / issue  not resolved",
-            "solution",
-            "issue",
-            "resolved",
-            "resolution"
+            "solution"
         ],
         "set": {
             "category": "Agent Opportunity",
@@ -1118,10 +888,7 @@
         "conditions": [
             "not happy with solution",
             "happy",
-            "solution",
-            "issue not resolved",
-            "issue",
-            "resolved"
+            "issue not resolved"
         ],
         "set": {
             "category": "Customer",
@@ -1151,9 +918,7 @@
             "dissatisfied with previous agent",
             "dissatisfied",
             "previous",
-            "agent",
-            "agent feedback",
-            "feedback"
+            "agent feedback"
         ],
         "set": {
             "category": "Customer",
@@ -1169,7 +934,6 @@
             "unfair",
             "practices",
             "dissatisfied with process",
-            "dissatisfied",
             "process"
         ],
         "set": {
@@ -1183,10 +947,7 @@
     {
         "conditions": [
             "unfriendly process",
-            "unfriendly",
-            "process",
-            "dissatisfied with process",
-            "dissatisfied"
+            "unfriendly"
         ],
         "set": {
             "category": "Process",
@@ -1215,11 +976,8 @@
     {
         "conditions": [
             "payment history / statement",
-            "payment",
             "history",
-            "statement",
-            "payment related",
-            "related"
+            "statement"
         ],
         "set": {
             "category": "Process",
@@ -1232,11 +990,7 @@
     {
         "conditions": [
             "issue in making payment",
-            "issue",
-            "making",
-            "payment",
-            "payment related",
-            "related"
+            "making"
         ],
         "set": {
             "category": "Process",
@@ -1252,8 +1006,7 @@
             "delayed",
             "refund",
             "billing related",
-            "billing",
-            "related"
+            "billing"
         ],
         "set": {
             "category": "Process",
@@ -1265,29 +1018,8 @@
     },
     {
         "conditions": [
-            "need refund",
-            "need",
-            "refund",
-            "billing related",
-            "billing",
-            "related"
-        ],
-        "set": {
-            "category": "Process",
-            "subcategory": "Billing Related",
-            "level_3": "Need Refund",
-            "level_4": "Need Refund",
-            "sentiment": "neutral"
-        }
-    },
-    {
-        "conditions": [
             "refund denied",
-            "refund",
-            "denied",
-            "billing related",
-            "billing",
-            "related"
+            "denied"
         ],
         "set": {
             "category": "Process",
@@ -1301,7 +1033,6 @@
         "conditions": [
             "bad / poor  service",
             "poor",
-            "service",
             "service dissatisfaction",
             "dissatisfaction"
         ],
@@ -1316,10 +1047,7 @@
     {
         "conditions": [
             "complicated service",
-            "complicated",
-            "service",
-            "service dissatisfaction",
-            "dissatisfaction"
+            "complicated"
         ],
         "set": {
             "category": "Products and Services",
@@ -1332,10 +1060,7 @@
     {
         "conditions": [
             "improve service",
-            "improve",
-            "service",
-            "service dissatisfaction",
-            "dissatisfaction"
+            "improve"
         ],
         "set": {
             "category": "Products and Services",
@@ -1347,11 +1072,7 @@
     },
     {
         "conditions": [
-            "not reliable service",
-            "reliable",
-            "service",
-            "service dissatisfaction",
-            "dissatisfaction"
+            "not reliable service"
         ],
         "set": {
             "category": "Products and Services",
@@ -1363,11 +1084,7 @@
     },
     {
         "conditions": [
-            "service not helpful",
-            "service",
-            "helpful",
-            "service dissatisfaction",
-            "dissatisfaction"
+            "service not helpful"
         ],
         "set": {
             "category": "Products and Services",
@@ -1380,12 +1097,10 @@
     {
         "conditions": [
             "no communication received",
-            "communication",
             "received",
             "updates / notification issue",
             "updates",
-            "notification",
-            "issue"
+            "notification"
         ],
         "set": {
             "category": "Process",
@@ -1419,9 +1134,7 @@
             "monthly",
             "fees",
             "product pricing issue",
-            "product",
-            "pricing",
-            "issue"
+            "pricing"
         ],
         "set": {
             "category": "Products and Services",
@@ -1434,12 +1147,9 @@
     {
         "conditions": [
             "issue in listening to songs",
-            "issue",
             "listening",
             "songs",
-            "product dissatisfaction",
-            "product",
-            "dissatisfaction"
+            "product dissatisfaction"
         ],
         "set": {
             "category": "Products and Services",
@@ -1452,12 +1162,8 @@
     {
         "conditions": [
             "issue in selecting song",
-            "issue",
             "selecting",
-            "song",
-            "product dissatisfaction",
-            "product",
-            "dissatisfaction"
+            "song"
         ],
         "set": {
             "category": "Products and Services",
@@ -1471,11 +1177,7 @@
         "conditions": [
             "playlist getting deleted",
             "playlist",
-            "getting",
-            "deleted",
-            "technical issues",
-            "technical",
-            "issues"
+            "deleted"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1489,11 +1191,7 @@
         "conditions": [
             "not able to delete playlist",
             "able",
-            "delete",
-            "playlist",
-            "technical issues",
-            "technical",
-            "issues"
+            "delete"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1506,11 +1204,7 @@
     {
         "conditions": [
             "can not play song",
-            "play",
-            "song",
-            "technical issues",
-            "technical",
-            "issues"
+            "play"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1523,13 +1217,7 @@
     {
         "conditions": [
             "issue in getting song / streaming history",
-            "issue",
-            "getting",
-            "song",
-            "streaming",
-            "technical issues",
-            "technical",
-            "issues"
+            "streaming"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1542,13 +1230,8 @@
     {
         "conditions": [
             "issue in getting json file",
-            "issue",
-            "getting",
             "json",
-            "file",
-            "technical issues",
-            "technical",
-            "issues"
+            "file"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1561,12 +1244,7 @@
     {
         "conditions": [
             "issue with song listing",
-            "issue",
-            "song",
-            "listing",
-            "technical issues",
-            "technical",
-            "issues"
+            "listing"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1579,11 +1257,7 @@
     {
         "conditions": [
             "issue with catalogue",
-            "issue",
-            "catalogue",
-            "technical issues",
-            "technical",
-            "issues"
+            "catalogue"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1596,11 +1270,9 @@
     {
         "conditions": [
             "issue with gift card",
-            "issue",
             "gift",
             "card",
             "promotion  advertisement",
-            "promotion",
             "advertisement"
         ],
         "set": {
@@ -1614,11 +1286,7 @@
     {
         "conditions": [
             "issue with lyrics",
-            "issue",
-            "lyrics",
-            "technical issues",
-            "technical",
-            "issues"
+            "lyrics"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1630,11 +1298,7 @@
     },
     {
         "conditions": [
-            "improve process",
-            "improve",
-            "process",
-            "dissatisfied with process",
-            "dissatisfied"
+            "improve process"
         ],
         "set": {
             "category": "Process",
@@ -1652,8 +1316,7 @@
             "accounts",
             "account management issue",
             "account",
-            "management",
-            "issue"
+            "management"
         ],
         "set": {
             "category": "Process",
@@ -1669,10 +1332,7 @@
             "missing",
             "track",
             "album",
-            "artist",
-            "product dissatisfaction",
-            "product",
-            "dissatisfaction"
+            "artist"
         ],
         "set": {
             "category": "Products and Services",
@@ -1685,13 +1345,7 @@
     {
         "conditions": [
             "incorrect track / album / artist",
-            "incorrect",
-            "track",
-            "album",
-            "artist",
-            "product dissatisfaction",
-            "product",
-            "dissatisfaction"
+            "incorrect"
         ],
         "set": {
             "category": "Products and Services",
@@ -1703,11 +1357,7 @@
     },
     {
         "conditions": [
-            "payment failed",
-            "payment",
-            "failed",
-            "payment related",
-            "related"
+            "failed"
         ],
         "set": {
             "category": "Process",
@@ -1720,12 +1370,8 @@
     {
         "conditions": [
             "issue with spotify connect",
-            "issue",
             "spotify",
-            "connect",
-            "technical issues",
-            "technical",
-            "issues"
+            "connect"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1740,10 +1386,7 @@
             "change in card/account information/account",
             "change",
             "card/account",
-            "information/account",
-            "payment related",
-            "payment",
-            "related"
+            "information/account"
         ],
         "set": {
             "category": "Process",
@@ -1757,10 +1400,7 @@
         "conditions": [
             "unable to access",
             "unable",
-            "access",
-            "technical issues",
-            "technical",
-            "issues"
+            "access"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1774,11 +1414,7 @@
         "conditions": [
             "verification requirement",
             "verification",
-            "requirement",
-            "account management issue",
-            "account",
-            "management",
-            "issue"
+            "requirement"
         ],
         "set": {
             "category": "Process",
@@ -1791,11 +1427,7 @@
     {
         "conditions": [
             "agent displayed empathy",
-            "agent",
-            "displayed",
-            "empathy",
-            "appreciating agent",
-            "appreciating"
+            "displayed"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -1825,10 +1457,7 @@
         "conditions": [
             "free plan/trial",
             "free",
-            "plan/trial",
-            "plan  services",
-            "plan",
-            "services"
+            "plan/trial"
         ],
         "set": {
             "category": "Products and Services",
@@ -1842,10 +1471,7 @@
         "conditions": [
             "competitor mentions",
             "competitor",
-            "mentions",
-            "product dissatisfaction",
-            "product",
-            "dissatisfaction"
+            "mentions"
         ],
         "set": {
             "category": "Products and Services",
@@ -1858,12 +1484,7 @@
     {
         "conditions": [
             "customer loyalty",
-            "customer",
-            "loyalty",
-            "appreciating product  service",
-            "appreciating",
-            "product",
-            "service"
+            "loyalty"
         ],
         "set": {
             "category": "Positive Feedback",
@@ -1876,10 +1497,7 @@
     {
         "conditions": [
             "car thing",
-            "thing",
-            "plan  services",
-            "plan",
-            "services"
+            "thing"
         ],
         "set": {
             "category": "Products and Services",
@@ -1893,11 +1511,7 @@
         "conditions": [
             "lost access to email",
             "lost",
-            "access",
-            "email",
-            "technical issues",
-            "technical",
-            "issues"
+            "email"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1909,12 +1523,8 @@
     },
     {
         "conditions": [
-            "password reset",
             "password",
-            "reset",
-            "technical issues",
-            "technical",
-            "issues"
+            "reset"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1927,12 +1537,7 @@
     {
         "conditions": [
             "account blocked/unable to access",
-            "account",
-            "blocked/unable",
-            "access",
-            "technical issues",
-            "technical",
-            "issues"
+            "blocked/unable"
         ],
         "set": {
             "category": "Technology Driven",
@@ -1946,7 +1551,6 @@
         "conditions": [
             "compromised account",
             "compromised",
-            "account",
             "privacy  security",
             "privacy",
             "security"
@@ -1962,11 +1566,7 @@
     {
         "conditions": [
             "hacked account",
-            "hacked",
-            "account",
-            "privacy  security",
-            "privacy",
-            "security"
+            "hacked"
         ],
         "set": {
             "category": "Process",
@@ -1979,11 +1579,8 @@
     {
         "conditions": [
             "service cancellation/switching provider",
-            "service",
             "cancellation/switching",
-            "provider",
-            "service dissatisfaction",
-            "dissatisfaction"
+            "provider"
         ],
         "set": {
             "category": "Products and Services",
@@ -1997,11 +1594,7 @@
         "conditions": [
             "price hike",
             "price",
-            "hike",
-            "product pricing issue",
-            "product",
-            "pricing",
-            "issue"
+            "hike"
         ],
         "set": {
             "category": "Products and Services",
@@ -2014,13 +1607,8 @@
     {
         "conditions": [
             "unable to update address",
-            "unable",
             "update",
-            "address",
-            "account management issue",
-            "account",
-            "management",
-            "issue"
+            "address"
         ],
         "set": {
             "category": "Process",
@@ -2032,10 +1620,7 @@
     },
     {
         "conditions": [
-            "app issues",
-            "issues",
-            "technical issues",
-            "technical"
+            "app issues"
         ],
         "set": {
             "category": "Technology Driven",
@@ -2047,11 +1632,7 @@
     },
     {
         "conditions": [
-            "website issues",
-            "website",
-            "issues",
-            "technical issues",
-            "technical"
+            "website issues"
         ],
         "set": {
             "category": "Technology Driven",
@@ -2066,10 +1647,8 @@
             "difficulties contacting spotify",
             "difficulties",
             "contacting",
-            "spotify",
             "support related",
-            "support",
-            "related"
+            "support"
         ],
         "set": {
             "category": "Process",
@@ -2082,12 +1661,7 @@
     {
         "conditions": [
             "unhappy with chat service",
-            "unhappy",
-            "chat",
-            "service",
-            "support related",
-            "support",
-            "related"
+            "unhappy"
         ],
         "set": {
             "category": "Process",
@@ -2100,10 +1674,7 @@
     {
         "conditions": [
             "web player/desktop app",
-            "player/desktop",
-            "technical issues",
-            "technical",
-            "issues"
+            "player/desktop"
         ],
         "set": {
             "category": "Technology Driven",
@@ -2116,10 +1687,7 @@
     {
         "conditions": [
             "playback/playlist issues",
-            "playback/playlist",
-            "issues",
-            "technical issues",
-            "technical"
+            "playback/playlist"
         ],
         "set": {
             "category": "Technology Driven",
@@ -2132,11 +1700,7 @@
     {
         "conditions": [
             "audiobook related",
-            "audiobook",
-            "related",
-            "plan  services",
-            "plan",
-            "services"
+            "audiobook"
         ],
         "set": {
             "category": "Products and Services",
@@ -2149,11 +1713,7 @@
     {
         "conditions": [
             "troubleshooting related",
-            "troubleshooting",
-            "related",
-            "technical issues",
-            "technical",
-            "issues"
+            "troubleshooting"
         ],
         "set": {
             "category": "Technology Driven",
@@ -2166,11 +1726,7 @@
     {
         "conditions": [
             "podcast related",
-            "podcast",
-            "related",
-            "plan  services",
-            "plan",
-            "services"
+            "podcast"
         ],
         "set": {
             "category": "Products and Services",
@@ -2184,10 +1740,7 @@
         "conditions": [
             "unwanted adds",
             "unwanted",
-            "adds",
-            "plan  services",
-            "plan",
-            "services"
+            "adds"
         ],
         "set": {
             "category": "Products and Services",
@@ -2199,11 +1752,7 @@
     },
     {
         "conditions": [
-            "unhappy with bot",
-            "unhappy",
-            "support related",
-            "support",
-            "related"
+            "unhappy with bot"
         ],
         "set": {
             "category": "Process",
@@ -2216,11 +1765,7 @@
     {
         "conditions": [
             "incorrect charges",
-            "incorrect",
-            "charges",
-            "billing related",
-            "billing",
-            "related"
+            "charges"
         ],
         "set": {
             "category": "Process",
@@ -2234,7 +1779,6 @@
         "conditions": [
             "vulnerable customer",
             "vulnerable",
-            "customer",
             "vulnerability"
         ],
         "set": {
@@ -2248,10 +1792,8 @@
     {
         "conditions": [
             "unhappy with the policy",
-            "unhappy",
             "policy",
-            "process policy",
-            "process"
+            "process policy"
         ],
         "set": {
             "category": "Process",
@@ -2263,11 +1805,7 @@
     },
     {
         "conditions": [
-            "privacy  security mentions",
-            "privacy",
-            "security",
-            "mentions",
-            "privacy  security"
+            "privacy  security mentions"
         ],
         "set": {
             "category": "Process",
@@ -2280,12 +1818,8 @@
     {
         "conditions": [
             "unhappy with scripted responses",
-            "unhappy",
             "scripted",
-            "responses",
-            "support related",
-            "support",
-            "related"
+            "responses"
         ],
         "set": {
             "category": "Process",
@@ -2298,12 +1832,7 @@
     {
         "conditions": [
             "need chat transcript",
-            "need",
-            "chat",
-            "transcript",
-            "support related",
-            "support",
-            "related"
+            "transcript"
         ],
         "set": {
             "category": "Process",
@@ -2316,12 +1845,7 @@
     {
         "conditions": [
             "discount mentions",
-            "discount",
-            "mentions",
-            "account management issue",
-            "account",
-            "management",
-            "issue"
+            "discount"
         ],
         "set": {
             "category": "Process",
@@ -2333,12 +1857,7 @@
     },
     {
         "conditions": [
-            "artist mentions",
-            "artist",
-            "mentions",
-            "plan  services",
-            "plan",
-            "services"
+            "artist mentions"
         ],
         "set": {
             "category": "Products and Services",
@@ -2351,11 +1870,7 @@
     {
         "conditions": [
             "google play issues",
-            "google",
-            "play",
-            "issues",
-            "technical issues",
-            "technical"
+            "google"
         ],
         "set": {
             "category": "Technology Driven",
@@ -2368,12 +1883,7 @@
     {
         "conditions": [
             "username change",
-            "username",
-            "change",
-            "account management issue",
-            "account",
-            "management",
-            "issue"
+            "username"
         ],
         "set": {
             "category": "Process",
@@ -2386,11 +1896,7 @@
     {
         "conditions": [
             "plan/subscription issues",
-            "plan/subscription",
-            "issues",
-            "plan  services",
-            "plan",
-            "services"
+            "plan/subscription"
         ],
         "set": {
             "category": "Products and Services",
@@ -2402,11 +1908,7 @@
     },
     {
         "conditions": [
-            "billing issues",
-            "billing",
-            "issues",
-            "billing related",
-            "related"
+            "billing issues"
         ],
         "set": {
             "category": "Process",
@@ -2418,11 +1920,7 @@
     },
     {
         "conditions": [
-            "payment issues",
-            "payment",
-            "issues",
-            "payment related",
-            "related"
+            "payment issues"
         ],
         "set": {
             "category": "Process",
@@ -2435,10 +1933,7 @@
     {
         "conditions": [
             "student plan",
-            "student",
-            "plan",
-            "plan  services",
-            "services"
+            "student"
         ],
         "set": {
             "category": "Products and Services",
@@ -2451,10 +1946,7 @@
     {
         "conditions": [
             "basic plan",
-            "basic",
-            "plan",
-            "plan  services",
-            "services"
+            "basic"
         ],
         "set": {
             "category": "Products and Services",
@@ -2466,10 +1958,7 @@
     },
     {
         "conditions": [
-            "duo plan",
-            "plan",
-            "plan  services",
-            "services"
+            "duo plan"
         ],
         "set": {
             "category": "Products and Services",
@@ -2482,10 +1971,7 @@
     {
         "conditions": [
             "family plan",
-            "family",
-            "plan",
-            "plan  services",
-            "services"
+            "family"
         ],
         "set": {
             "category": "Products and Services",
@@ -2497,13 +1983,7 @@
     },
     {
         "conditions": [
-            "address verification",
-            "address",
-            "verification",
-            "account management issue",
-            "account",
-            "management",
-            "issue"
+            "address verification"
         ],
         "set": {
             "category": "Process",
@@ -2516,11 +1996,7 @@
     {
         "conditions": [
             "hulu mentions",
-            "hulu",
-            "mentions",
-            "plan  services",
-            "plan",
-            "services"
+            "hulu"
         ],
         "set": {
             "category": "Products and Services",
@@ -2533,11 +2009,7 @@
     {
         "conditions": [
             "spam mentions",
-            "spam",
-            "mentions",
-            "privacy  security",
-            "privacy",
-            "security"
+            "spam"
         ],
         "set": {
             "category": "Process",
@@ -2550,11 +2022,7 @@
     {
         "conditions": [
             "renewal mentions",
-            "renewal",
-            "mentions",
-            "billing related",
-            "billing",
-            "related"
+            "renewal"
         ],
         "set": {
             "category": "Process",
@@ -2568,11 +2036,7 @@
         "conditions": [
             "outside country",
             "outside",
-            "country",
-            "account management issue",
-            "account",
-            "management",
-            "issue"
+            "country"
         ],
         "set": {
             "category": "Process",
@@ -2585,10 +2049,7 @@
     {
         "conditions": [
             "asked for card details as per process",
-            "asked",
-            "card",
             "details",
-            "process",
             "critical fail",
             "critical",
             "fail"
@@ -2605,10 +2066,7 @@
         "conditions": [
             "not sending pii data",
             "sending",
-            "data",
-            "critical fail",
-            "critical",
-            "fail"
+            "data"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2622,12 +2080,7 @@
         "conditions": [
             "not revealing spotify internal information",
             "revealing",
-            "spotify",
-            "internal",
-            "information",
-            "critical fail",
-            "critical",
-            "fail"
+            "internal"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2641,12 +2094,7 @@
         "conditions": [
             "sent password reset link from fanbase",
             "sent",
-            "password",
-            "reset",
-            "link",
-            "critical fail",
-            "critical",
-            "fail"
+            "link"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2660,10 +2108,7 @@
         "conditions": [
             "patronizing or sarcastic",
             "patronizing",
-            "sarcastic",
-            "critical fail",
-            "critical",
-            "fail"
+            "sarcastic"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2676,12 +2121,8 @@
     {
         "conditions": [
             "rude offensive or abusive",
-            "rude",
             "offensive",
-            "abusive",
-            "critical fail",
-            "critical",
-            "fail"
+            "abusive"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2693,10 +2134,7 @@
     },
     {
         "conditions": [
-            "petty",
-            "critical fail",
-            "critical",
-            "fail"
+            "petty"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2708,29 +2146,10 @@
     },
     {
         "conditions": [
-            "argumentative",
-            "critical fail",
-            "critical",
-            "fail"
-        ],
-        "set": {
-            "category": "Critical Fail",
-            "subcategory": "Critical Fail",
-            "level_3": "Argumentative",
-            "level_4": "Argumentative",
-            "sentiment": "negative"
-        }
-    },
-    {
-        "conditions": [
             "making negative remarks about spotify",
-            "making",
             "negative",
             "remarks",
-            "about",
-            "critical fail",
-            "critical",
-            "fail"
+            "about"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2742,14 +2161,7 @@
     },
     {
         "conditions": [
-            "making negative remarks about the customer",
-            "making",
-            "negative",
-            "remarks",
-            "about",
-            "critical fail",
-            "critical",
-            "fail"
+            "making negative remarks about the customer"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2765,10 +2177,7 @@
             "against",
             "spotifys",
             "values",
-            "racist",
-            "critical fail",
-            "critical",
-            "fail"
+            "racist"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2782,12 +2191,7 @@
         "conditions": [
             "undermining family or duo plan restrictions",
             "undermining",
-            "family",
-            "plan",
-            "restrictions",
-            "critical fail",
-            "critical",
-            "fail"
+            "restrictions"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2802,11 +2206,7 @@
             "sharing limits or policy guidelines on offers/discounts/trials",
             "sharing",
             "limits",
-            "policy",
-            "guidelines",
-            "critical fail",
-            "critical",
-            "fail"
+            "guidelines"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2820,14 +2220,9 @@
         "conditions": [
             "educating customer on how to bypass country limitations",
             "educating",
-            "customer",
             "bypass",
-            "country",
             "educating customers on how to bypass country limitations",
-            "customers",
-            "critical fail",
-            "critical",
-            "fail"
+            "customers"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2841,12 +2236,7 @@
         "conditions": [
             "allowing/encouraging multiple users on 1 account",
             "allowing/encouraging",
-            "multiple",
-            "users",
-            "account",
-            "critical fail",
-            "critical",
-            "fail"
+            "users"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2859,13 +2249,8 @@
     {
         "conditions": [
             "allowing/encouraging customer to export music from spotify",
-            "allowing/encouraging",
-            "customer",
             "export",
-            "music",
-            "critical fail",
-            "critical",
-            "fail"
+            "music"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2878,13 +2263,7 @@
     {
         "conditions": [
             "educating/allowing customer to use vpn to bypass country restrictions",
-            "educating/allowing",
-            "customer",
-            "bypass",
-            "country",
-            "critical fail",
-            "critical",
-            "fail"
+            "educating/allowing"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2897,13 +2276,9 @@
     {
         "conditions": [
             "sharing fansfirst codes with ineligible users",
-            "sharing",
             "fansfirst",
             "codes",
-            "ineligible",
-            "critical fail",
-            "critical",
-            "fail"
+            "ineligible"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2918,11 +2293,7 @@
             "soliciting positive customer satisfaction survey",
             "soliciting",
             "positive",
-            "customer",
-            "satisfaction",
-            "critical fail",
-            "critical",
-            "fail"
+            "satisfaction"
         ],
         "set": {
             "category": "Critical Fail",
@@ -2935,7 +2306,6 @@
     {
         "conditions": [
             "agent taking the right steps to identify the issue",
-            "agent",
             "taking",
             "right",
             "steps",
@@ -2952,11 +2322,7 @@
     {
         "conditions": [
             "agent resolving customer issue",
-            "agent",
-            "resolving",
-            "customer",
-            "issue",
-            "progress"
+            "resolving"
         ],
         "set": {
             "category": "Progress",
@@ -2969,8 +2335,6 @@
     {
         "conditions": [
             "agent making grammatical mistakes in conversation",
-            "agent",
-            "making",
             "grammatical",
             "mistakes",
             "writing"
@@ -2986,9 +2350,7 @@
     {
         "conditions": [
             "incorrect terminology",
-            "incorrect",
-            "terminology",
-            "writing"
+            "terminology"
         ],
         "set": {
             "category": "Writing",
@@ -3001,10 +2363,8 @@
     {
         "conditions": [
             "agent being difficult to understand",
-            "agent",
             "being",
             "difficult",
-            "understand",
             "build rapport",
             "build",
             "rapport"
@@ -3019,10 +2379,7 @@
     },
     {
         "conditions": [
-            "clarity",
-            "build rapport",
-            "build",
-            "rapport"
+            "clarity"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3034,10 +2391,7 @@
     },
     {
         "conditions": [
-            "carelessness",
-            "build rapport",
-            "build",
-            "rapport"
+            "carelessness"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3049,27 +2403,8 @@
     },
     {
         "conditions": [
-            "jargon",
-            "writing"
-        ],
-        "set": {
-            "category": "Writing",
-            "subcategory": "Writing",
-            "level_3": "Jargon",
-            "level_4": "Jargon",
-            "sentiment": "neutral"
-        }
-    },
-    {
-        "conditions": [
             "agent using positive language",
-            "agent",
-            "using",
-            "positive",
-            "language",
-            "build rapport",
-            "build",
-            "rapport"
+            "using"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3082,13 +2417,8 @@
     {
         "conditions": [
             "agent exhibiting empathy as needed",
-            "agent",
             "exhibiting",
-            "empathy",
-            "needed",
-            "build rapport",
-            "build",
-            "rapport"
+            "needed"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3101,12 +2431,7 @@
     {
         "conditions": [
             "quick  swift resolution",
-            "quick",
-            "swift",
-            "resolution",
-            "build rapport",
-            "build",
-            "rapport"
+            "swift"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3118,28 +2443,9 @@
     },
     {
         "conditions": [
-            "assurance",
-            "build rapport",
-            "build",
-            "rapport"
-        ],
-        "set": {
-            "category": "Build Rapport",
-            "subcategory": "Build Rapport",
-            "level_3": "Assurance",
-            "level_4": "Assurance",
-            "sentiment": "neutral"
-        }
-    },
-    {
-        "conditions": [
             "adapt tone of voice",
             "adapt",
-            "tone",
-            "voice",
-            "build rapport",
-            "build",
-            "rapport"
+            "voice"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3152,11 +2458,7 @@
     {
         "conditions": [
             "scripted/templated responses",
-            "scripted/templated",
-            "responses",
-            "build rapport",
-            "build",
-            "rapport"
+            "scripted/templated"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3170,10 +2472,7 @@
         "conditions": [
             "human touch",
             "human",
-            "touch",
-            "build rapport",
-            "build",
-            "rapport"
+            "touch"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3187,11 +2486,7 @@
         "conditions": [
             "unclear and lengthy responses",
             "unclear",
-            "lengthy",
-            "responses",
-            "build rapport",
-            "build",
-            "rapport"
+            "lengthy"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3206,10 +2501,7 @@
             "blunt robotic apathetic etc",
             "blunt",
             "robotic",
-            "apathetic",
-            "build rapport",
-            "build",
-            "rapport"
+            "apathetic"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3221,12 +2513,7 @@
     },
     {
         "conditions": [
-            "negative language",
-            "negative",
-            "language",
-            "build rapport",
-            "build",
-            "rapport"
+            "negative language"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3239,13 +2526,11 @@
     {
         "conditions": [
             "agent receiving appreciation during the conversation",
-            "agent",
             "receiving",
             "appreciation",
             "during",
             "best thing",
-            "best",
-            "thing"
+            "best"
         ],
         "set": {
             "category": "Best Thing",
@@ -3257,14 +2542,7 @@
     },
     {
         "conditions": [
-            "customer appreciating agent for being proactive and swift",
-            "customer",
-            "appreciating",
-            "agent",
-            "being",
-            "best thing",
-            "best",
-            "thing"
+            "customer appreciating agent for being proactive and swift"
         ],
         "set": {
             "category": "Best Thing",
@@ -3278,10 +2556,7 @@
         "conditions": [
             "great summary/recap",
             "great",
-            "summary/recap",
-            "best thing",
-            "best",
-            "thing"
+            "summary/recap"
         ],
         "set": {
             "category": "Best Thing",
@@ -3293,14 +2568,7 @@
     },
     {
         "conditions": [
-            "agent sharing wrong account information with the customer",
-            "agent",
-            "sharing",
-            "wrong",
-            "account",
-            "critical fail",
-            "critical",
-            "fail"
+            "agent sharing wrong account information with the customer"
         ],
         "set": {
             "category": "Critical Fail",
@@ -3313,13 +2581,9 @@
     {
         "conditions": [
             "agent not asking for the permission before making account changes",
-            "agent",
             "asking",
             "permission",
-            "before",
-            "critical fail",
-            "critical",
-            "fail"
+            "before"
         ],
         "set": {
             "category": "Critical Fail",
@@ -3331,10 +2595,7 @@
     },
     {
         "conditions": [
-            "paraphrasing",
-            "build rapport",
-            "build",
-            "rapport"
+            "paraphrasing"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3347,11 +2608,7 @@
     {
         "conditions": [
             "asking the right questions to identify customers issue probing",
-            "asking",
-            "right",
-            "questions",
-            "identify",
-            "progress"
+            "identify"
         ],
         "set": {
             "category": "Progress",
@@ -3363,10 +2620,7 @@
     },
     {
         "conditions": [
-            "personalization",
-            "build rapport",
-            "build",
-            "rapport"
+            "personalization"
         ],
         "set": {
             "category": "Build Rapport",
@@ -3378,38 +2632,7 @@
     },
     {
         "conditions": [
-            "ownership",
-            "progress"
-        ],
-        "set": {
-            "category": "Progress",
-            "subcategory": "Progress",
-            "level_3": "Ownership",
-            "level_4": "Ownership",
-            "sentiment": "neutral"
-        }
-    },
-    {
-        "conditions": [
-            "build rapport",
-            "build",
-            "rapport"
-        ],
-        "set": {
-            "category": "Build Rapport",
-            "subcategory": "Build Rapport",
-            "level_3": "Build Rapport",
-            "level_4": "Build Rapport",
-            "sentiment": "neutral"
-        }
-    },
-    {
-        "conditions": [
-            "positive tov",
-            "positive",
-            "build rapport",
-            "build",
-            "rapport"
+            "positive tov"
         ],
         "set": {
             "category": "Build Rapport",

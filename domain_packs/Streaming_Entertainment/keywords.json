@@ -322,7 +322,6 @@
             "stopped working",
             "app stopped working",
             "freeze",
-            "freezing",
             "app freezing",
             "hang",
             "hanging",
@@ -580,7 +579,6 @@
         "conditions": [
             "search issue",
             "search problem",
-            "search not working",
             "can't find content",
             "search results wrong",
             "search results poor",
