@@ -1,11 +1,85 @@
 [
     {
         "conditions": [
-            "cant play",
-            "not playing",
+            "login issue",
+            "login problem",
+            "can't login",
+            "can't log in",
+            "cannot login",
+            "unable to login",
+            "login failed",
+            "sign in issue",
+            "sign in problem",
+            "can't sign in",
+            "unable to sign in",
+            "forgot password",
+            "reset password",
+            "password reset",
+            "password issue",
+            "authentication failed",
+            "verification code",
+            "2fa not working",
+            "two factor issue",
+            "two-factor problem",
+            "unable to access account"
+        ],
+        "set": {
+            "category": "Account Access",
+            "subcategory": "Login Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "account issue",
+            "account problem",
+            "account disabled",
+            "account locked",
+            "account suspended",
+            "deactivate account",
+            "profile issue",
+            "profile problem",
+            "username issue",
+            "display name problem",
+            "linked account issue",
+            "merge account",
+            "multiple accounts",
+            "email change issue",
+            "update details problem",
+            "account not working"
+        ],
+        "set": {
+            "category": "Account Management",
+            "subcategory": "Account Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "playback issue",
             "playback error",
-            "video wont load",
-            "stream failed"
+            "playback problem",
+            "cant play",
+            "can't play",
+            "not playing",
+            "won't play",
+            "video won't load",
+            "video not loading",
+            "stream failed",
+            "streaming failed",
+            "music not playing",
+            "song not playing",
+            "track skipped",
+            "audio skipping",
+            "stops suddenly",
+            "keeps stopping",
+            "pauses randomly",
+            "audio issue",
+            "no sound",
+            "silence",
+            "volume problem",
+            "sound problem",
+            "playback stuck"
         ],
         "set": {
             "category": "Technology Driven",
@@ -16,10 +90,24 @@
     {
         "conditions": [
             "buffering",
+            "buffering issue",
+            "constant buffering",
+            "buffering problem",
             "lag",
+            "lagging",
+            "laggy",
             "stuttering",
+            "video stuttering",
+            "audio stuttering",
             "freezing",
-            "slow loading"
+            "video freezing",
+            "keeps freezing",
+            "slow loading",
+            "slow buffering",
+            "poor quality",
+            "low quality",
+            "quality issue",
+            "streaming quality"
         ],
         "set": {
             "category": "Technology Driven",
@@ -32,7 +120,17 @@
             "cancel subscription",
             "cancel membership",
             "end subscription",
-            "stop payment"
+            "stop subscription",
+            "stop payment",
+            "cancel service",
+            "unsubscribe",
+            "terminate subscription",
+            "close account",
+            "don't want subscription",
+            "no longer need",
+            "cancel plan",
+            "stop billing",
+            "discontinue service"
         ],
         "set": {
             "category": "Cancellation",
@@ -43,9 +141,26 @@
     {
         "conditions": [
             "content not available",
-            "removed",
-            "cant find",
-            "missing episodes"
+            "content unavailable",
+            "removed content",
+            "missing content",
+            "can't find",
+            "cannot find",
+            "missing episodes",
+            "episode missing",
+            "show removed",
+            "movie removed",
+            "song removed",
+            "track removed",
+            "song not available",
+            "track unavailable",
+            "region restriction",
+            "country restriction",
+            "not available in my region",
+            "not licensed",
+            "greyed out",
+            "grayed out",
+            "removed from library"
         ],
         "set": {
             "category": "Products and Services",
@@ -55,15 +170,575 @@
     },
     {
         "conditions": [
+            "device issue",
+            "device problem",
+            "device not working",
+            "bluetooth issue",
+            "bluetooth problem",
+            "bluetooth not connecting",
+            "speaker issue",
+            "speaker problem",
+            "carplay issue",
+            "carplay not working",
+            "android auto issue",
+            "android auto problem",
+            "smart tv issue",
+            "smart tv problem",
+            "echo issue",
+            "alexa issue",
+            "alexa not working",
+            "chromecast issue",
+            "chromecast problem",
+            "airplay issue",
+            "airplay not working",
+            "headphones issue",
+            "device not showing",
+            "device disconnected",
+            "device won't connect"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Device Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "ads issue",
+            "ad issue",
+            "ad problem",
+            "advertisement issue",
+            "too many ads",
+            "excessive ads",
+            "ad volume too loud",
+            "ad volume issue",
+            "ads keep playing",
+            "premium has ads",
+            "premium still ads",
+            "commercials issue",
+            "too many commercials",
+            "ad blocker",
+            "skip ads not working"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Advertisement Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "recommendation issue",
+            "recommendation problem",
+            "recommendations bad",
+            "poor recommendations",
+            "discover weekly bad",
+            "radio issue",
+            "algorithm bad",
+            "algorithm issue",
+            "curated playlist bad",
+            "autoplay issue",
+            "autoplay problem",
+            "song suggestions bad",
+            "not relevant suggestions",
+            "wrong recommendations",
+            "irrelevant content"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Recommendation Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "ui issue",
+            "ui problem",
+            "interface issue",
+            "interface problem",
+            "layout issue",
+            "layout problem",
+            "design issue",
+            "design problem",
+            "dark mode not working",
+            "dark mode issue",
+            "buttons not working",
+            "button not working",
+            "search not working",
+            "search broken",
+            "filter not working",
+            "filter issue",
+            "navigation issue",
+            "menu issue",
+            "confusing interface",
+            "hard to use"
+        ],
+        "set": {
+            "category": "User Experience",
+            "subcategory": "UI Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "network failure",
+            "network issue",
+            "network problem",
+            "connectivity issue",
+            "connectivity problem",
+            "internet issue",
+            "internet problem",
+            "server issue",
+            "server error",
+            "server down",
+            "connection failed",
+            "connection error",
+            "offline issue",
+            "not connecting",
+            "won't connect",
+            "app down",
+            "service down",
+            "timeout",
+            "timeout error",
+            "dns error",
+            "proxy issue",
+            "vpn issue"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Network Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "app crash",
+            "app crashed",
+            "app keeps crashing",
+            "crash issue",
+            "crash problem",
+            "app closed",
+            "app stopped",
+            "stopped working",
+            "app stopped working",
+            "freeze",
+            "app freezing",
+            "hang",
+            "hanging",
+            "app hanging",
+            "bug",
+            "bugs",
+            "error message",
+            "glitch",
+            "glitches",
+            "glitchy",
+            "unresponsive",
+            "app unresponsive",
+            "not responding"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "App Crash",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "performance issue",
+            "performance problem",
+            "slow app",
+            "app slow",
+            "very slow",
+            "extremely slow",
+            "sluggish",
+            "lag issue",
+            "delay issue",
+            "delayed response",
+            "poor performance",
+            "bad performance",
+            "loading slow",
+            "takes forever",
+            "loading forever"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Performance Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "data sync issue",
+            "sync issue",
+            "sync problem",
+            "not syncing",
+            "won't sync",
+            "sync failed",
+            "listening history issue",
+            "recently played missing",
+            "activity feed issue",
+            "connect issue",
+            "data lost",
+            "lost data",
+            "missing data",
+            "data missing",
+            "playlists not syncing",
+            "library not syncing"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Data Sync Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "subscription issue",
+            "subscription problem",
+            "plan issue",
+            "plan problem",
+            "premium issue",
+            "premium not working",
+            "billing issue",
+            "billing error",
+            "billing problem",
+            "charged wrong",
+            "charged twice",
+            "overcharged",
+            "incorrect charge",
+            "payment issue",
+            "payment failed",
+            "payment declined",
+            "refund issue",
+            "want refund",
+            "need refund",
+            "invoice issue",
+            "invoice error",
+            "upgrade issue",
+            "downgrade issue",
+            "family plan issue",
+            "student plan issue",
+            "gift card issue",
+            "promo code not working",
+            "promo code issue"
+        ],
+        "set": {
+            "category": "Billing & Subscription",
+            "subcategory": "Subscription Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
             "love this",
+            "love it",
+            "loving it",
             "great content",
+            "amazing content",
+            "excellent content",
             "amazing shows",
-            "best streaming"
+            "great shows",
+            "best streaming",
+            "best service",
+            "highly recommend",
+            "recommend this",
+            "wonderful service",
+            "fantastic",
+            "awesome",
+            "perfect",
+            "exactly what needed",
+            "worth the money",
+            "great value"
         ],
         "set": {
             "category": "Positive Feedback",
             "subcategory": "Content Appreciation",
             "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "easy to use",
+            "user friendly",
+            "simple interface",
+            "smooth experience",
+            "seamless",
+            "works perfectly",
+            "no issues",
+            "flawless",
+            "reliable",
+            "stable",
+            "consistent quality",
+            "great experience",
+            "satisfied",
+            "happy with service"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "User Experience",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "customer service excellent",
+            "great support",
+            "helpful support",
+            "support team great",
+            "quick response",
+            "fast resolution",
+            "resolved quickly",
+            "helpful agent",
+            "friendly support",
+            "professional support"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Customer Support",
+            "sentiment": "positive"
+        }
+    },
+    {
+        "conditions": [
+            "download issue",
+            "download problem",
+            "can't download",
+            "download failed",
+            "download not working",
+            "offline download issue",
+            "offline mode issue",
+            "downloaded content missing",
+            "download quality low"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Download Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "library issue",
+            "library problem",
+            "playlist issue",
+            "playlist problem",
+            "playlist deleted",
+            "playlist missing",
+            "songs missing from playlist",
+            "can't create playlist",
+            "can't edit playlist",
+            "library not loading",
+            "saved songs missing"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Library Management",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "subtitle issue",
+            "subtitle problem",
+            "subtitles not working",
+            "captions not working",
+            "subtitle sync issue",
+            "subtitle missing",
+            "wrong subtitles",
+            "audio sync issue",
+            "audio out of sync",
+            "audio video sync"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Subtitle/Audio Sync",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "video quality issue",
+            "video quality problem",
+            "poor video quality",
+            "low resolution",
+            "blurry video",
+            "pixelated",
+            "grainy video",
+            "quality drops",
+            "hd not working",
+            "4k not working",
+            "resolution issue"
+        ],
+        "set": {
+            "category": "Technology Driven",
+            "subcategory": "Video Quality",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "search issue",
+            "search problem",
+            "can't find content",
+            "search results wrong",
+            "search results poor",
+            "browse issue",
+            "category issue",
+            "genre filter broken"
+        ],
+        "set": {
+            "category": "User Experience",
+            "subcategory": "Search Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "sharing issue",
+            "share not working",
+            "can't share",
+            "social media sharing issue",
+            "profile sharing issue",
+            "collaborative playlist issue"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Sharing Issue",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "parental control issue",
+            "parental controls not working",
+            "kids profile issue",
+            "content filter issue",
+            "age restriction issue",
+            "mature content showing"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Parental Controls",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "watch history issue",
+            "history not saving",
+            "continue watching issue",
+            "resume not working",
+            "bookmark issue",
+            "watchlist issue",
+            "favorites issue"
+        ],
+        "set": {
+            "category": "User Experience",
+            "subcategory": "History/Watchlist",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "price too high",
+            "too expensive",
+            "overpriced",
+            "not worth the price",
+            "price increase",
+            "raised prices",
+            "charging more",
+            "subscription too expensive",
+            "cost too much"
+        ],
+        "set": {
+            "category": "Billing & Subscription",
+            "subcategory": "Pricing Complaint",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "limited content",
+            "not enough content",
+            "poor content library",
+            "small library",
+            "missing popular shows",
+            "missing movies",
+            "content selection poor",
+            "library too small"
+        ],
+        "set": {
+            "category": "Products and Services",
+            "subcategory": "Content Library",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "customer service bad",
+            "poor support",
+            "unhelpful support",
+            "support not responding",
+            "no response from support",
+            "support useless",
+            "terrible customer service",
+            "support slow",
+            "waited too long",
+            "no help received"
+        ],
+        "set": {
+            "category": "Customer Service",
+            "subcategory": "Poor Support",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "auto renewal issue",
+            "auto renew problem",
+            "charged without permission",
+            "unwanted charge",
+            "subscription renewed automatically",
+            "cancel auto renewal",
+            "stop auto renewal"
+        ],
+        "set": {
+            "category": "Billing & Subscription",
+            "subcategory": "Auto Renewal",
+            "sentiment": "negative"
+        }
+    },
+    {
+        "conditions": [
+            "feature request",
+            "request feature",
+            "suggest feature",
+            "would like feature",
+            "add feature",
+            "missing feature",
+            "need feature",
+            "want feature"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "Feature Request",
+            "sentiment": "neutral"
+        }
+    },
+    {
+        "conditions": [
+            "suggestion",
+            "feedback",
+            "improvement suggestion",
+            "app improvement",
+            "could be better",
+            "recommend adding",
+            "would be nice if"
+        ],
+        "set": {
+            "category": "Positive Feedback",
+            "subcategory": "General Feedback",
+            "sentiment": "neutral"
         }
     }
 ]
