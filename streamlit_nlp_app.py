@@ -8,8 +8,10 @@ MODIFICATIONS:
 3. Removed: Primary_Proximity, Proximity_Group, Total_Turns, Consumer_Turns, Matched_Keywords from output
 4. Sentiment based on consumer tone/chats only
 5. Multiple failure keywords detection support
+6. Updated sentiment ranges: Very Positive (≥0.60), Positive (≥0.20), Neutral (-0.20 to 0.20), 
+   Negative (≥-0.60), Very Negative (<-0.60)
 
-Version: 3.1.1 - Consumer-Focused Analysis (Matched_Keywords Removed)
+Version: 3.1.2 - Consumer-Focused Analysis (Updated Sentiment Ranges)
 """
 
 import streamlit as st
@@ -853,26 +855,36 @@ class SentimentAnalyzer:
     @staticmethod
     @lru_cache(maxsize=CACHE_SIZE)
     def analyze_sentiment(text: str) -> Tuple[str, float]:
-        """Analyze sentiment of text - based on consumer tone"""
+        """
+        Analyze sentiment of text - based on consumer tone
+        
+        Sentiment ranges:
+        - Very Positive: score >= 0.60
+        - Positive: 0.20 <= score < 0.60
+        - Neutral: -0.20 <= score < 0.20
+        - Negative: -0.60 <= score < -0.20
+        - Very Negative: score < -0.60
+        """
         if not text or not isinstance(text, str):
             return "Neutral", 0.0
         
         try:
             blob = TextBlob(text)
-            polarity = blob.sentiment.polarity
+            score = blob.sentiment.polarity
             
-            if polarity >= 0.5:
+            # Apply sentiment ranges
+            if score >= 0.60:
                 sentiment = "Very Positive"
-            elif polarity >= 0.1:
+            elif score >= 0.20:
                 sentiment = "Positive"
-            elif polarity <= -0.5:
-                sentiment = "Very Negative"
-            elif polarity <= -0.1:
+            elif score >= -0.20:
+                sentiment = "Neutral"
+            elif score >= -0.60:
                 sentiment = "Negative"
             else:
-                sentiment = "Neutral"
+                sentiment = "Very Negative"
             
-            return sentiment, polarity
+            return sentiment, score
         
         except Exception as e:
             logger.error(f"Sentiment analysis error: {e}")
@@ -1210,7 +1222,7 @@ def main():
     )
     
     # Title
-    st.title("🔒 Consumer-Focused NLP Analysis Pipeline v3.1.1")
+    st.title("🔒 Consumer-Focused NLP Analysis Pipeline v3.1.2")
     st.markdown("""
     **Features:**
     - 👤 **Consumer-Only Analysis** - Analyzes only consumer messages from transcripts
@@ -1218,17 +1230,22 @@ def main():
     - 🔐 HIPAA/GDPR/PCI-DSS Compliant PII Redaction
     - 📊 Hierarchical Category Classification (L1 → L2 → L3 → L4)
     - 🔍 Multi-Keyword Detection & Tracking
-    - 💭 Consumer Sentiment Analysis
+    - 💭 Consumer Sentiment Analysis (5-Level Granularity)
     - ⚡ Optimized for Speed (No Translation Required)
     
     ---
-    **🆕 v3.1.1 Changes:**
+    **🆕 v3.1.2 Changes:**
     - ✅ Consumer message extraction from transcripts
     - ✅ Sentiment based on consumer tone only
+    - ✅ **Updated Sentiment Ranges:**
+      - Very Positive: score ≥ 0.60
+      - Positive: 0.20 ≤ score < 0.60
+      - Neutral: -0.20 ≤ score < 0.20
+      - Negative: -0.60 ≤ score < -0.20
+      - Very Negative: score < -0.60
     - ✅ Translation section removed (not required)
-    - ✅ Multiple keyword detection support
     - ✅ Removed: Primary_Proximity, Proximity_Group, Total_Turns, Consumer_Turns, Matched_Keywords
-    - ✅ Streamlined output: Conversation_ID, Original_Text, Consumer_Text, L1-L4 Categories, Sentiment
+    - ✅ Streamlined output with essential columns only
     """)
     
     # Compliance badges
@@ -1675,7 +1692,7 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style='text-align: center; color: gray;'>
-    <small>Consumer-Focused NLP Pipeline v3.1.1 | Built with Streamlit | HIPAA/GDPR/PCI-DSS/CCPA Compliant</small>
+    <small>Consumer-Focused NLP Pipeline v3.1.2 | Built with Streamlit | HIPAA/GDPR/PCI-DSS/CCPA Compliant</small>
     </div>
     """, unsafe_allow_html=True)
 
