@@ -53,13 +53,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Constants - ULTRA-OPTIMIZED FOR MAXIMUM SPEED
+# Constants - OPTIMIZED FOR MAXIMUM SPEED WITH THREADING
 CPU_COUNT = multiprocessing.cpu_count()
-MAX_WORKERS = min(CPU_COUNT * 4, 32)  # Increased from 16 to 32 workers (aggressive parallelization)
-BATCH_SIZE = 2000  # Increased from 1000 to 2000 for better throughput
-CACHE_SIZE = 100000  # Increased from 50000 to 100000 for better hit rates
+MAX_WORKERS = min(CPU_COUNT * 4, 32)  # Up to 32 workers
+BATCH_SIZE = 2000  # Process 2000 at a time
+CACHE_SIZE = 100000  # 100K cache entries
 SUPPORTED_FORMATS = ['csv', 'xlsx', 'xls', 'parquet', 'json']
 COMPLIANCE_STANDARDS = ["HIPAA", "GDPR", "PCI-DSS", "CCPA"]
+
+# USE THREADING (avoids pickling issues, still fast!)
+USE_MULTIPROCESSING = False  # Set to False to avoid ProcessPool pickling errors
 
 # Performance flags - OPTIMIZED BUT MAINTAIN PII ACCURACY
 ENABLE_TRANSLATION = False  # REMOVED - Not required
@@ -826,15 +829,15 @@ class DynamicNLPPipeline:
         progress_callback=None
     ) -> List[NLPResult]:
         """
-        ULTRA-FAST batch processing with automatic fallback
-        Tries ProcessPoolExecutor first, falls back to ThreadPoolExecutor if needed
+        Fast batch processing with ThreadPoolExecutor
+        Reliable and works on all platforms (Streamlit Cloud, local, etc.)
         """
         results = []
         total = len(df)
         
-        logger.info(f"🚀 Starting parallel processing with {MAX_WORKERS} workers")
+        logger.info(f"🚀 Starting parallel processing with {MAX_WORKERS} workers (ThreadPoolExecutor)")
         
-        # For small batches, use sequential processing (overhead not worth it)
+        # For small batches, use sequential processing
         if total < 50:
             logger.info("Small batch detected, using sequential processing")
             for idx, row in df.iterrows():
@@ -846,38 +849,11 @@ class DynamicNLPPipeline:
                     progress_callback(idx + 1, total)
             return results
         
-        # Try ProcessPoolExecutor first (fastest if it works)
-        use_process_pool = False
-        try:
-            # Test if ProcessPoolExecutor works with a small test
-            logger.info("Testing ProcessPoolExecutor...")
-            with ProcessPoolExecutor(max_workers=2) as executor:
-                test_future = executor.submit(
-                    self.process_single_text,
-                    "test",
-                    "test text",
-                    redaction_mode
-                )
-                test_future.result(timeout=5)  # 5 second timeout
-                use_process_pool = True
-                logger.info("✅ ProcessPoolExecutor available - using multiprocessing")
-        except Exception as e:
-            logger.warning(f"⚠️ ProcessPoolExecutor not available: {e}")
-            logger.info("ℹ️ Falling back to ThreadPoolExecutor (still fast!)")
-            use_process_pool = False
-        
-        # Use the appropriate executor
-        if use_process_pool:
-            ExecutorClass = ProcessPoolExecutor
-            executor_name = "ProcessPoolExecutor"
-        else:
-            ExecutorClass = ThreadPoolExecutor
-            executor_name = "ThreadPoolExecutor"
-        
-        logger.info(f"📊 Using {executor_name} with {MAX_WORKERS} workers for {total} records")
+        # Use ThreadPoolExecutor for all platforms (reliable!)
+        logger.info(f"📊 Using ThreadPoolExecutor with {MAX_WORKERS} workers for {total} records")
         
         try:
-            with ExecutorClass(max_workers=MAX_WORKERS) as executor:
+            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                 futures = {}
                 
                 # Submit all tasks
@@ -901,7 +877,7 @@ class DynamicNLPPipeline:
                         results.append(result)
                         completed += 1
                         
-                        if progress_callback and completed % 25 == 0:  # Update every 25 records
+                        if progress_callback and completed % 50 == 0:  # Update every 50 records
                             progress_callback(completed, total)
                     
                     except Exception as e:
@@ -909,7 +885,7 @@ class DynamicNLPPipeline:
                         completed += 1
         
         except Exception as e:
-            logger.error(f"❌ {executor_name} failed: {e}")
+            logger.error(f"❌ ThreadPoolExecutor failed: {e}")
             logger.info("🔄 Falling back to sequential processing...")
             
             # Final fallback: sequential processing
@@ -921,7 +897,7 @@ class DynamicNLPPipeline:
                     result = self.process_single_text(conv_id, text, redaction_mode)
                     results.append(result)
                     
-                    if progress_callback and (idx + 1) % 10 == 0:
+                    if progress_callback and (idx + 1) % 25 == 0:
                         progress_callback(idx + 1, total)
                 except Exception as e:
                     logger.error(f"❌ Error processing row {idx}: {e}")
@@ -1154,36 +1130,36 @@ def main():
     st.sidebar.markdown("---")
     
     # Performance Info
-    st.sidebar.subheader("⚡ ULTRA-FAST Mode")
-    st.sidebar.success("🚀 v5.0 Optimizations Active")
-    st.sidebar.metric("Parallel Workers", f"{MAX_WORKERS} (multiprocessing)")
+    st.sidebar.subheader("⚡ Optimized Mode")
+    st.sidebar.success("🚀 v5.1 - Stable & Fast")
+    st.sidebar.metric("Parallel Workers", f"{MAX_WORKERS} (threading)")
     st.sidebar.metric("Batch Size", f"{BATCH_SIZE:,}")
     st.sidebar.metric("Cache Size", f"{CACHE_SIZE:,}")
-    st.sidebar.metric("Target Speed", "10-15 rec/s")
+    st.sidebar.metric("Target Speed", "8-10 rec/s")
     
-    with st.sidebar.expander("ℹ️ Speed Optimizations", expanded=False):
+    with st.sidebar.expander("ℹ️ Optimizations", expanded=False):
         st.markdown("""
         **Active Optimizations:**
-        - ✅ ProcessPoolExecutor (true parallelism)
-        - ✅ 32 workers max (4x CPU cores)
+        - ✅ ThreadPoolExecutor (reliable!)
+        - ✅ 32 workers max
         - ✅ 100K cache entries
         - ✅ 2000 batch size
         - ✅ Aggressive regex caching
-        - ✅ Smart classification (keyword first)
-        - ✅ 9-column output only
+        - ✅ Smart classification
+        - ✅ 9-column output
         
         **PII Detection:**
-        - ✅ FULL MODE (all validations enabled)
+        - ✅ FULL MODE (all validations)
         - ✅ Credit card Luhn validation
         - ✅ SSN format validation
         - ✅ DOB validation
         - ✅ spaCy NER for names
-        - ✅ All 10 PII types detected
-        - ✅ 95%+ accuracy maintained
+        - ✅ All 10 PII types
+        - ✅ 95%+ accuracy
         
-        **Speed vs v4.0:**
-        - 2-3x faster processing
-        - 10-15 rec/s target
+        **Speed:**
+        - 8-10 rec/s (stable)
+        - Works on all platforms
         - Full PII accuracy
         """)
 
