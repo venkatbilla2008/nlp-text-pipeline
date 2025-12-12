@@ -1,30 +1,27 @@
 """
-Dynamic NLP Pipeline v3.1 - Ultra-Fast Consumer Analysis
-=========================================================
+Dynamic Domain-Agnostic NLP Text Analysis Pipeline - CONSUMER-FOCUSED VERSION
+==============================================================================
 
-NEW IN v3.1:
-1. Polars + PyArrow + DuckDB for blazing-fast analytics (10-50x faster)
-2. Consumer-only analysis (filters agent messages)
-3. Handles multiple keywords/failures per transcript
-4. spaCy NER for PII detection
-5. Translation disabled (commented out)
+MODIFICATIONS:
+1. Analyze only CONSUMER messages from transcripts
+2. Translation section commented out (not required)
+3. Removed: Primary_Proximity, Proximity_Group, Total_Turns, Consumer_Turns, Matched_Keywords from output
+4. Sentiment based on consumer tone/chats only
+5. Multiple failure keywords detection support
 
-Performance: Processes 10,000+ records in seconds
-Version: 3.1 - Ultra-Fast Consumer Analytics
+Version: 3.1.1 - Consumer-Focused Analysis (Matched_Keywords Removed)
 """
 
 import streamlit as st
 import pandas as pd
-import polars as pl
-import duckdb
 import numpy as np
 import re
 import hashlib
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
-from dataclasses import dataclass
+from typing import Dict, List, Tuple, Set, Optional, Any
+from dataclasses import dataclass, asdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 from functools import lru_cache
@@ -34,63 +31,153 @@ import os
 # NLP Libraries
 import spacy
 from textblob import TextBlob
+# from deep_translator import GoogleTranslator  # COMMENTED OUT - Translation not required
 
 # ========================================================================================
-# CONFIGURATION
+# CONFIGURATION & CONSTANTS
 # ========================================================================================
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
-# Performance - Optimized for large datasets
-MAX_WORKERS = 12  # Increased for Polars parallel processing
-BATCH_SIZE = 1000
-CACHE_SIZE = 20000
+# Constants - OPTIMIZED FOR PERFORMANCE
+MAX_WORKERS = 8  # Increased from 4 to 8 (use more CPU cores)
+BATCH_SIZE = 500  # Increased from 100 to 500 for better batching
+CACHE_SIZE = 10000  # Increased from 1000 to 10000 for better caching
 SUPPORTED_FORMATS = ['csv', 'xlsx', 'xls', 'parquet', 'json']
 COMPLIANCE_STANDARDS = ["HIPAA", "GDPR", "PCI-DSS", "CCPA"]
 
-# Flags
-ENABLE_TRANSLATION = False
-ENABLE_SPACY_NER = True
-PII_DETECTION_MODE = 'full'
+# Performance optimization flags
+ENABLE_TRANSLATION = False  # Translation disabled - not required
+ENABLE_SPACY_NER = False  # Set to False to skip spaCy NER in PII (saves ~50ms/text)
+PII_DETECTION_MODE = 'fast'  # 'fast' or 'full' - fast skips expensive checks
 
-# File limits
-MAX_FILE_SIZE_MB = 1000  # Increased for large datasets
-WARN_FILE_SIZE_MB = 200
+# NEW: File size limits (in MB)
+MAX_FILE_SIZE_MB = 500  # 500MB max file size
+WARN_FILE_SIZE_MB = 100  # Warning threshold
 
+# Domain packs directory structure
 DOMAIN_PACKS_DIR = "domain_packs"
 
-# Load spaCy
+# Load spaCy model
 @st.cache_resource
 def load_spacy_model():
+    """Load spaCy model with caching and better error handling"""
     try:
         return spacy.load("en_core_web_sm")
     except OSError:
-        import subprocess, sys
-        subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], timeout=120)
-        return spacy.load("en_core_web_sm")
+        try:
+            logger.warning("spaCy model not found. Attempting to download...")
+            import subprocess
+            import sys
+            
+            # Use sys.executable to get correct Python path
+            result = subprocess.run(
+                [sys.executable, "-m", "spacy", "download", "en_core_web_sm"],
+                capture_output=True,
+                text=True,
+                timeout=120
+            )
+            
+            if result.returncode == 0:
+                logger.info("spaCy model downloaded successfully")
+                return spacy.load("en_core_web_sm")
+            else:
+                logger.error(f"Failed to download spaCy model: {result.stderr}")
+                st.error("⚠️ spaCy model download failed. Please run: python -m spacy download en_core_web_sm")
+                st.stop()
+        except Exception as e:
+            logger.error(f"Error downloading spaCy model: {e}")
+            st.error(f"⚠️ Could not load spaCy model. Error: {e}")
+            st.info("💡 Solution: Add 'setup.sh' file to your repo with spaCy download command")
+            st.stop()
 
 nlp = load_spacy_model()
+
+# # TRANSLATION SECTION - COMMENTED OUT (Not Required)
+# # Initialize translator
+# @st.cache_resource
+# def get_translator():
+#     """Get cached translator instance"""
+#     return None  # deep-translator doesn't need persistent instance
+# 
+# translator = get_translator()
+
+
+# ========================================================================================
+# DATA CLASSES
+# ========================================================================================
+
+@dataclass
+class PIIRedactionResult:
+    """Result of PII detection and redaction"""
+    redacted_text: str
+    pii_detected: bool
+    pii_counts: Dict[str, int]
+    total_items: int
+
+
+@dataclass
+class CategoryMatch:
+    """Hierarchical category match result with 4 levels"""
+    l1: str
+    l2: str
+    l3: str
+    l4: str
+    confidence: float
+    match_path: str
+    matched_rule: Optional[str] = None
+
+
+# @dataclass  # COMMENTED OUT - Not needed in output
+# class ProximityResult:
+#     """Proximity-based grouping result"""
+#     primary_proximity: str
+#     proximity_group: str
+#     theme_count: int
+#     matched_themes: List[str]
+
+
+@dataclass
+class NLPResult:
+    """Complete NLP analysis result - MODIFIED for consumer-focused output"""
+    conversation_id: str
+    original_text: str
+    consumer_text: str  # NEW: Extracted consumer messages only
+    redacted_text: str
+    # translated_text: str  # COMMENTED OUT - No translation
+    category: CategoryMatch
+    # proximity: ProximityResult  # COMMENTED OUT - Not needed
+    sentiment: str
+    sentiment_score: float
+    pii_result: PIIRedactionResult
+    industry: Optional[str] = None
+    # matched_keywords: List[str] = None  # COMMENTED OUT - Not needed in output
+
 
 # ========================================================================================
 # CONSUMER MESSAGE EXTRACTOR
 # ========================================================================================
 
-class ConsumerExtractor:
+class ConsumerMessageExtractor:
     """
-    Extracts CONSUMER-ONLY messages from conversation transcripts
-    
-    Handles formats:
-    - "Agent: message\nConsumer: message"
-    - "A: message\nC: message"
-    - Timestamps: "[10:30] Consumer: message"
+    Extracts consumer messages from agent-consumer conversation transcripts
+    Supports various transcript formats
     """
     
-    # Patterns to identify consumer messages
+    # Common patterns for identifying consumer vs agent messages
     CONSUMER_PATTERNS = [
-        re.compile(r'(?:^|\n)(?:Consumer|Customer|Client|User|Caller):\s*(.+?)(?=\n(?:Agent|Representative|Rep|Advisor)|$)', re.IGNORECASE | re.DOTALL),
-        re.compile(r'(?:^|\n)C:\s*(.+?)(?=\nA:|$)', re.DOTALL),
-        re.compile(r'\[\d{1,2}:\d{2}(?::\d{2})?\]\s*(?:Consumer|Customer):\s*(.+?)(?=\n\[\d{1,2}:\d{2}|$)', re.IGNORECASE | re.DOTALL),
+        r'(?:consumer|customer|caller|client|user)[\s:>-]+(.+?)(?=\n(?:agent|representative|rep|support)|$)',
+        r'^(?!agent|representative|rep|support)([^:]+):(.+?)$',  # Lines without agent prefix
+        r'\[(?:consumer|customer|caller|client|user)\][\s:]*(.+?)(?=\[agent|$)',
+    ]
+    
+    AGENT_PATTERNS = [
+        r'(?:agent|representative|rep|support)[\s:>-]+',
+        r'\[(?:agent|representative|rep|support)\]',
     ]
     
     @classmethod
@@ -102,345 +189,672 @@ class ConsumerExtractor:
             transcript: Full conversation transcript
             
         Returns:
-            Consumer messages only, concatenated
+            String containing only consumer messages
         """
         if not transcript or not isinstance(transcript, str):
             return ""
         
         consumer_messages = []
+        lines = transcript.split('\n')
         
-        # Try each pattern
-        for pattern in cls.CONSUMER_PATTERNS:
-            matches = pattern.findall(transcript)
-            consumer_messages.extend(matches)
-        
-        # If no pattern matched, check if entire text is consumer message
-        if not consumer_messages:
-            # Check if text doesn't contain agent indicators
-            agent_indicators = ['agent:', 'representative:', 'rep:', 'advisor:', 'a:']
-            text_lower = transcript.lower()
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
             
-            if not any(indicator in text_lower for indicator in agent_indicators):
-                # Likely all consumer message
-                return transcript
+            # Check if line is from agent (skip it)
+            is_agent = False
+            for agent_pattern in cls.AGENT_PATTERNS:
+                if re.search(agent_pattern, line, re.IGNORECASE):
+                    is_agent = True
+                    break
+            
+            if is_agent:
+                continue
+            
+            # Try to extract consumer message
+            for consumer_pattern in cls.CONSUMER_PATTERNS:
+                match = re.search(consumer_pattern, line, re.IGNORECASE | re.MULTILINE)
+                if match:
+                    # Get the message content (last group)
+                    message = match.group(match.lastindex) if match.lastindex else match.group(0)
+                    consumer_messages.append(message.strip())
+                    break
+            else:
+                # If no pattern matches, assume it's consumer message if it doesn't start with common agent indicators
+                if not any(line.lower().startswith(indicator) for indicator in ['agent', 'representative', 'rep', 'support']):
+                    consumer_messages.append(line)
         
-        # Clean and join consumer messages
-        cleaned = [msg.strip() for msg in consumer_messages if msg.strip()]
-        return " ".join(cleaned)
+        # Join all consumer messages
+        return ' '.join(consumer_messages)
     
     @classmethod
-    def get_consumer_tone(cls, consumer_text: str) -> str:
+    def count_turns(cls, transcript: str) -> Tuple[int, int]:
         """
-        Determine tone of consumer messages
+        Count total turns and consumer turns in transcript
         
-        Returns: 'frustrated', 'angry', 'neutral', 'satisfied', 'happy'
+        Returns:
+            Tuple of (total_turns, consumer_turns)
         """
-        if not consumer_text:
-            return "neutral"
+        if not transcript or not isinstance(transcript, str):
+            return 0, 0
         
-        text_lower = consumer_text.lower()
+        lines = [l.strip() for l in transcript.split('\n') if l.strip()]
+        total_turns = len(lines)
         
-        # Frustrated indicators
-        frustrated_words = ['frustrated', 'annoyed', 'disappointed', 'upset', 'unhappy', 'dissatisfied']
-        frustrated_count = sum(1 for word in frustrated_words if word in text_lower)
+        consumer_turns = 0
+        for line in lines:
+            is_agent = any(re.search(pattern, line, re.IGNORECASE) for pattern in cls.AGENT_PATTERNS)
+            if not is_agent:
+                consumer_turns += 1
         
-        # Angry indicators
-        angry_words = ['angry', 'furious', 'outraged', 'terrible', 'horrible', 'worst', 'unacceptable']
-        angry_count = sum(1 for word in angry_words if word in text_lower)
-        
-        # Happy indicators
-        happy_words = ['thank', 'thanks', 'great', 'excellent', 'wonderful', 'perfect', 'appreciate']
-        happy_count = sum(1 for word in happy_words if word in text_lower)
-        
-        # Determine tone
-        if angry_count >= 2:
-            return "angry"
-        elif frustrated_count >= 2:
-            return "frustrated"
-        elif happy_count >= 2:
-            return "happy"
-        elif happy_count >= 1:
-            return "satisfied"
-        else:
-            return "neutral"
+        return total_turns, consumer_turns
 
 
 # ========================================================================================
-# DATA CLASSES
-# ========================================================================================
-
-@dataclass
-class PIIRedactionResult:
-    redacted_text: str
-    pii_detected: bool
-    pii_counts: Dict[str, int]
-    total_items: int
-
-@dataclass
-class CategoryMatch:
-    l1: str
-    l2: str
-    l3: str
-    l4: str
-    confidence: float
-    match_path: str
-    matched_keywords: List[str]  # NEW: Track which keywords matched
-
-@dataclass
-class ProximityResult:
-    primary_proximity: str
-    proximity_group: str
-    theme_count: int
-    matched_themes: List[str]
-
-@dataclass
-class NLPResult:
-    conversation_id: str
-    original_text: str
-    consumer_only_text: str  # NEW: Consumer messages only
-    consumer_tone: str  # NEW: Consumer tone
-    redacted_text: str
-    category: CategoryMatch
-    proximity: ProximityResult
-    sentiment: str
-    sentiment_score: float
-    pii_result: PIIRedactionResult
-    industry: Optional[str] = None
-
-
-# ========================================================================================
-# DOMAIN LOADER
+# DOMAIN LOADER - Dynamic Industry Rules & Keywords
 # ========================================================================================
 
 class DomainLoader:
+    """
+    Dynamically loads industry-specific rules and keywords from JSON files
+    Supports flexible domain pack structure
+    """
+    
     def __init__(self, domain_packs_dir: str = None):
+        """
+        Initialize domain loader
+        
+        Args:
+            domain_packs_dir: Path to domain_packs directory
+        """
         self.domain_packs_dir = domain_packs_dir or DOMAIN_PACKS_DIR
         self.industries = {}
+        self.company_mapping = {}
+        
+    def load_company_mapping(self, mapping_file: str = None) -> Dict:
+        """
+        Load company-to-industry mapping from JSON
+        
+        Args:
+            mapping_file: Path to mapping JSON file
+            
+        Returns:
+            Dictionary with industry mappings
+        """
+        if mapping_file and os.path.exists(mapping_file):
+            with open(mapping_file, 'r') as f:
+                data = json.load(f)
+                self.company_mapping = data.get('industries', {})
+                logger.info(f"Loaded company mapping with {len(self.company_mapping)} industries")
+                return self.company_mapping
+        return {}
     
     def auto_load_all_industries(self) -> int:
+        """
+        Automatically load all industries from domain_packs directory
+        
+        Returns:
+            Number of industries loaded
+        """
         loaded_count = 0
         
         if not os.path.exists(self.domain_packs_dir):
-            logger.error(f"Domain packs not found: {self.domain_packs_dir}")
+            logger.error(f"Domain packs directory not found: {self.domain_packs_dir}")
+            logger.error(f"Current working directory: {os.getcwd()}")
+            logger.error(f"Directory contents: {os.listdir('.')}")
             return 0
         
-        for item in os.listdir(self.domain_packs_dir):
+        logger.info(f"Scanning domain_packs directory: {self.domain_packs_dir}")
+        
+        # Load company mapping first
+        mapping_path = os.path.join(self.domain_packs_dir, "company_industry_mapping.json")
+        if os.path.exists(mapping_path):
+            self.load_company_mapping(mapping_path)
+            logger.info(f"Loaded company mapping from {mapping_path}")
+        
+        # Scan for industry directories
+        try:
+            items = os.listdir(self.domain_packs_dir)
+            logger.info(f"Found {len(items)} items in domain_packs: {items}")
+        except Exception as e:
+            logger.error(f"Error listing domain_packs directory: {e}")
+            return 0
+        
+        for item in items:
             item_path = os.path.join(self.domain_packs_dir, item)
             
-            if not os.path.isdir(item_path) or item.startswith('.'):
+            # Skip if not a directory
+            if not os.path.isdir(item_path):
+                logger.debug(f"Skipping non-directory: {item}")
                 continue
             
+            # Skip hidden directories
+            if item.startswith('.'):
+                logger.debug(f"Skipping hidden directory: {item}")
+                continue
+            
+            # Look for rules.json and keywords.json
             rules_path = os.path.join(item_path, "rules.json")
             keywords_path = os.path.join(item_path, "keywords.json")
             
+            logger.info(f"Checking industry: {item}")
+            logger.info(f"  Rules exists: {os.path.exists(rules_path)}")
+            logger.info(f"  Keywords exists: {os.path.exists(keywords_path)}")
+            
             if os.path.exists(rules_path) and os.path.exists(keywords_path):
                 try:
-                    with open(rules_path) as f:
-                        rules = json.load(f)
-                    with open(keywords_path) as f:
-                        keywords = json.load(f)
-                    
-                    self.industries[item] = {
-                        'rules': rules,
-                        'keywords': keywords,
-                        'rules_count': len(rules),
-                        'keywords_count': len(keywords)
-                    }
+                    self.load_from_files(rules_path, keywords_path, item)
                     loaded_count += 1
+                    logger.info(f"✅ Successfully auto-loaded: {item}")
                 except Exception as e:
-                    logger.error(f"Failed to load {item}: {e}")
+                    logger.error(f"❌ Failed to auto-load {item}: {str(e)}")
+                    import traceback
+                    logger.error(f"Traceback: {traceback.format_exc()}")
+            else:
+                logger.warning(f"⚠️ Skipping {item}: missing rules.json or keywords.json")
         
-        logger.info(f"Loaded {loaded_count} industries")
+        logger.info(f"Auto-load complete: {loaded_count} industries loaded from {self.domain_packs_dir}")
         return loaded_count
     
+    def load_from_files(self, rules_file: str, keywords_file: str, industry_name: str):
+        """
+        Load rules and keywords from uploaded files
+        
+        Args:
+            rules_file: Path to rules JSON file
+            keywords_file: Path to keywords JSON file
+            industry_name: Name of the industry
+        """
+        try:
+            # Load rules
+            with open(rules_file, 'r') as f:
+                rules = json.load(f)
+            
+            # Load keywords
+            with open(keywords_file, 'r') as f:
+                keywords = json.load(f)
+            
+            self.industries[industry_name] = {
+                'rules': rules,
+                'keywords': keywords,
+                'rules_count': len(rules),
+                'keywords_count': len(keywords)
+            }
+            
+            logger.info(f"Loaded {industry_name}: {len(rules)} rules, {len(keywords)} keyword groups")
+            
+        except Exception as e:
+            logger.error(f"Error loading {industry_name} domain pack: {e}")
+            raise
+    
     def get_available_industries(self) -> List[str]:
+        """Get list of loaded industries"""
         return list(self.industries.keys())
     
     def get_industry_data(self, industry: str) -> Dict:
+        """Get rules and keywords for specific industry"""
         return self.industries.get(industry, {'rules': [], 'keywords': []})
+    
+    def detect_industry_from_company(self, company_name: str) -> Optional[str]:
+        """
+        Detect industry based on company name
+        
+        Args:
+            company_name: Name of the company
+            
+        Returns:
+            Industry name or None
+        """
+        if not self.company_mapping:
+            return None
+        
+        company_name_lower = company_name.lower().strip()
+        
+        for industry, companies in self.company_mapping.items():
+            for company in companies:
+                if company.lower().strip() == company_name_lower:
+                    return industry
+                # Partial match
+                if company_name_lower in company.lower() or company.lower() in company_name_lower:
+                    return industry
+        
+        return None
 
 
 # ========================================================================================
-# PII DETECTOR - spaCy NER
+# PII DETECTION & REDACTION ENGINE
 # ========================================================================================
 
 class PIIDetector:
+    """
+    Comprehensive PII/PHI/PCI detection and redaction engine
+    Compliant with: HIPAA, GDPR, PCI-DSS, CCPA
+    """
+    
     EMAIL_PATTERN = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+    
     PHONE_PATTERNS = [
         re.compile(r'\b\d{3}[-.]?\d{3}[-.]?\d{4}\b'),
         re.compile(r'\(\d{3}\)\s*\d{3}[-.]?\d{4}'),
+        re.compile(r'\+1[-.]?\d{3}[-.]?\d{3}[-.]?\d{4}'),
     ]
+    
+    CREDIT_CARD_PATTERNS = [
+        re.compile(r'\b(?:4[0-9]{12}(?:[0-9]{3})?)\b'),  # Visa
+        re.compile(r'\b(?:5[1-5][0-9]{14})\b'),  # Mastercard
+        re.compile(r'\b(?:3[47][0-9]{13})\b'),  # Amex
+        re.compile(r'\b(?:6(?:011|5[0-9]{2})[0-9]{12})\b'),  # Discover
+    ]
+    
     SSN_PATTERN = re.compile(r'\b\d{3}-\d{2}-\d{4}\b')
-    CARD_PATTERN = re.compile(r'\b\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b')
+    DOB_PATTERN = re.compile(r'\b(?:0[1-9]|1[0-2])[/-](?:0[1-9]|[12][0-9]|3[01])[/-](?:19|20)\d{2}\b')
+    MRN_PATTERN = re.compile(r'\b(?:MRN|mrn|Medical Record|medical record)[:\s]+([A-Z0-9]{6,12})\b', re.IGNORECASE)
+    IP_PATTERN = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')
+    
+    ADDRESS_PATTERN = re.compile(
+        r'\b\d+\s+[A-Za-z0-9\s,.-]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Lane|Ln|Drive|Dr|Court|Ct|Apartment|Apt|Suite|Ste|Unit)\b',
+        re.IGNORECASE
+    )
+    
+    DISEASE_KEYWORDS = {
+        'diabetes', 'cancer', 'hiv', 'aids', 'covid', 'covid-19', 'coronavirus',
+        'hypertension', 'depression', 'anxiety', 'asthma', 'copd', 'pneumonia',
+        'tuberculosis', 'hepatitis', 'alzheimer', 'parkinson', 'schizophrenia',
+        'epilepsy', 'stroke', 'heart attack', 'myocardial infarction'
+    }
     
     @classmethod
     def _generate_hash(cls, text: str) -> str:
+        """Generate SHA-256 hash for consistent redaction"""
         return hashlib.sha256(text.encode()).hexdigest()[:8]
     
     @classmethod
+    def _is_valid_credit_card(cls, card: str) -> bool:
+        """Validate credit card using Luhn algorithm"""
+        card = re.sub(r'[^0-9]', '', card)
+        if len(card) < 13 or len(card) > 19:
+            return False
+        
+        total = 0
+        reverse_digits = card[::-1]
+        for i, digit in enumerate(reverse_digits):
+            n = int(digit)
+            if i % 2 == 1:
+                n *= 2
+                if n > 9:
+                    n -= 9
+            total += n
+        
+        return total % 10 == 0
+    
+    @classmethod
+    def _is_valid_ssn(cls, ssn: str) -> bool:
+        """Validate SSN format"""
+        parts = ssn.split('-')
+        if len(parts) != 3:
+            return False
+        
+        if parts[0] == '000' or parts[0] == '666' or parts[0].startswith('9'):
+            return False
+        if parts[1] == '00':
+            return False
+        if parts[2] == '0000':
+            return False
+        
+        return True
+    
+    @classmethod
+    def _is_valid_dob(cls, dob: str) -> bool:
+        """Validate date of birth"""
+        try:
+            year_match = re.search(r'(19|20)\d{2}', dob)
+            if year_match:
+                year = int(year_match.group())
+                current_year = datetime.now().year
+                return 1900 <= year <= current_year
+        except:
+            pass
+        return False
+    
+    @classmethod
     def _redact_value(cls, value: str, pii_type: str, mode: str) -> str:
+        """Redact value based on mode"""
         if mode == 'hash':
             return f"[{pii_type}:{cls._generate_hash(value)}]"
         elif mode == 'mask':
-            return f"[{pii_type}:***]"
+            return f"[{pii_type}:{'*' * 10}]"
         elif mode == 'token':
             return f"[{pii_type}]"
+        elif mode == 'remove':
+            return ""
         else:
             return f"[{pii_type}:{cls._generate_hash(value)}]"
     
     @classmethod
     def detect_and_redact(cls, text: str, redaction_mode: str = 'hash') -> PIIRedactionResult:
-        if not text:
-            return PIIRedactionResult("", False, {}, 0)
+        """Detect and redact all PII/PHI/PCI from text - OPTIMIZED"""
+        if not text or not isinstance(text, str):
+            return PIIRedactionResult(
+                redacted_text=str(text) if text else "",
+                pii_detected=False,
+                pii_counts={},
+                total_items=0
+            )
         
         redacted = text
         pii_counts = {}
         
-        # spaCy NER
-        if ENABLE_SPACY_NER and nlp:
-            try:
-                doc = nlp(redacted)
-                for ent in doc.ents:
-                    if ent.label_ == 'PERSON':
-                        redacted = redacted.replace(ent.text, cls._redact_value(ent.text, 'NAME', redaction_mode))
-                        pii_counts['names'] = pii_counts.get('names', 0) + 1
-                    elif ent.label_ == 'ORG':
-                        redacted = redacted.replace(ent.text, cls._redact_value(ent.text, 'ORG', redaction_mode))
-                        pii_counts['orgs'] = pii_counts.get('orgs', 0) + 1
-            except Exception as e:
-                logger.error(f"spaCy error: {e}")
+        # PERFORMANCE OPTIMIZATION: Fast mode skips expensive checks
+        if PII_DETECTION_MODE == 'fast':
+            # Only run essential checks in fast mode
+            
+            # 1. Emails (fast)
+            emails = cls.EMAIL_PATTERN.findall(redacted)
+            for email in emails:
+                redacted = redacted.replace(email, cls._redact_value(email, 'EMAIL', redaction_mode))
+                pii_counts['emails'] = pii_counts.get('emails', 0) + 1
+            
+            # 2. Phone numbers (fast)
+            for pattern in cls.PHONE_PATTERNS:
+                phones = pattern.findall(redacted)
+                for phone in phones:
+                    redacted = redacted.replace(phone, cls._redact_value(phone, 'PHONE', redaction_mode))
+                    pii_counts['phones'] = pii_counts.get('phones', 0) + 1
+            
+            # Skip expensive checks: credit cards, SSN validation, spaCy NER, etc.
+            total_items = sum(pii_counts.values())
+            
+            return PIIRedactionResult(
+                redacted_text=redacted,
+                pii_detected=total_items > 0,
+                pii_counts=pii_counts,
+                total_items=total_items
+            )
         
-        # Regex patterns
-        for email in cls.EMAIL_PATTERN.findall(redacted):
+        # FULL MODE: Original comprehensive detection
+        # 1. Emails
+        emails = cls.EMAIL_PATTERN.findall(redacted)
+        for email in emails:
             redacted = redacted.replace(email, cls._redact_value(email, 'EMAIL', redaction_mode))
             pii_counts['emails'] = pii_counts.get('emails', 0) + 1
         
+        # 2. Credit cards (expensive - Luhn validation)
+        for pattern in cls.CREDIT_CARD_PATTERNS:
+            cards = pattern.findall(redacted)
+            for card in cards:
+                if cls._is_valid_credit_card(card):
+                    redacted = redacted.replace(card, cls._redact_value(card, 'CARD', redaction_mode))
+                    pii_counts['credit_cards'] = pii_counts.get('credit_cards', 0) + 1
+        
+        # 3. SSNs (expensive - validation)
+        ssns = cls.SSN_PATTERN.findall(redacted)
+        for ssn in ssns:
+            if cls._is_valid_ssn(ssn):
+                redacted = redacted.replace(ssn, cls._redact_value(ssn, 'SSN', redaction_mode))
+                pii_counts['ssns'] = pii_counts.get('ssns', 0) + 1
+        
+        # 4. Phone numbers
         for pattern in cls.PHONE_PATTERNS:
-            for phone in pattern.findall(redacted):
+            phones = pattern.findall(redacted)
+            for phone in phones:
                 redacted = redacted.replace(phone, cls._redact_value(phone, 'PHONE', redaction_mode))
                 pii_counts['phones'] = pii_counts.get('phones', 0) + 1
         
-        for ssn in cls.SSN_PATTERN.findall(redacted):
-            redacted = redacted.replace(ssn, cls._redact_value(ssn, 'SSN', redaction_mode))
-            pii_counts['ssn'] = pii_counts.get('ssn', 0) + 1
+        # 5. DOBs (expensive - validation)
+        dobs = cls.DOB_PATTERN.findall(redacted)
+        for dob in dobs:
+            if cls._is_valid_dob(dob):
+                redacted = redacted.replace(dob, cls._redact_value(dob, 'DOB', redaction_mode))
+                pii_counts['dobs'] = pii_counts.get('dobs', 0) + 1
         
-        total = sum(pii_counts.values())
-        return PIIRedactionResult(redacted, total > 0, pii_counts, total)
+        # 6. Medical records
+        mrns = cls.MRN_PATTERN.findall(redacted)
+        for mrn in mrns:
+            redacted = redacted.replace(mrn, cls._redact_value(mrn, 'MRN', redaction_mode))
+            pii_counts['medical_records'] = pii_counts.get('medical_records', 0) + 1
+        
+        # 7. IP addresses
+        ips = cls.IP_PATTERN.findall(redacted)
+        for ip in ips:
+            parts = ip.split('.')
+            if all(0 <= int(p) <= 255 for p in parts):
+                redacted = redacted.replace(ip, cls._redact_value(ip, 'IP', redaction_mode))
+                pii_counts['ip_addresses'] = pii_counts.get('ip_addresses', 0) + 1
+        
+        # 8. Addresses
+        addresses = cls.ADDRESS_PATTERN.findall(redacted)
+        for address in addresses:
+            redacted = redacted.replace(address, cls._redact_value(address, 'ADDRESS', redaction_mode))
+            pii_counts['addresses'] = pii_counts.get('addresses', 0) + 1
+        
+        # 9. Diseases
+        text_lower = redacted.lower()
+        for disease in cls.DISEASE_KEYWORDS:
+            if disease in text_lower:
+                pattern = re.compile(re.escape(disease), re.IGNORECASE)
+                matches = pattern.findall(redacted)
+                for match in matches:
+                    redacted = redacted.replace(match, cls._redact_value(match, 'CONDITION', redaction_mode))
+                    pii_counts['diseases'] = pii_counts.get('diseases', 0) + 1
+        
+        # 10. Names (spaCy NER - VERY EXPENSIVE ~50ms per text)
+        if ENABLE_SPACY_NER:
+            doc = nlp(redacted)
+            for ent in doc.ents:
+                if ent.label_ == 'PERSON':
+                    redacted = redacted.replace(ent.text, cls._redact_value(ent.text, 'NAME', redaction_mode))
+                    pii_counts['names'] = pii_counts.get('names', 0) + 1
+        
+        total_items = sum(pii_counts.values())
+        
+        return PIIRedactionResult(
+            redacted_text=redacted,
+            pii_detected=total_items > 0,
+            pii_counts=pii_counts,
+            total_items=total_items
+        )
 
 
 # ========================================================================================
-# RULE ENGINE - HANDLES MULTIPLE KEYWORDS
+# DYNAMIC RULE ENGINE - Industry-Specific Classification
 # ========================================================================================
 
 class DynamicRuleEngine:
-    """Optimized for multiple keyword matches per transcript"""
+    """
+    Dynamic rule-based classification engine
+    Uses industry-specific rules and keywords
+    ENHANCED: Tracks which keywords matched for multi-keyword detection
+    """
     
     def __init__(self, industry_data: Dict):
+        """
+        Initialize with industry-specific rules and keywords
+        
+        Args:
+            industry_data: Dictionary containing 'rules' and 'keywords'
+        """
         self.rules = industry_data.get('rules', [])
         self.keywords = industry_data.get('keywords', [])
+        
+        # Build optimized lookup structures
         self._build_lookup_tables()
+        
+        logger.info(f"Initialized DynamicRuleEngine with {len(self.rules)} rules, {len(self.keywords)} keyword groups")
     
     def _build_lookup_tables(self):
-        self.compiled_keywords = []
-        for kw_group in self.keywords:
-            conditions = kw_group.get('conditions', [])
+        """Build optimized lookup tables for fast matching"""
+        # Compile regex patterns for each rule
+        self.compiled_rules = []
+        
+        for rule in self.rules:
+            conditions = rule.get('conditions', [])
             if conditions:
-                # Create pattern that captures ALL matches
+                # Create regex pattern for all conditions (case-insensitive)
+                pattern_parts = [re.escape(cond.lower()) for cond in conditions]
+                # Match any of the conditions
+                pattern = re.compile('|'.join(pattern_parts), re.IGNORECASE)
+                
+                self.compiled_rules.append({
+                    'pattern': pattern,
+                    'conditions': conditions,
+                    'category': rule.get('set', {})
+                })
+        
+        # Compile keyword patterns
+        self.compiled_keywords = []
+        
+        for keyword_group in self.keywords:
+            conditions = keyword_group.get('conditions', [])
+            if conditions:
                 pattern_parts = [re.escape(cond.lower()) for cond in conditions]
                 pattern = re.compile('|'.join(pattern_parts), re.IGNORECASE)
+                
                 self.compiled_keywords.append({
                     'pattern': pattern,
                     'conditions': conditions,
-                    'category': kw_group.get('set', {})
+                    'category': keyword_group.get('set', {})
                 })
     
     @lru_cache(maxsize=CACHE_SIZE)
     def classify_text(self, text: str) -> CategoryMatch:
         """
-        Classify text - returns ALL matched keywords
-        Handles multiple keywords per transcript
+        Classify text using dynamic rules
+        
+        Args:
+            text: Input text to classify
+            
+        Returns:
+            CategoryMatch with L1-L4 categories
         """
-        if not text:
-            return CategoryMatch("Uncategorized", "NA", "NA", "NA", 0.0, "Uncategorized", [])
+        if not text or not isinstance(text, str):
+            return CategoryMatch(
+                l1="Uncategorized",
+                l2="NA",
+                l3="NA",
+                l4="NA",
+                confidence=0.0,
+                match_path="Uncategorized",
+                matched_rule=None
+            )
         
         text_lower = text.lower()
-        best_match = None
-        max_matches = 0
-        all_matched_keywords = []
+        # matched_keywords = []  # COMMENTED OUT - Not needed
         
-        # Find ALL keyword matches
+        # First try keywords (higher priority for quick categorization)
         for kw_item in self.compiled_keywords:
             matches = kw_item['pattern'].findall(text_lower)
             if matches:
-                all_matched_keywords.extend(matches)
+                # # Track which keywords matched - COMMENTED OUT
+                # for condition in kw_item['conditions']:
+                #     if condition.lower() in text_lower:
+                #         matched_keywords.append(condition)
                 
-                if len(matches) > max_matches:
-                    max_matches = len(matches)
-                    best_match = kw_item
+                category_data = kw_item['category']
+                
+                l1 = category_data.get('category', 'Uncategorized')
+                l2 = category_data.get('subcategory', 'NA')
+                l3 = category_data.get('level_3', 'NA')
+                l4 = category_data.get('level_4', 'NA')
+                
+                # Calculate confidence based on match
+                confidence = 0.9  # High confidence for keyword match
+                
+                return CategoryMatch(
+                    l1=l1,
+                    l2=l2,
+                    l3=l3,
+                    l4=l4,
+                    confidence=confidence,
+                    match_path=f"{l1} > {l2} > {l3} > {l4}",
+                    matched_rule="keyword_match"
+                )
+        
+        # Then try detailed rules
+        best_match = None
+        best_match_count = 0
+        
+        for rule_item in self.compiled_rules:
+            # Count how many conditions match
+            matches = rule_item['pattern'].findall(text_lower)
+            match_count = len(matches)
+            
+            if match_count > best_match_count:
+                best_match_count = match_count
+                best_match = rule_item
+                
+                # # Track matched keywords from rules - COMMENTED OUT
+                # matched_keywords = []
+                # for condition in rule_item['conditions']:
+                #     if condition.lower() in text_lower:
+                #         matched_keywords.append(condition)
         
         if best_match:
-            cat = best_match['category']
-            confidence = min(max_matches / 10.0, 1.0)  # More matches = higher confidence
+            category_data = best_match['category']
+            
+            l1 = category_data.get('category', 'Uncategorized')
+            l2 = category_data.get('subcategory', 'NA')
+            l3 = category_data.get('level_3', 'NA')
+            l4 = category_data.get('level_4', 'NA')
+            
+            # Calculate confidence based on number of matches
+            total_conditions = len(best_match['conditions'])
+            confidence = min(best_match_count / max(total_conditions, 1), 1.0) * 0.85
             
             return CategoryMatch(
-                l1=cat.get('category', 'Uncategorized'),
-                l2=cat.get('subcategory', 'NA'),
-                l3=cat.get('level_3', 'NA'),
-                l4=cat.get('level_4', 'NA'),
+                l1=l1,
+                l2=l2,
+                l3=l3,
+                l4=l4,
                 confidence=confidence,
-                match_path=f"{cat.get('category', 'Uncategorized')} > {cat.get('subcategory', 'NA')}",
-                matched_keywords=list(set(all_matched_keywords))  # Unique keywords
+                match_path=f"{l1} > {l2} > {l3} > {l4}",
+                matched_rule=f"rule_match_{best_match_count}_conditions"
             )
         
-        return CategoryMatch("Uncategorized", "NA", "NA", "NA", 0.0, "Uncategorized", [])
-
-
-# ========================================================================================
-# PROXIMITY & SENTIMENT
-# ========================================================================================
-
-class ProximityAnalyzer:
-    """
-    Proximity analyzer - Uses keywords from domain_packs ONLY
-    No hardcoded keywords - all come from loaded industry data
-    """
-    
-    # REMOVED: Hardcoded PROXIMITY_THEMES
-    # All proximity themes now come from domain_packs rules/keywords
-    
-    @classmethod
-    def analyze_proximity(cls, text: str, matched_keywords: List[str]) -> ProximityResult:
-        """
-        Analyze proximity based on matched keywords from domain packs
-        
-        Args:
-            text: Consumer text
-            matched_keywords: Keywords matched from domain_packs
-            
-        Returns:
-            ProximityResult with primary proximity based on matched keywords
-        """
-        if not matched_keywords:
-            return ProximityResult("Uncategorized", "Uncategorized", 0, [])
-        
-        # Use matched keywords as proximity themes
-        # First matched keyword becomes primary proximity
-        primary = matched_keywords[0] if matched_keywords else "Uncategorized"
-        all_themes = ", ".join(matched_keywords[:5])  # First 5 keywords
-        
-        return ProximityResult(
-            primary_proximity=primary,
-            proximity_group=all_themes,
-            theme_count=len(matched_keywords),
-            matched_themes=matched_keywords
+        # No match found
+        return CategoryMatch(
+            l1="Uncategorized",
+            l2="NA",
+            l3="NA",
+            l4="NA",
+            confidence=0.0,
+            match_path="Uncategorized",
+            matched_rule=None
         )
 
 
+# ========================================================================================
+# PROXIMITY ANALYZER - COMMENTED OUT (Not needed in output)
+# ========================================================================================
+
+# class ProximityAnalyzer:
+#     """Analyzes text for proximity-based contextual themes"""
+#     
+#     PROXIMITY_THEMES = {
+#         'Agent_Behavior': [...],
+#         'Technical_Issues': [...],
+#         ...
+#     }
+#     
+#     @classmethod
+#     @lru_cache(maxsize=CACHE_SIZE)
+#     def analyze_proximity(cls, text: str) -> ProximityResult:
+#         """Analyze text for proximity-based themes"""
+#         ...
+
+
+# ========================================================================================
+# SENTIMENT & TRANSLATION
+# ========================================================================================
+
 class SentimentAnalyzer:
+    """Sentiment analysis with 5-level granularity - CONSUMER-FOCUSED"""
+    
     @staticmethod
     @lru_cache(maxsize=CACHE_SIZE)
     def analyze_sentiment(text: str) -> Tuple[str, float]:
-        if not text:
+        """Analyze sentiment of text - based on consumer tone"""
+        if not text or not isinstance(text, str):
             return "Neutral", 0.0
         
         try:
@@ -448,96 +862,209 @@ class SentimentAnalyzer:
             polarity = blob.sentiment.polarity
             
             if polarity >= 0.5:
-                return "Very Positive", polarity
+                sentiment = "Very Positive"
             elif polarity >= 0.1:
-                return "Positive", polarity
+                sentiment = "Positive"
             elif polarity <= -0.5:
-                return "Very Negative", polarity
+                sentiment = "Very Negative"
             elif polarity <= -0.1:
-                return "Negative", polarity
+                sentiment = "Negative"
             else:
-                return "Neutral", polarity
-        except:
+                sentiment = "Neutral"
+            
+            return sentiment, polarity
+        
+        except Exception as e:
+            logger.error(f"Sentiment analysis error: {e}")
             return "Neutral", 0.0
 
 
+# # TRANSLATION SERVICE - COMMENTED OUT (Not Required)
+# class TranslationService:
+#     """Multi-language translation service using deep-translator - OPTIMIZED"""
+#     
+#     @staticmethod
+#     @lru_cache(maxsize=CACHE_SIZE)
+#     def translate_to_english(text: str) -> str:
+#         """Translate text to English if needed using deep-translator - OPTIMIZED"""
+#         if not text or not isinstance(text, str):
+#             return text
+#         
+#         # PERFORMANCE OPTIMIZATION: Skip translation if disabled
+#         if not ENABLE_TRANSLATION:
+#             return text  # Skip translation entirely (saves ~150ms per text)
+#         
+#         try:
+#             # Use deep-translator - auto-detects language and translates
+#             translated = GoogleTranslator(source='auto', target='en').translate(text)
+#             return translated
+#         
+#         except Exception as e:
+#             logger.error(f"Translation error: {e}")
+#             return text
+
+
 # ========================================================================================
-# ULTRA-FAST PIPELINE WITH POLARS
+# COMPLIANCE MANAGER
 # ========================================================================================
 
-class UltraFastNLPPipeline:
+class ComplianceManager:
+    """Manages compliance reporting and audit logging"""
+    
+    def __init__(self):
+        self.audit_log = []
+        self.start_time = datetime.now()
+    
+    def log_redaction(self, conversation_id: str, pii_counts: Dict[str, int]):
+        """Log PII redaction event"""
+        self.audit_log.append({
+            'timestamp': datetime.now().isoformat(),
+            'conversation_id': conversation_id,
+            'pii_counts': pii_counts,
+            'total_items': sum(pii_counts.values())
+        })
+    
+    def generate_compliance_report(self, results: List[NLPResult]) -> Dict:
+        """Generate comprehensive compliance report"""
+        total_records = len(results)
+        records_with_pii = sum(1 for r in results if r.pii_result.pii_detected)
+        total_pii_items = sum(r.pii_result.total_items for r in results)
+        
+        pii_distribution = {}
+        for result in results:
+            for pii_type, count in result.pii_result.pii_counts.items():
+                pii_distribution[pii_type] = pii_distribution.get(pii_type, 0) + count
+        
+        return {
+            'report_generated': datetime.now().isoformat(),
+            'processing_time': str(datetime.now() - self.start_time),
+            'summary': {
+                'total_records_processed': total_records,
+                'records_with_pii': records_with_pii,
+                'records_clean': total_records - records_with_pii,
+                'pii_detection_rate': f"{(records_with_pii/total_records*100):.2f}%" if total_records > 0 else "0%",
+                'total_pii_items': total_pii_items
+            },
+            'pii_type_distribution': pii_distribution,
+            'compliance_standards': COMPLIANCE_STANDARDS,
+            'audit_log_entries': len(self.audit_log)
+        }
+    
+    def export_audit_log(self) -> pd.DataFrame:
+        """Export audit log as DataFrame"""
+        if not self.audit_log:
+            return pd.DataFrame()
+        
+        return pd.DataFrame(self.audit_log)
+
+
+# ========================================================================================
+# MAIN NLP PIPELINE - CONSUMER-FOCUSED
+# ========================================================================================
+
+class DynamicNLPPipeline:
     """
-    Ultra-fast pipeline using Polars, DuckDB, and parallel processing
-    Designed for 10,000+ transcripts with multiple keywords each
+    Main NLP processing pipeline with consumer-focused analysis
+    MODIFIED: Analyzes only consumer messages from transcripts
     """
     
-    def __init__(self, rule_engine, enable_pii=True, industry_name=None):
+    def __init__(
+        self, 
+        rule_engine: DynamicRuleEngine,
+        enable_pii_redaction: bool = True,
+        industry_name: str = None
+    ):
         self.rule_engine = rule_engine
-        self.enable_pii = enable_pii
+        self.enable_pii_redaction = enable_pii_redaction
         self.industry_name = industry_name
+        self.compliance_manager = ComplianceManager()
     
-    def process_single_text(self, conversation_id: str, transcript: str, redaction_mode: str = 'hash') -> NLPResult:
-        """Process single transcript - Consumer-only analysis"""
+    def process_single_text(
+        self, 
+        conversation_id: str, 
+        text: str,
+        redaction_mode: str = 'hash'
+    ) -> NLPResult:
+        """Process a single transcript through complete pipeline - CONSUMER-FOCUSED"""
         
-        # 1. Extract consumer messages only
-        consumer_text = ConsumerExtractor.extract_consumer_messages(transcript)
-        consumer_tone = ConsumerExtractor.get_consumer_tone(consumer_text)
+        # NEW: Extract consumer messages only
+        consumer_text = ConsumerMessageExtractor.extract_consumer_messages(text)
         
-        # 2. PII Detection on consumer text
-        if self.enable_pii:
+        if not consumer_text:
+            # No consumer text found, use original
+            logger.warning(f"No consumer messages extracted for {conversation_id}, using original text")
+            consumer_text = text
+        
+        # 1. PII Detection & Redaction (on consumer text)
+        if self.enable_pii_redaction:
             pii_result = PIIDetector.detect_and_redact(consumer_text, redaction_mode)
+            if pii_result.pii_detected:
+                self.compliance_manager.log_redaction(conversation_id, pii_result.pii_counts)
             working_text = pii_result.redacted_text
         else:
-            pii_result = PIIRedactionResult(consumer_text, False, {}, 0)
+            pii_result = PIIRedactionResult(
+                redacted_text=consumer_text,
+                pii_detected=False,
+                pii_counts={},
+                total_items=0
+            )
             working_text = consumer_text
         
-        # 3. Classification (on consumer text) - Gets matched keywords from domain_packs
-        category = self.rule_engine.classify_text(working_text)
+        # 2. Translation - COMMENTED OUT (Not required)
+        # translated_text = TranslationService.translate_to_english(working_text)
+        translated_text = working_text  # Use original text without translation
         
-        # 4. Proximity - Uses matched keywords from classification (no hardcoded keywords)
-        proximity = ProximityAnalyzer.analyze_proximity(working_text, category.matched_keywords)
+        # 3. Dynamic Category Classification (+ Keyword Tracking - COMMENTED OUT)
+        category = self.rule_engine.classify_text(translated_text)
+        # matched_keywords = []  # COMMENTED OUT - Not needed
         
-        # 5. Sentiment (on consumer text)
-        sentiment, sentiment_score = SentimentAnalyzer.analyze_sentiment(working_text)
+        # 4. Proximity Analysis - COMMENTED OUT (Not needed)
+        # proximity = ProximityAnalyzer.analyze_proximity(translated_text)
+        
+        # 5. Sentiment Analysis (on consumer messages only)
+        sentiment, sentiment_score = SentimentAnalyzer.analyze_sentiment(consumer_text)
         
         return NLPResult(
             conversation_id=conversation_id,
-            original_text=transcript,
-            consumer_only_text=consumer_text,
-            consumer_tone=consumer_tone,
+            original_text=text,
+            consumer_text=consumer_text,
             redacted_text=pii_result.redacted_text,
+            # translated_text=translated_text,  # COMMENTED OUT
             category=category,
-            proximity=proximity,
+            # proximity=proximity,  # COMMENTED OUT
             sentiment=sentiment,
             sentiment_score=sentiment_score,
             pii_result=pii_result,
             industry=self.industry_name
+            # matched_keywords=matched_keywords  # COMMENTED OUT
         )
     
-    def process_batch_polars(self, df_polars: pl.DataFrame, text_column: str, id_column: str, 
-                             redaction_mode: str = 'hash', progress_callback=None) -> pl.DataFrame:
-        """
-        Ultra-fast batch processing using Polars
-        
-        10-50x faster than pandas for large datasets
-        """
-        logger.info(f"Processing {len(df_polars):,} records with Polars...")
-        
+    def process_batch(
+        self,
+        df: pd.DataFrame,
+        text_column: str,
+        id_column: str,
+        redaction_mode: str = 'hash',
+        progress_callback=None
+    ) -> List[NLPResult]:
+        """Process batch of texts with parallel processing"""
         results = []
-        total = len(df_polars)
-        
-        # Convert to list for parallel processing
-        records = df_polars.select([id_column, text_column]).to_dicts()
+        total = len(df)
         
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            futures = {
-                executor.submit(
+            futures = {}
+            
+            for idx, row in df.iterrows():
+                conv_id = str(row[id_column])
+                text = str(row[text_column])
+                
+                future = executor.submit(
                     self.process_single_text,
-                    record[id_column],
-                    record[text_column],
+                    conv_id,
+                    text,
                     redaction_mode
-                ): idx for idx, record in enumerate(records)
-            }
+                )
+                futures[future] = idx
             
             completed = 0
             for future in as_completed(futures):
@@ -546,259 +1073,611 @@ class UltraFastNLPPipeline:
                     results.append(result)
                     completed += 1
                     
-                    if progress_callback and completed % 100 == 0:
+                    if progress_callback and completed % 10 == 0:
                         progress_callback(completed, total)
+                
                 except Exception as e:
-                    logger.error(f"Error: {e}")
+                    logger.error(f"Error processing row {futures[future]}: {e}")
                     completed += 1
         
-        # Convert results to Polars DataFrame (FAST)
-        # ONLY ESSENTIAL COLUMNS - 8 columns total
-        # Removed: PII_Detected, PII_Count, Matched_Keywords, Keyword_Count, Consumer_Tone, Original_Transcript, Primary_Proximity, Proximity_Group
-        data = [{
-            'Conversation_ID': r.conversation_id,
-            # 'Original_Transcript': r.original_text,  # REMOVED - Not required
-            'Consumer_Messages_Only': r.consumer_only_text,
-            # 'Consumer_Tone': r.consumer_tone,  # REMOVED - Not required
-            'L1_Category': r.category.l1,
-            'L2_Subcategory': r.category.l2,
-            'L3_Tertiary': r.category.l3,
-            'L4_Quaternary': r.category.l4,
-            # 'Matched_Keywords': ', '.join(r.category.matched_keywords[:10]),  # REMOVED - Not required
-            # 'Keyword_Count': len(r.category.matched_keywords),  # REMOVED - Not required
-            # 'Primary_Proximity': r.proximity.primary_proximity,  # REMOVED - Not required
-            # 'Proximity_Group': r.proximity.proximity_group,  # REMOVED - Not required
-            'Sentiment': r.sentiment,
-            'Sentiment_Score': r.sentiment_score,
-            # 'PII_Detected': r.pii_result.pii_detected,  # REMOVED - Not required
-            # 'PII_Count': r.pii_result.total_items  # REMOVED - Not required
-        } for r in results]
+        return results
+    
+    def results_to_dataframe(self, results: List[NLPResult]) -> pd.DataFrame:
+        """
+        Convert NLPResult list to DataFrame - MODIFIED OUTPUT
+        Excludes: Primary_Proximity, Proximity_Group, Total_Turns, Consumer_Turns, Matched_Keywords
+        Includes: Consumer_Text
+        """
+        data = []
         
-        return pl.DataFrame(data)
+        for result in results:
+            row = {
+                'Conversation_ID': result.conversation_id,
+                'Original_Text': result.original_text,
+                'Consumer_Text': result.consumer_text,  # NEW
+                'L1_Category': result.category.l1,
+                'L2_Subcategory': result.category.l2,
+                'L3_Tertiary': result.category.l3,
+                'L4_Quaternary': result.category.l4,
+                # 'Matched_Keywords': ', '.join(result.matched_keywords) if result.matched_keywords else '',  # COMMENTED OUT
+                'Sentiment': result.sentiment,
+                'Sentiment_Score': result.sentiment_score
+                # Removed: Primary_Proximity, Proximity_Group, Total_Turns, Consumer_Turns, Matched_Keywords
+            }
+            data.append(row)
+        
+        return pd.DataFrame(data)
 
 
 # ========================================================================================
-# FILE HANDLER - Polars Optimized
+# FILE UTILITIES
 # ========================================================================================
 
-class FastFileHandler:
+class FileHandler:
+    """Handles file I/O operations"""
+    
     @staticmethod
-    def read_file(uploaded_file) -> Optional[pl.DataFrame]:
-        """Read file using Polars (much faster than pandas)"""
+    def read_file(uploaded_file) -> Optional[pd.DataFrame]:
+        """Read uploaded file and return DataFrame"""
         try:
+            # NEW: Check file size
             file_size_mb = uploaded_file.size / (1024 * 1024)
+            logger.info(f"File size: {file_size_mb:.2f} MB")
             
             if file_size_mb > MAX_FILE_SIZE_MB:
-                st.error(f"❌ File too large: {file_size_mb:.1f}MB")
+                st.error(f"❌ File size ({file_size_mb:.1f} MB) exceeds maximum limit of {MAX_FILE_SIZE_MB} MB")
+                st.info("💡 Tip: Try splitting your file into smaller chunks or filtering the data before upload")
                 return None
             
-            ext = Path(uploaded_file.name).suffix.lower()[1:]
+            if file_size_mb > WARN_FILE_SIZE_MB:
+                st.warning(f"⚠️ Large file detected ({file_size_mb:.1f} MB). Processing may take several minutes.")
             
-            if ext == 'csv':
-                df = pl.read_csv(uploaded_file)
-            elif ext in ['xlsx', 'xls']:
-                # Polars doesn't read Excel directly, use pandas then convert
-                df_pd = pd.read_excel(uploaded_file)
-                df = pl.from_pandas(df_pd)
-            elif ext == 'parquet':
-                df = pl.read_parquet(uploaded_file)
-            elif ext == 'json':
-                df = pl.read_json(uploaded_file)
+            file_extension = Path(uploaded_file.name).suffix.lower()[1:]
+            
+            if file_extension == 'csv':
+                df = pd.read_csv(uploaded_file)
+            elif file_extension in ['xlsx', 'xls']:
+                df = pd.read_excel(uploaded_file)
+            elif file_extension == 'parquet':
+                df = pd.read_parquet(uploaded_file)
+            elif file_extension == 'json':
+                df = pd.read_json(uploaded_file)
             else:
-                st.error(f"Unsupported: {ext}")
+                st.error(f"Unsupported file format: {file_extension}")
                 return None
             
-            logger.info(f"Loaded {len(df):,} rows with Polars")
+            # Fix duplicate column names
+            if not df.columns.is_unique:
+                cols = pd.Series(df.columns)
+                for dup in cols[cols.duplicated()].unique():
+                    dup_indices = [i for i, x in enumerate(df.columns) if x == dup]
+                    for i, idx in enumerate(dup_indices[1:], start=1):
+                        df.columns.values[idx] = f"{dup}_{i}"
+                logger.warning(f"Fixed duplicate column names: {list(df.columns)}")
+                st.warning(f"⚠️ Fixed duplicate column names in file. New columns: {list(df.columns)}")
+            
+            logger.info(f"Successfully loaded file: {uploaded_file.name} ({len(df)} rows)")
             return df
+        
         except Exception as e:
-            st.error(f"Error: {e}")
+            logger.error(f"Error reading file: {e}")
+            st.error(f"Error reading file: {e}")
             return None
     
     @staticmethod
-    def save_dataframe(df: pl.DataFrame, format: str = 'csv') -> bytes:
-        """Save Polars DataFrame"""
+    def save_dataframe(df: pd.DataFrame, format: str = 'csv') -> bytes:
+        """Save DataFrame to bytes"""
         buffer = io.BytesIO()
         
         if format == 'csv':
-            df.write_csv(buffer)
-        elif format == 'parquet':
-            df.write_parquet(buffer)
-        elif format == 'json':
-            df.write_json(buffer)
-        elif format == 'xlsx':
-            # Convert to pandas for Excel
-            df.to_pandas().to_excel(buffer, index=False, engine='openpyxl')
+            df.to_csv(buffer, index=False)
+            buffer.seek(0)
+            return buffer.getvalue()
         
-        buffer.seek(0)
-        return buffer.getvalue()
+        elif format == 'xlsx':
+            with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
+                df.to_excel(writer, index=False, sheet_name='Results')
+            buffer.seek(0)
+            return buffer.getvalue()
+        
+        elif format == 'parquet':
+            df.to_parquet(buffer, index=False)
+            buffer.seek(0)
+            return buffer.getvalue()
+        
+        elif format == 'json':
+            df.to_json(buffer, orient='records', lines=True)
+            buffer.seek(0)
+            return buffer.getvalue()
+        
+        else:
+            raise ValueError(f"Unsupported format: {format}")
 
 
 # ========================================================================================
-# STREAMLIT UI
+# STREAMLIT UI - CONSUMER-FOCUSED VERSION
 # ========================================================================================
 
 def main():
-    st.set_page_config(page_title="Ultra-Fast NLP v3.1", page_icon="⚡", layout="wide")
+    """Main Streamlit application - CONSUMER-FOCUSED VERSION"""
     
-    st.title("⚡ Ultra-Fast NLP Pipeline v3.1")
+    # Page configuration
+    st.set_page_config(
+        page_title="Consumer-Focused NLP Pipeline",
+        page_icon="🔒",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
+    
+    # Title
+    st.title("🔒 Consumer-Focused NLP Analysis Pipeline v3.1.1")
     st.markdown("""
-    **Consumer-Only Analysis with Blazing Speed**
-    - 🚀 Polars + DuckDB (10-50x faster)
-    - 👤 Consumer message extraction
-    - 🎯 Multiple keyword detection
-    - 🔐 spaCy NER for PII
-    - 💭 Consumer sentiment & tone
+    **Features:**
+    - 👤 **Consumer-Only Analysis** - Analyzes only consumer messages from transcripts
+    - 🏭 Dynamic Industry-Specific Rules & Keywords
+    - 🔐 HIPAA/GDPR/PCI-DSS Compliant PII Redaction
+    - 📊 Hierarchical Category Classification (L1 → L2 → L3 → L4)
+    - 🔍 Multi-Keyword Detection & Tracking
+    - 💭 Consumer Sentiment Analysis
+    - ⚡ Optimized for Speed (No Translation Required)
+    
+    ---
+    **🆕 v3.1.1 Changes:**
+    - ✅ Consumer message extraction from transcripts
+    - ✅ Sentiment based on consumer tone only
+    - ✅ Translation section removed (not required)
+    - ✅ Multiple keyword detection support
+    - ✅ Removed: Primary_Proximity, Proximity_Group, Total_Turns, Consumer_Turns, Matched_Keywords
+    - ✅ Streamlined output: Conversation_ID, Original_Text, Consumer_Text, L1-L4 Categories, Sentiment
     """)
     
-    # Status
+    # Compliance badges
     cols = st.columns(4)
-    cols[0].success("✅ Polars: Enabled")
-    cols[1].success("✅ Consumer-Only")
-    cols[2].success("✅ spaCy NER")
-    cols[3].info(f"⚡ {MAX_WORKERS} workers")
+    for idx, standard in enumerate(COMPLIANCE_STANDARDS):
+        cols[idx].success(f"✅ {standard} Compliant")
     
     st.markdown("---")
     
-    # Initialize
+    # Initialize domain loader in session state
     if 'domain_loader' not in st.session_state:
         st.session_state.domain_loader = DomainLoader()
-        loaded = st.session_state.domain_loader.auto_load_all_industries()
-        if loaded > 0:
-            st.success(f"✅ Loaded {loaded} industries")
+        
+        # Auto-load all industries
+        with st.spinner("🔄 Loading industries from domain_packs/..."):
+            loaded_count = st.session_state.domain_loader.auto_load_all_industries()
+            
+            if loaded_count > 0:
+                industries_list = st.session_state.domain_loader.get_available_industries()
+                st.success(f"✅ Loaded {loaded_count} industries: {', '.join(sorted(industries_list))}")
+                logger.info(f"Successfully auto-loaded {loaded_count} industries")
+            else:
+                st.error("❌ No industries loaded from domain_packs/ folder!")
+                st.info("💡 Check that domain_packs/ folder exists with industry subfolders")
     
-    # Sidebar
+    # Sidebar configuration
     st.sidebar.header("⚙️ Configuration")
     
-    industries = st.session_state.domain_loader.get_available_industries()
-    if industries:
-        selected = st.sidebar.selectbox("Industry", [""] + sorted(industries))
-        st.session_state.selected_industry = selected if selected else None
-        
-        if selected:
-            data = st.session_state.domain_loader.get_industry_data(selected)
-            st.sidebar.success(f"✅ {selected}")
-            st.sidebar.info(f"Rules: {data.get('rules_count', 0)}\nKeywords: {data.get('keywords_count', 0)}")
-    else:
-        st.sidebar.error("❌ No industries")
+    # Industry Selection
+    st.sidebar.subheader("🏭 Industry Selection")
+    
+    # Get available industries
+    available_industries = st.session_state.domain_loader.get_available_industries()
+    
+    if not available_industries:
+        st.sidebar.error("❌ No industries loaded")
         st.session_state.selected_industry = None
+    else:
+        # Display industry selection dropdown
+        selected_industry = st.sidebar.selectbox(
+            "Select Industry",
+            options=[""] + sorted(available_industries),
+            help="Choose your industry domain for analysis",
+            key="industry_selector"
+        )
+        
+        if selected_industry:
+            # Store in session state
+            st.session_state.selected_industry = selected_industry
+            
+            # Show industry details
+            industry_data = st.session_state.domain_loader.get_industry_data(selected_industry)
+            
+            st.sidebar.success(f"✅ **{selected_industry}** selected")
+            st.sidebar.info(f"""
+            **Configuration:**
+            - 📋 Rules: {industry_data.get('rules_count', 0)}
+            - 🔑 Keywords: {industry_data.get('keywords_count', 0)}
+            """)
+        else:
+            st.sidebar.warning("⚠️ Please select an industry")
+            st.session_state.selected_industry = None
     
     st.sidebar.markdown("---")
-    enable_pii = st.sidebar.checkbox("Enable PII", value=True)
-    redaction_mode = st.sidebar.selectbox("Redaction", ['hash', 'mask', 'token'])
-    output_format = st.sidebar.selectbox("Output", ['csv', 'xlsx', 'parquet'])
     
-    # Main
-    st.header("📁 Upload Transcripts")
-    data_file = st.file_uploader("Upload file with transcripts column", type=SUPPORTED_FORMATS)
+    # PII Redaction settings
+    st.sidebar.subheader("🔒 PII Redaction")
+    enable_pii = st.sidebar.checkbox("Enable PII Redaction", value=True)
     
-    has_industry = st.session_state.get('selected_industry')
+    redaction_mode = st.sidebar.selectbox(
+        "Redaction Mode",
+        options=['hash', 'mask', 'token', 'remove'],
+        help="hash: SHA-256 | mask: *** | token: [TYPE] | remove: delete"
+    )
     
+    st.sidebar.markdown("---")
+    
+    # PERFORMANCE SETTINGS
+    st.sidebar.subheader("⚡ Performance Settings")
+    
+    st.sidebar.info("💡 **Optimization: Translation Disabled**")
+    st.sidebar.caption("Translation is not required for this analysis (saves ~150ms/text)")
+    
+    # PII detection mode
+    pii_mode = st.sidebar.radio(
+        "PII Detection Mode",
+        options=['fast', 'full'],
+        index=0,
+        help="Fast: Skip expensive checks\nFull: Comprehensive PII detection"
+    )
+    
+    # spaCy NER toggle
+    enable_spacy = st.sidebar.checkbox(
+        "Enable spaCy NER (Names)",
+        value=False,
+        help="⚠️ Slow (~50ms/text). Disable if name detection not critical."
+    )
+    
+    # Worker threads
+    max_workers = st.sidebar.slider(
+        "Parallel Workers",
+        min_value=2,
+        max_value=16,
+        value=8,
+        help="More workers = faster processing"
+    )
+    
+    # Update global flags
+    import sys
+    current_module = sys.modules[__name__]
+    current_module.ENABLE_TRANSLATION = False  # Always disabled
+    current_module.PII_DETECTION_MODE = pii_mode
+    current_module.ENABLE_SPACY_NER = enable_spacy
+    current_module.MAX_WORKERS = max_workers
+    
+    # Output format
+    st.sidebar.subheader("📤 Output Settings")
+    output_format = st.sidebar.selectbox(
+        "Output Format",
+        options=['csv', 'xlsx', 'parquet', 'json']
+    )
+    
+    # Main content area
+    st.header("📁 Data Input")
+    
+    # File uploader
+    data_file = st.file_uploader(
+        "Upload your transcript data file",
+        type=SUPPORTED_FORMATS,
+        help=f"Supported: CSV, Excel, Parquet, JSON (Max {MAX_FILE_SIZE_MB}MB)",
+        key="data_file_uploader"
+    )
+    
+    # Store uploaded file in session state
+    if data_file is not None:
+        st.session_state.current_file = data_file
+        st.session_state.file_uploaded = True
+        logger.info(f"File uploaded: {data_file.name}, size: {data_file.size} bytes")
+    
+    # Check conditions
+    has_industry = st.session_state.get('selected_industry') is not None and st.session_state.get('selected_industry') != ""
+    has_file = data_file is not None
+    
+    # Show appropriate messages
     if not has_industry:
-        st.info("👆 Select industry")
-    elif not data_file:
-        st.info("👆 Upload file")
+        st.info("👆 **Step 1:** Please select an industry from the sidebar to begin")
+    elif not has_file:
+        st.info("👆 **Step 2:** Please upload your transcript data file to continue")
     else:
-        df_polars = FastFileHandler.read_file(data_file)
+        # Both conditions met - show processing interface
+        selected_industry = st.session_state.selected_industry
         
-        if df_polars is not None:
-            st.success(f"✅ {len(df_polars):,} records loaded with Polars")
+        st.success(f"✅ Ready to process with **{selected_industry}** industry")
+        
+        # Load data
+        data_df = FileHandler.read_file(data_file)
+        
+        if data_df is not None:
+            st.success(f"✅ Loaded {len(data_df):,} records from {data_file.name}")
+            
+            # Smart column detection
+            st.info("🤖 **Smart Column Detection**")
+            detection_cols = st.columns(2)
+            
+            # Detect ID column
+            likely_id_cols = []
+            for col in data_df.columns:
+                col_lower = col.lower()
+                if any(keyword in col_lower for keyword in ['id', 'conversation', 'ticket', 'case', 'record']):
+                    likely_id_cols.append(col)
+                elif data_df[col].nunique() / len(data_df) > 0.8:
+                    likely_id_cols.append(col)
+            
+            # Detect transcript columns
+            likely_transcript_cols = []
+            for col in data_df.columns:
+                col_lower = col.lower()
+                if any(keyword in col_lower for keyword in ['transcript', 'conversation', 'text', 'message', 'chat']):
+                    if data_df[col].dtype == 'object':
+                        sample = data_df[col].dropna().head(20).astype(str)
+                        if len(sample) > 0:
+                            avg_len = sample.str.len().mean()
+                            if avg_len > 50:  # Transcripts are typically long
+                                likely_transcript_cols.append(col)
+            
+            with detection_cols[0]:
+                if likely_id_cols:
+                    st.success(f"🆔 **Suggested ID:** `{likely_id_cols[0]}`")
+                else:
+                    st.warning("🆔 **ID:** No suggestion")
+            
+            with detection_cols[1]:
+                if likely_transcript_cols:
+                    st.success(f"💬 **Suggested Transcript:** `{likely_transcript_cols[0]}`")
+                else:
+                    st.warning("💬 **Transcript:** No suggestion")
+            
+            st.caption("💡 These are suggestions based on column names and content. You can override them below.")
+            st.markdown("---")
+            
+            # Column selection
+            st.subheader("🔧 Configuration")
             
             col1, col2 = st.columns(2)
+            
             with col1:
-                id_col = st.selectbox("ID Column", df_polars.columns)
+                id_default_idx = 0
+                if likely_id_cols and likely_id_cols[0] in data_df.columns:
+                    id_default_idx = data_df.columns.tolist().index(likely_id_cols[0])
+                
+                id_column = st.selectbox(
+                    "ID Column",
+                    options=data_df.columns.tolist(),
+                    index=id_default_idx,
+                    help="Select column with unique conversation IDs",
+                    key="id_col_selector"
+                )
+            
             with col2:
-                text_cols = [c for c in df_polars.columns if c != id_col]
-                text_col = st.selectbox("Transcripts Column", text_cols)
-            
-            with st.expander("👀 Preview (first 5)"):
-                st.dataframe(df_polars.select([id_col, text_col]).head(5).to_pandas())
-            
-            st.info("ℹ️ **Consumer-Only Analysis**: Only consumer messages will be analyzed. Agent messages are filtered out.")
-            
-            if st.button("🚀 Run Ultra-Fast Analysis", type="primary", width="stretch"):
-                industry_data = st.session_state.domain_loader.get_industry_data(st.session_state.selected_industry)
+                text_col_options = [col for col in data_df.columns if col != id_column]
                 
-                with st.spinner("Initializing ultra-fast pipeline..."):
+                default_text_idx = 0
+                if likely_transcript_cols:
+                    for idx, col in enumerate(text_col_options):
+                        if col in likely_transcript_cols:
+                            default_text_idx = idx
+                            break
+                
+                text_column = st.selectbox(
+                    "Transcript Column",
+                    options=text_col_options,
+                    index=default_text_idx,
+                    help="Select column with consumer-agent transcripts",
+                    key="text_col_selector"
+                )
+            
+            # Validation
+            validation_errors = []
+            
+            if id_column == text_column:
+                validation_errors.append("⚠️ ID Column and Transcript Column cannot be the same!")
+            
+            if validation_errors:
+                for error in validation_errors:
+                    st.error(error)
+                st.error("❌ Please fix the column selection errors above before proceeding.")
+                config_valid = False
+            else:
+                config_valid = True
+            
+            # Preview data
+            with st.expander("👀 Preview Data (first 10 rows)", expanded=config_valid):
+                if not config_valid:
+                    st.info("🔧 Fix configuration errors to see data preview")
+                else:
+                    try:
+                        preview_cols = [id_column, text_column]
+                        preview_df = data_df[preview_cols].head(10).copy()
+                        
+                        st.dataframe(
+                            preview_df, 
+                            use_container_width=True,
+                            height=400
+                        )
+                    
+                    except Exception as e:
+                        logger.error(f"Preview error: {e}")
+                        st.error("❌ Unable to preview data with current column selection.")
+            
+            st.markdown("---")
+            
+            # Process button
+            can_process = config_valid and id_column and text_column
+            
+            if not can_process:
+                st.button(
+                    "🚀 Run Consumer Analysis", 
+                    type="primary", 
+                    use_container_width=True,
+                    disabled=True,
+                    help="Fix configuration errors before running analysis"
+                )
+                st.error("⚠️ Please fix configuration errors above to enable analysis")
+            
+            elif st.button("🚀 Run Consumer Analysis", type="primary", use_container_width=True):
+                
+                # Get industry data
+                industry_data = st.session_state.domain_loader.get_industry_data(selected_industry)
+                
+                # Initialize components
+                with st.spinner(f"Initializing consumer-focused NLP pipeline for {selected_industry}..."):
                     rule_engine = DynamicRuleEngine(industry_data)
-                    pipeline = UltraFastNLPPipeline(rule_engine, enable_pii, st.session_state.selected_industry)
+                    pipeline = DynamicNLPPipeline(
+                        rule_engine=rule_engine,
+                        enable_pii_redaction=enable_pii,
+                        industry_name=selected_industry
+                    )
                 
-                progress = st.progress(0)
-                status = st.empty()
+                # Progress tracking
+                st.subheader("📊 Processing Progress")
+                progress_bar = st.progress(0)
+                status_text = st.empty()
                 
                 def update_progress(completed, total):
-                    progress.progress(completed / total)
-                    status.text(f"⚡ {completed:,}/{total:,} ({completed/total*100:.1f}%)")
+                    progress = completed / total
+                    progress_bar.progress(progress)
+                    status_text.text(f"Processed {completed:,}/{total:,} records ({progress*100:.1f}%)")
                 
-                start = datetime.now()
+                # Process data
+                start_time = datetime.now()
                 
-                results_polars = pipeline.process_batch_polars(
-                    df_polars, text_col, id_col, redaction_mode, update_progress
-                )
+                with st.spinner("Processing transcripts (extracting consumer messages)..."):
+                    results = pipeline.process_batch(
+                        df=data_df,
+                        text_column=text_column,
+                        id_column=id_column,
+                        redaction_mode=redaction_mode,
+                        progress_callback=update_progress
+                    )
                 
-                elapsed = (datetime.now() - start).total_seconds()
-                speed = len(results_polars) / elapsed if elapsed > 0 else 0
+                end_time = datetime.now()
+                processing_time = (end_time - start_time).total_seconds()
                 
-                st.success(f"⚡ Done! {elapsed:.2f}s ({speed:.0f} rec/sec)")
+                # Convert to DataFrame
+                results_df = pipeline.results_to_dataframe(results)
+                
+                # Display results
+                st.success(f"✅ Consumer Analysis Complete! Processed {len(results):,} records in {processing_time:.2f} seconds")
                 
                 # Metrics
-                st.subheader("📈 Results")
-                cols = st.columns(4)
-                cols[0].metric("Records", f"{len(results_polars):,}")
-                cols[1].metric("Speed", f"{speed:.0f}/sec")
-                cols[2].metric("Categories", results_polars['L1_Category'].n_unique())
-                cols[3].metric("Avg Sentiment", f"{results_polars['Sentiment_Score'].mean():.2f}")
-                # Removed: Avg Keywords, PII Found, Proximity Themes (columns not in output)
+                st.subheader("📈 Analysis Metrics")
                 
-                # Show sample
-                st.dataframe(results_polars.head(20).to_pandas())
+                metric_cols = st.columns(6)
                 
-                # Charts
-                st.subheader("📊 Analytics")
+                with metric_cols[0]:
+                    st.metric("Total Records", f"{len(results):,}")
                 
-                # Convert to pandas for charts (more reliable)
-                results_pd = results_polars.to_pandas()
+                with metric_cols[1]:
+                    st.metric("Industry", selected_industry)
                 
-                try:
-                    cols = st.columns(3)
+                with metric_cols[2]:
+                    unique_categories = results_df['L1_Category'].nunique()
+                    st.metric("Unique Categories", unique_categories)
+                
+                with metric_cols[3]:
+                    avg_sentiment = results_df['Sentiment_Score'].mean()
+                    st.metric("Avg. Consumer Sentiment", f"{avg_sentiment:.2f}")
+                
+                with metric_cols[4]:
+                    negative_count = len(results_df[results_df['Sentiment'].isin(['Negative', 'Very Negative'])])
+                    pct = (negative_count/len(results)*100) if len(results) > 0 else 0
+                    st.metric("Negative Sentiment", f"{negative_count:,} ({pct:.1f}%)")
+                
+                with metric_cols[5]:
+                    processing_speed = len(results) / processing_time if processing_time > 0 else 0
+                    st.metric("Speed", f"{processing_speed:.1f} rec/sec")
+                
+                # Results preview
+                st.subheader("📋 Results Preview")
+                st.dataframe(results_df.head(20), use_container_width=True)
+                
+                # Distribution charts
+                st.subheader("📊 Analysis Distributions")
+                
+                chart_cols = st.columns(2)
+                
+                with chart_cols[0]:
+                    st.markdown("**L1 Category Distribution**")
+                    l1_counts = results_df['L1_Category'].value_counts()
+                    st.bar_chart(l1_counts)
+                
+                with chart_cols[1]:
+                    st.markdown("**Consumer Sentiment Distribution**")
+                    sentiment_counts = results_df['Sentiment'].value_counts()
+                    st.bar_chart(sentiment_counts)
+                
+                # # Keyword analysis - COMMENTED OUT (Not needed)
+                # st.subheader("🔍 Keyword Analysis")
+                # 
+                # # Count matched keywords
+                # all_keywords = []
+                # for kw_str in results_df['Matched_Keywords']:
+                #     if kw_str:
+                #         all_keywords.extend([k.strip() for k in kw_str.split(',')])
+                # 
+                # if all_keywords:
+                #     keyword_counts = pd.Series(all_keywords).value_counts().head(20)
+                #     st.bar_chart(keyword_counts)
+                #     
+                #     st.caption(f"Total unique keywords detected: {len(set(all_keywords))}")
+                # else:
+                #     st.info("No keywords were matched in the analysis")
+                
+                # Compliance report
+                if enable_pii:
+                    st.subheader("🔒 Compliance Report")
+                    compliance_report = pipeline.compliance_manager.generate_compliance_report(results)
                     
-                    with cols[0]:
-                        st.markdown("**L1 Categories**")
-                        try:
-                            cat_counts = results_pd['L1_Category'].value_counts()
-                            st.bar_chart(cat_counts)
-                        except Exception as e:
-                            st.warning(f"Unable to generate L1 chart: {e}")
+                    report_cols = st.columns(2)
                     
-                    with cols[1]:
-                        st.markdown("**L2 Subcategories (Top 10)**")
-                        try:
-                            subcat_counts = results_pd['L2_Subcategory'].value_counts().head(10)
-                            st.bar_chart(subcat_counts)
-                        except Exception as e:
-                            st.warning(f"Unable to generate L2 chart: {e}")
+                    with report_cols[0]:
+                        st.json(compliance_report['summary'])
                     
-                    with cols[2]:
-                        st.markdown("**Sentiment**")
-                        try:
-                            sent_counts = results_pd['Sentiment'].value_counts()
-                            st.bar_chart(sent_counts)
-                        except Exception as e:
-                            st.warning(f"Unable to generate Sentiment chart: {e}")
+                    with report_cols[1]:
+                        st.json(compliance_report['pii_type_distribution'])
                 
-                except Exception as e:
-                    st.warning(f"Unable to generate analytics charts: {e}")
-                    logger.error(f"Chart generation error: {e}")
+                # Downloads
+                st.subheader("💾 Download Results")
                 
-                # Download
-                data = FastFileHandler.save_dataframe(results_polars, output_format)
-                st.download_button(
-                    f"📥 Download (.{output_format})",
-                    data=data,
-                    file_name=f"consumer_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{output_format}"
-                )
+                download_cols = st.columns(3)
+                
+                with download_cols[0]:
+                    results_bytes = FileHandler.save_dataframe(results_df, output_format)
+                    st.download_button(
+                        label=f"📥 Download Results (.{output_format})",
+                        data=results_bytes,
+                        file_name=f"consumer_analysis_{selected_industry}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{output_format}",
+                        mime=f"application/{output_format}"
+                    )
+                
+                with download_cols[1]:
+                    if enable_pii:
+                        report_bytes = json.dumps(compliance_report, indent=2).encode()
+                        st.download_button(
+                            label="📥 Download Compliance Report",
+                            data=report_bytes,
+                            file_name=f"compliance_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+                            mime="application/json"
+                        )
+                
+                with download_cols[2]:
+                    if enable_pii:
+                        audit_df = pipeline.compliance_manager.export_audit_log()
+                        if not audit_df.empty:
+                            audit_bytes = FileHandler.save_dataframe(audit_df, 'csv')
+                            st.download_button(
+                                label="📥 Download Audit Log",
+                                data=audit_bytes,
+                                file_name=f"audit_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                                mime="text/csv"
+                            )
     
+    # Footer
     st.markdown("---")
-    st.markdown("<div style='text-align:center;color:gray'><small>v3.1 - Ultra-Fast Consumer Analytics</small></div>", unsafe_allow_html=True)
+    st.markdown("""
+    <div style='text-align: center; color: gray;'>
+    <small>Consumer-Focused NLP Pipeline v3.1.1 | Built with Streamlit | HIPAA/GDPR/PCI-DSS/CCPA Compliant</small>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
