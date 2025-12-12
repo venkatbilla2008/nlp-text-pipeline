@@ -4,7 +4,7 @@ Dynamic Domain-Agnostic NLP Text Analysis Pipeline - CONSUMER-FOCUSED VERSION
 
 FINAL WORKING VERSION - All issues resolved
 
-Version: 3.2.0 - Consumer-Focused Analysis (Final)
+Version: 3.2.1 - Enhanced Error Handling & Debugging
 """
 
 import streamlit as st
@@ -686,16 +686,24 @@ class DynamicNLPPipeline:
         """Process batch with parallel processing"""
         results = []
         total = len(df)
+        errors = []
+        
+        logger.info(f"Starting batch processing: {total} records")
         
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             futures = {}
             
             for idx, row in df.iterrows():
-                conv_id = str(row[id_column])
-                text = str(row[text_column])
-                
-                future = executor.submit(self.process_single_text, conv_id, text, redaction_mode)
-                futures[future] = idx
+                try:
+                    conv_id = str(row[id_column])
+                    text = str(row[text_column])
+                    
+                    future = executor.submit(self.process_single_text, conv_id, text, redaction_mode)
+                    futures[future] = (idx, conv_id)
+                    
+                except Exception as e:
+                    logger.error(f"Error submitting row {idx}: {e}")
+                    errors.append({'row': idx, 'error': str(e), 'stage': 'submission'})
             
             completed = 0
             for future in as_completed(futures):
@@ -708,8 +716,15 @@ class DynamicNLPPipeline:
                         progress_callback(completed, total)
                 
                 except Exception as e:
-                    logger.error(f"Error processing row {futures[future]}: {e}")
+                    row_idx, conv_id = futures[future]
+                    logger.error(f"Error processing row {row_idx} (ID: {conv_id}): {e}")
+                    errors.append({'row': row_idx, 'id': conv_id, 'error': str(e), 'stage': 'processing'})
                     completed += 1
+        
+        logger.info(f"Batch processing complete: {len(results)} successful, {len(errors)} errors")
+        
+        if errors:
+            logger.warning(f"Errors encountered: {errors[:5]}")  # Log first 5 errors
         
         return results
     
@@ -828,7 +843,7 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    st.title("🔒 Consumer-Focused NLP Analysis Pipeline v3.2.0")
+    st.title("🔒 Consumer-Focused NLP Analysis Pipeline v3.2.1")
     st.markdown("""
     **Features:**
     - 👤 **Consumer-Only Analysis** - Analyzes only consumer messages
@@ -995,21 +1010,83 @@ def main():
                 start_time = datetime.now()
                 
                 with st.spinner("Processing transcripts..."):
-                    results = pipeline.process_batch(
-                        df=data_df,
-                        text_column=text_column,
-                        id_column=id_column,
-                        redaction_mode=redaction_mode,
-                        progress_callback=update_progress
-                    )
+                    try:
+                        results = pipeline.process_batch(
+                            df=data_df,
+                            text_column=text_column,
+                            id_column=id_column,
+                            redaction_mode=redaction_mode,
+                            progress_callback=update_progress
+                        )
+                        
+                        logger.info(f"Batch processing complete. Results count: {len(results)}")
+                        
+                    except Exception as e:
+                        st.error(f"❌ Error during batch processing: {e}")
+                        logger.error(f"Batch processing error: {e}")
+                        import traceback
+                        logger.error(traceback.format_exc())
+                        st.stop()
                 
                 end_time = datetime.now()
                 processing_time = (end_time - start_time).total_seconds()
                 
+                # Check if results are empty
+                if not results or len(results) == 0:
+                    st.error("❌ No results generated. The processing returned empty results.")
+                    st.info("**Possible causes:**")
+                    st.write("1. All rows failed processing")
+                    st.write("2. Text column contains invalid data")
+                    st.write("3. Processing errors occurred")
+                    st.info("**Debug Info:**")
+                    st.write(f"- Input rows: {len(data_df)}")
+                    st.write(f"- Results returned: {len(results)}")
+                    st.write(f"- Text column: {text_column}")
+                    st.write(f"- ID column: {id_column}")
+                    
+                    # Show sample of input data
+                    st.write("**Sample input data:**")
+                    st.dataframe(data_df[[id_column, text_column]].head(3))
+                    st.stop()
+                
                 # Convert to DataFrame
-                results_df = pipeline.results_to_dataframe(results)
+                try:
+                    results_df = pipeline.results_to_dataframe(results)
+                    logger.info(f"DataFrame created with shape: {results_df.shape}")
+                    logger.info(f"DataFrame columns: {list(results_df.columns)}")
+                    
+                except Exception as e:
+                    st.error(f"❌ Error converting results to DataFrame: {e}")
+                    logger.error(f"DataFrame conversion error: {e}")
+                    import traceback
+                    logger.error(traceback.format_exc())
+                    st.stop()
+                
+                # Verify DataFrame is not empty
+                if results_df.empty:
+                    st.error("❌ Results DataFrame is empty after conversion!")
+                    st.stop()
                 
                 st.success(f"✅ Analysis Complete! {len(results):,} records in {processing_time:.2f}s")
+                
+                # Debug expander
+                with st.expander("🐛 Debug: Processing Details", expanded=False):
+                    st.write(f"**Input:** {len(data_df)} rows")
+                    st.write(f"**Output:** {len(results)} results")
+                    st.write(f"**DataFrame shape:** {results_df.shape}")
+                    st.write(f"**DataFrame columns:** {list(results_df.columns)}")
+                    st.write(f"**Processing time:** {processing_time:.2f}s")
+                    
+                    if len(results) > 0:
+                        st.write("**Sample result:**")
+                        sample = results[0]
+                        st.write(f"- Conversation ID: {sample.conversation_id}")
+                        st.write(f"- Category: {sample.category.l1}")
+                        st.write(f"- Sentiment: {sample.sentiment}")
+                        st.write(f"- Consumer text length: {len(sample.consumer_text)}")
+                    
+                    st.write("**DataFrame sample:**")
+                    st.dataframe(results_df.head(3))
                 
                 # Metrics
                 st.subheader("📈 Metrics")
@@ -1104,7 +1181,7 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style='text-align: center; color: gray;'>
-    <small>Consumer-Focused NLP Pipeline v3.2.0 | HIPAA/GDPR/PCI-DSS/CCPA Compliant</small>
+    <small>Consumer-Focused NLP Pipeline v3.2.1 | HIPAA/GDPR/PCI-DSS/CCPA Compliant</small>
     </div>
     """, unsafe_allow_html=True)
 
