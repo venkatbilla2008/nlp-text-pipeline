@@ -826,26 +826,58 @@ class DynamicNLPPipeline:
         progress_callback=None
     ) -> List[NLPResult]:
         """
-        ULTRA-FAST batch processing with ProcessPoolExecutor
-        Uses true multiprocessing for CPU-bound tasks (3-5x faster than threads)
+        ULTRA-FAST batch processing with automatic fallback
+        Tries ProcessPoolExecutor first, falls back to ThreadPoolExecutor if needed
         """
         results = []
         total = len(df)
         
-        logger.info(f"🚀 Starting ULTRA-FAST parallel processing with {MAX_WORKERS} workers")
+        logger.info(f"🚀 Starting parallel processing with {MAX_WORKERS} workers")
         
         # For small batches, use sequential processing (overhead not worth it)
         if total < 50:
+            logger.info("Small batch detected, using sequential processing")
             for idx, row in df.iterrows():
                 conv_id = str(row[id_column])
                 text = str(row[text_column])
                 result = self.process_single_text(conv_id, text, redaction_mode)
                 results.append(result)
+                if progress_callback and (idx + 1) % 10 == 0:
+                    progress_callback(idx + 1, total)
             return results
         
-        # For large batches, use ProcessPoolExecutor for true parallelism
+        # Try ProcessPoolExecutor first (fastest if it works)
+        use_process_pool = False
         try:
-            with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            # Test if ProcessPoolExecutor works with a small test
+            logger.info("Testing ProcessPoolExecutor...")
+            with ProcessPoolExecutor(max_workers=2) as executor:
+                test_future = executor.submit(
+                    self.process_single_text,
+                    "test",
+                    "test text",
+                    redaction_mode
+                )
+                test_future.result(timeout=5)  # 5 second timeout
+                use_process_pool = True
+                logger.info("✅ ProcessPoolExecutor available - using multiprocessing")
+        except Exception as e:
+            logger.warning(f"⚠️ ProcessPoolExecutor not available: {e}")
+            logger.info("ℹ️ Falling back to ThreadPoolExecutor (still fast!)")
+            use_process_pool = False
+        
+        # Use the appropriate executor
+        if use_process_pool:
+            ExecutorClass = ProcessPoolExecutor
+            executor_name = "ProcessPoolExecutor"
+        else:
+            ExecutorClass = ThreadPoolExecutor
+            executor_name = "ThreadPoolExecutor"
+        
+        logger.info(f"📊 Using {executor_name} with {MAX_WORKERS} workers for {total} records")
+        
+        try:
+            with ExecutorClass(max_workers=MAX_WORKERS) as executor:
                 futures = {}
                 
                 # Submit all tasks
@@ -877,36 +909,22 @@ class DynamicNLPPipeline:
                         completed += 1
         
         except Exception as e:
-            logger.error(f"❌ ProcessPoolExecutor failed: {e}, falling back to ThreadPoolExecutor")
-            # Fallback to ThreadPoolExecutor if ProcessPoolExecutor fails
-            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-                futures = {}
-                
-                for idx, row in df.iterrows():
+            logger.error(f"❌ {executor_name} failed: {e}")
+            logger.info("🔄 Falling back to sequential processing...")
+            
+            # Final fallback: sequential processing
+            results = []
+            for idx, row in df.iterrows():
+                try:
                     conv_id = str(row[id_column])
                     text = str(row[text_column])
+                    result = self.process_single_text(conv_id, text, redaction_mode)
+                    results.append(result)
                     
-                    future = executor.submit(
-                        self.process_single_text,
-                        conv_id,
-                        text,
-                        redaction_mode
-                    )
-                    futures[future] = idx
-                
-                completed = 0
-                for future in as_completed(futures):
-                    try:
-                        result = future.result()
-                        results.append(result)
-                        completed += 1
-                        
-                        if progress_callback and completed % 25 == 0:
-                            progress_callback(completed, total)
-                    
-                    except Exception as e:
-                        logger.error(f"❌ Error processing row {futures[future]}: {e}")
-                        completed += 1
+                    if progress_callback and (idx + 1) % 10 == 0:
+                        progress_callback(idx + 1, total)
+                except Exception as e:
+                    logger.error(f"❌ Error processing row {idx}: {e}")
         
         logger.info(f"✅ Completed processing {len(results)} records")
         return results
@@ -1252,12 +1270,12 @@ def main():
             # Preview
             with st.expander("👀 Preview (first 10 rows)", expanded=True):
                 preview_df = data_df[[id_column, text_column]].head(10)
-                st.dataframe(preview_df, use_container_width=True)
+                st.dataframe(preview_df, width="stretch")
             
             st.markdown("---")
             
             # Process button
-            if st.button("🚀 Run Analysis", type="primary", use_container_width=True):
+            if st.button("🚀 Run Analysis", type="primary", width="stretch"):
                 
                 # Get industry data
                 industry_data = st.session_state.domain_loader.get_industry_data(selected_industry)
@@ -1331,7 +1349,7 @@ def main():
                 
                 # Results preview
                 st.subheader("📋 Results Preview")
-                st.dataframe(results_df.head(20), use_container_width=True)
+                st.dataframe(results_df.head(20), width="stretch")
                 
                 # Distributions
                 st.subheader("📊 Distributions")
