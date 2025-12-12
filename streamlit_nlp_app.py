@@ -715,7 +715,7 @@ def main():
             
             st.info("ℹ️ **Consumer-Only Analysis**: Only consumer messages will be analyzed. Agent messages are filtered out.")
             
-            if st.button("🚀 Run Ultra-Fast Analysis", type="primary", use_container_width=True):
+            if st.button("🚀 Run Ultra-Fast Analysis", type="primary", width="stretch"):
                 industry_data = st.session_state.domain_loader.get_industry_data(st.session_state.selected_industry)
                 
                 with st.spinner("Initializing ultra-fast pipeline..."):
@@ -750,26 +750,44 @@ def main():
                 # Removed: Avg Keywords, PII Found, Proximity Themes (columns not in output)
                 
                 # Show sample
-                st.dataframe(results_polars.head(20).to_pandas(), use_container_width=True)
+                st.dataframe(results_polars.head(20).to_pandas(), width=None)
                 
                 # Charts
                 st.subheader("📊 Analytics")
-                cols = st.columns(3)
                 
-                with cols[0]:
-                    st.markdown("**L1 Categories**")
-                    cat_counts = results_polars.groupby('L1_Category').count().sort('Conversation_ID', descending=True)
-                    st.bar_chart(cat_counts.to_pandas().set_index('L1_Category')['Conversation_ID'])
+                # Convert to pandas for charts (more reliable)
+                results_pd = results_polars.to_pandas()
                 
-                with cols[1]:
-                    st.markdown("**L2 Subcategories (Top 10)**")
-                    subcat_counts = results_polars.groupby('L2_Subcategory').count().sort('Conversation_ID', descending=True).head(10)
-                    st.bar_chart(subcat_counts.to_pandas().set_index('L2_Subcategory')['Conversation_ID'])
+                try:
+                    cols = st.columns(3)
+                    
+                    with cols[0]:
+                        st.markdown("**L1 Categories**")
+                        try:
+                            cat_counts = results_pd['L1_Category'].value_counts()
+                            st.bar_chart(cat_counts)
+                        except Exception as e:
+                            st.warning(f"Unable to generate L1 chart: {e}")
+                    
+                    with cols[1]:
+                        st.markdown("**L2 Subcategories (Top 10)**")
+                        try:
+                            subcat_counts = results_pd['L2_Subcategory'].value_counts().head(10)
+                            st.bar_chart(subcat_counts)
+                        except Exception as e:
+                            st.warning(f"Unable to generate L2 chart: {e}")
+                    
+                    with cols[2]:
+                        st.markdown("**Sentiment**")
+                        try:
+                            sent_counts = results_pd['Sentiment'].value_counts()
+                            st.bar_chart(sent_counts)
+                        except Exception as e:
+                            st.warning(f"Unable to generate Sentiment chart: {e}")
                 
-                with cols[2]:
-                    st.markdown("**Sentiment**")
-                    sent_counts = results_polars.groupby('Sentiment').count()
-                    st.bar_chart(sent_counts.to_pandas().set_index('Sentiment')['Conversation_ID'])
+                except Exception as e:
+                    st.warning(f"Unable to generate analytics charts: {e}")
+                    logger.error(f"Chart generation error: {e}")
                 
                 # Download
                 data = FastFileHandler.save_dataframe(results_polars, output_format)
