@@ -1,5 +1,5 @@
 # ============================================================================
-# requirements.txt - v3.0.3 FIXED - Numpy/spaCy Compatibility
+# requirements.txt - Numpy/spaCy Compatibility
 # ============================================================================
 
 # Core dependencies
@@ -30,7 +30,7 @@ spacy>=3.7.0,<3.8.0
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
 
 # ============================================================================
-# CRITICAL FIX: numpy version pinned to 1.24.3
+# CRITICAL FIX: 
 # 
 # Issue: "numpy.dtype size changed" error
 # Cause: numpy 2.x is incompatible with spaCy 3.7.x
